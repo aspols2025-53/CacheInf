@@ -1,0 +1,36 @@
+<launch>
+  <arg name="stationary" default="true"/>
+  <arg name="offload" default="false"/>
+  <arg name="transparent" default="false"/>
+  <arg name="log_window" default="30"/>
+  <param name="window" value="$(arg log_window)"/>
+
+  <node name='dataset' pkg="kapao" type="data_feeder.py" output="screen">
+    <param name="name" value="dataset" unless="$(arg offload)"/>
+    <param name="name" value="dataset_offload" if="$(arg offload)"/>
+
+    <!-- <param name="name" value="dataset"/>
+    <param name="next_name" value="inference"
+        unless="$(eval arg('offload') or arg('transparent'))"/>
+    <param name="next_name" value="inference_server"
+         if="$(arg offload)"/>
+    <param name="next_name" value="inference_transparent"
+         if="$(arg transparent)"/> -->
+  </node>
+
+  <node name='inference' pkg="kapao" type="inference.py" unless="$(eval arg('offload') or arg('transparent'))" output="screen">
+    <param name="name" value="inference"/>
+    <param name="next_name" value="run_nms"/>
+    <param name="last_name" value="dataset"/>
+  </node>
+
+  <node name='run_nms' pkg="kapao" type="run_nms.py" output="screen">
+    <param name="name" value="run_nms"/>
+    <param name="next_name" value="comp_navigation"/>
+  </node>
+
+  <node name='comp_navigation' pkg="kapao" type="comp_navigation_goal.py" output="screen">
+    <param name="name" value="comp_navigation"/>
+    <param name="next_name" value=""/>
+  </node>
+</launch>

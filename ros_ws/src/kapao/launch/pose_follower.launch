@@ -1,0 +1,23 @@
+<launch>
+  <arg name="stationary" default="true"/>
+  <arg name="offload" default="false"/>
+  <arg name="debug" default="true"/>
+  <arg name="transparent" default="false"/>
+  <arg name="log_window" default="30"/>
+  <arg name="output" default="screen"/>
+  <arg name="inference_server" default="inference_server"/>
+
+  <param name="window" value="$(arg log_window)"/>
+
+  <node name='pose_follower' pkg="kapao" type="pose_follower.py" output="$(arg output)">
+    <param name="offload" value="$(arg offload)"/>
+    <param name="debug" value="$(arg debug)"/>
+    <param name="transparent" value="$(arg transparent)"/>
+    <param name="offload_server" value="$(arg inference_server)" if="$(eval arg('offload'))"/>
+    <param name="offload_server" value="inference_transparent" if="$(eval arg('transparent'))"/>
+  </node>
+
+  <!-- <node name='power_monitor' pkg="kapao" type="power_monitor.py" output="$(arg output)">
+  </node> -->
+
+</launch>

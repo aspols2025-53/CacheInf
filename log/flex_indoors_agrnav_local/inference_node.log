@@ -1,0 +1,685 @@
+[rospy.client][INFO] 2023-11-22 09:00:14,563: init_node, name[/inference_node], pid[124]
+[xmlrpc][INFO] 2023-11-22 09:00:14,570: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-11-22 09:00:14,572: Started XML-RPC server [http://robot2:40909/]
+[rospy.init][INFO] 2023-11-22 09:00:14,572: ROS Slave URI: [http://robot2:40909/]
+[rospy.impl.masterslave][INFO] 2023-11-22 09:00:14,575: _ready: http://robot2:40909/
+[rospy.registration][INFO] 2023-11-22 09:00:14,590: Registering with master node http://robot2:11311
+[xmlrpc][INFO] 2023-11-22 09:00:14,590: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-11-22 09:00:14,676: registered with master
+[rospy.rosout][INFO] 2023-11-22 09:00:14,679: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-11-22 09:00:14,703: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-11-22 09:00:14,720: initializing /clock core topic
+[rospy.simtime][INFO] 2023-11-22 09:00:14,740: connected to core topic /clock
+[rospy.internal][INFO] 2023-11-22 09:00:14,763: topic[/clock] adding connection to [http://robot2:44619/], count 0
+[rospy.internal][INFO] 2023-11-22 09:00:18,794: topic[/rosout] adding connection to [/rosout], count 0
+[root][INFO] 2023-11-22 09:00:18,966: ============ Test weights: "/project/ParallelCollaborativeInference/third_parties/AGRNav/src/perception/SCONet/network/weights/weights_epoch_037.pth" ============
+
+[root][INFO] 2023-11-22 09:00:19,205: => Loading network architecture...
+[root][INFO] 2023-11-22 09:00:19,280: => Loading network weights...
+[root][INFO] 2023-11-22 09:00:19,475: => Model loaded at /project/ParallelCollaborativeInference/third_parties/AGRNav/src/perception/SCONet/network/weights/weights_epoch_037.pth
+[rosout][INFO] 2023-11-22 09:00:19,489: offload_mode flex
+[rosout][INFO] 2023-11-22 09:00:19,495: Configuring torch to use deterministic behaviors.
+[rosout][INFO] 2023-11-22 09:00:19,499: parallel approach flex
+[rosout][INFO] 2023-11-22 09:00:19,504: constraint_latency False
+[rosout][INFO] 2023-11-22 09:00:19,509: Warning: model still requires grad. Setting requires grad to False.
+[rosout][INFO] 2023-11-22 09:00:19,517: Connecting to server 192.168.10.8:12345
+[rosout][INFO] 2023-11-22 09:00:19,530: Connected to server 192.168.10.8: 12345
+[rosout][INFO] 2023-11-22 09:00:19,539: Model parameter number 0.8395M.
+[rosout][INFO] 2023-11-22 09:00:20,180: Send model to server 3.2604MB.
+[root][INFO] 2023-11-22 09:00:20,289: => Passing the network on the test set...
+[rosout][INFO] 2023-11-22 09:00:20,288: client: started.
+[rosout][INFO] 2023-11-22 09:00:21,101: client: send init input to server
+[rosout][INFO] 2023-11-22 09:00:21,132: Input size 8.0004MB
+[rosout][INFO] 2023-11-22 09:00:21,138: Forwarding for 0(+2 warmup and 3 repeat) times for initialization.
+[rosout][INFO] 2023-11-22 09:00:29,805: Forward of the original model takes average 0.5358s.
+[rosout][INFO] 2023-11-22 09:00:32,728: pickle.dumps size to time poly: 
+           2
+1.219e-18 x + 6.518e-10 x + 0.01311
+[rosout][INFO] 2023-11-22 09:00:32,735: pickle.loads size to time poly: 
+            2
+-3.262e-18 x + 1.122e-09 x + 0.0003124
+[rosout][INFO] 2023-11-22 09:00:32,745: Output size 1.0004MB
+[rosout][INFO] 2023-11-22 09:00:35,430: Local random exec takes average 0.5352s.
+[rosout][INFO] 2023-11-22 09:00:35,439: Using torch.profiler for op profile
+[rosout][INFO] 2023-11-22 09:00:42,567: Operator records (align ops time with factor 1.0436): 
+[rosout][INFO] 2023-11-22 09:00:42,574: 0 _start: input_from: [], output_to: [1], output_shapes: [torch.Size([1, 1, 256, 32, 128])], barrier: True, local dim: 4;  accu_time 0.0000s
+[rosout][INFO] 2023-11-22 09:00:42,581: 1 squeeze: input_from: [0], output_to: [2], output_shapes: [torch.Size([1, 256, 32, 128])], barrier: False, local dim: 3;  accu_time 0.0005s
+[rosout][INFO] 2023-11-22 09:00:42,587: 2 permute: input_from: [1], output_to: [3], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0006s
+[rosout][INFO] 2023-11-22 09:00:42,593: 3 conv2d: input_from: [2], output_to: [4], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0033s
+[rosout][INFO] 2023-11-22 09:00:42,599: 4 relu: input_from: [3], output_to: [5], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0035s
+[rosout][INFO] 2023-11-22 09:00:42,604: 5 conv2d: input_from: [4], output_to: [6], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0049s
+[rosout][INFO] 2023-11-22 09:00:42,609: 6 relu: input_from: [5], output_to: [7, 37], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0051s
+[rosout][INFO] 2023-11-22 09:00:42,614: 7 max_pool2d: input_from: [6], output_to: [8], output_shapes: [torch.Size([1, 32, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0053s
+[rosout][INFO] 2023-11-22 09:00:42,619: 8 conv2d: input_from: [7], output_to: [9], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0060s
+[rosout][INFO] 2023-11-22 09:00:42,625: 9 relu: input_from: [8], output_to: [10], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0061s
+[rosout][INFO] 2023-11-22 09:00:42,631: 10 conv2d: input_from: [9], output_to: [11], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0070s
+[rosout][INFO] 2023-11-22 09:00:42,637: 11 relu: input_from: [10], output_to: [12, 30], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0071s
+[rosout][INFO] 2023-11-22 09:00:42,643: 12 max_pool2d: input_from: [11], output_to: [13], output_shapes: [torch.Size([1, 48, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0072s
+[rosout][INFO] 2023-11-22 09:00:42,648: 13 conv2d: input_from: [12], output_to: [14], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0074s
+[rosout][INFO] 2023-11-22 09:00:42,654: 14 relu: input_from: [13], output_to: [15], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0075s
+[rosout][INFO] 2023-11-22 09:00:42,660: 15 conv2d: input_from: [14], output_to: [16], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0078s
+[rosout][INFO] 2023-11-22 09:00:42,665: 16 relu: input_from: [15], output_to: [17, 24], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0079s
+[rosout][INFO] 2023-11-22 09:00:42,670: 17 max_pool2d: input_from: [16], output_to: [18], output_shapes: [torch.Size([1, 64, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0080s
+[rosout][INFO] 2023-11-22 09:00:42,675: 18 conv2d: input_from: [17], output_to: [19], output_shapes: [torch.Size([1, 80, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0085s
+[rosout][INFO] 2023-11-22 09:00:42,681: 19 relu: input_from: [18], output_to: [20], output_shapes: [torch.Size([1, 80, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0086s
+[rosout][INFO] 2023-11-22 09:00:42,686: 20 conv2d: input_from: [19], output_to: [21], output_shapes: [torch.Size([1, 80, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0091s
+[rosout][INFO] 2023-11-22 09:00:42,691: 21 relu: input_from: [20], output_to: [22], output_shapes: [torch.Size([1, 80, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0093s
+[rosout][INFO] 2023-11-22 09:00:42,696: 22 conv2d: input_from: [21], output_to: [23, 29, 36], output_shapes: [torch.Size([1, 4, 32, 16])], barrier: False, local dim: 3;  accu_time 0.0101s
+[rosout][INFO] 2023-11-22 09:00:42,700: 23 conv_transpose2d: input_from: [22], output_to: [24], output_shapes: [torch.Size([1, 4, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0107s
+[rosout][INFO] 2023-11-22 09:00:42,706: 24 cat: input_from: [23, 16], output_to: [25], output_shapes: [torch.Size([1, 68, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0110s
+[rosout][INFO] 2023-11-22 09:00:42,711: 25 conv2d: input_from: [24], output_to: [26], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0118s
+[rosout][INFO] 2023-11-22 09:00:42,716: 26 relu: input_from: [25], output_to: [27], output_shapes: [torch.Size([1, 64, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0118s
+[rosout][INFO] 2023-11-22 09:00:42,721: 27 conv2d: input_from: [26], output_to: [28, 35], output_shapes: [torch.Size([1, 8, 64, 32])], barrier: False, local dim: 3;  accu_time 0.0129s
+[rosout][INFO] 2023-11-22 09:00:42,725: 28 conv_transpose2d: input_from: [27], output_to: [30], output_shapes: [torch.Size([1, 8, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0133s
+[rosout][INFO] 2023-11-22 09:00:42,730: 29 conv_transpose2d: input_from: [22], output_to: [30], output_shapes: [torch.Size([1, 4, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0134s
+[rosout][INFO] 2023-11-22 09:00:42,735: 30 cat: input_from: [28, 11, 29], output_to: [31], output_shapes: [torch.Size([1, 60, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0137s
+[rosout][INFO] 2023-11-22 09:00:42,740: 31 conv2d: input_from: [30], output_to: [32], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0151s
+[rosout][INFO] 2023-11-22 09:00:42,744: 32 relu: input_from: [31], output_to: [33], output_shapes: [torch.Size([1, 48, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0152s
+[rosout][INFO] 2023-11-22 09:00:42,749: 33 conv2d: input_from: [32], output_to: [34], output_shapes: [torch.Size([1, 16, 128, 64])], barrier: False, local dim: 3;  accu_time 0.0157s
+[rosout][INFO] 2023-11-22 09:00:42,753: 34 conv_transpose2d: input_from: [33], output_to: [37], output_shapes: [torch.Size([1, 16, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0193s
+[rosout][INFO] 2023-11-22 09:00:42,758: 35 conv_transpose2d: input_from: [27], output_to: [37], output_shapes: [torch.Size([1, 8, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0197s
+[rosout][INFO] 2023-11-22 09:00:42,763: 36 conv_transpose2d: input_from: [22], output_to: [37], output_shapes: [torch.Size([1, 4, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0199s
+[rosout][INFO] 2023-11-22 09:00:42,768: 37 cat: input_from: [34, 6, 35, 36], output_to: [38], output_shapes: [torch.Size([1, 60, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0203s
+[rosout][INFO] 2023-11-22 09:00:42,772: 38 conv2d: input_from: [37], output_to: [39], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0226s
+[rosout][INFO] 2023-11-22 09:00:42,777: 39 relu: input_from: [38], output_to: [40], output_shapes: [torch.Size([1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0228s
+[rosout][INFO] 2023-11-22 09:00:42,783: 40 __getitem__: input_from: [39], output_to: [41], output_shapes: [torch.Size([1, 1, 32, 256, 128])], barrier: False, local dim: 3;  accu_time 0.0228s
+[rosout][INFO] 2023-11-22 09:00:42,788: 41 conv3d: input_from: [40], output_to: [42], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.0395s
+[rosout][INFO] 2023-11-22 09:00:42,793: 42 relu: input_from: [41], output_to: [43, 48, 54, 60], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.0410s
+[rosout][INFO] 2023-11-22 09:00:42,798: 43 conv3d: input_from: [42], output_to: [44], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.0947s
+[rosout][INFO] 2023-11-22 09:00:42,803: 44 batch_norm: input_from: [43], output_to: [45], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.0974s
+[rosout][INFO] 2023-11-22 09:00:42,808: 45 relu: input_from: [44], output_to: [46], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.0989s
+[rosout][INFO] 2023-11-22 09:00:42,814: 46 conv3d: input_from: [45], output_to: [47], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.1525s
+[rosout][INFO] 2023-11-22 09:00:42,820: 47 batch_norm: input_from: [46], output_to: [53], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.1552s
+[rosout][INFO] 2023-11-22 09:00:42,826: 48 conv3d: input_from: [42], output_to: [49], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.2352s
+[rosout][INFO] 2023-11-22 09:00:42,831: 49 batch_norm: input_from: [48], output_to: [50], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.2378s
+[rosout][INFO] 2023-11-22 09:00:42,837: 50 relu: input_from: [49], output_to: [51], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.2394s
+[rosout][INFO] 2023-11-22 09:00:42,842: 51 conv3d: input_from: [50], output_to: [52], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.3194s
+[rosout][INFO] 2023-11-22 09:00:42,847: 52 batch_norm: input_from: [51], output_to: [53], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.3221s
+[rosout][INFO] 2023-11-22 09:00:42,852: 53 add_: input_from: [47, 52], output_to: [59], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.3244s
+[rosout][INFO] 2023-11-22 09:00:42,856: 54 conv3d: input_from: [42], output_to: [55], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4041s
+[rosout][INFO] 2023-11-22 09:00:42,861: 55 batch_norm: input_from: [54], output_to: [56], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4068s
+[rosout][INFO] 2023-11-22 09:00:42,866: 56 relu: input_from: [55], output_to: [57], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4083s
+[rosout][INFO] 2023-11-22 09:00:42,871: 57 conv3d: input_from: [56], output_to: [58], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4881s
+[rosout][INFO] 2023-11-22 09:00:42,876: 58 batch_norm: input_from: [57], output_to: [59], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4908s
+[rosout][INFO] 2023-11-22 09:00:42,882: 59 add_: input_from: [53, 58], output_to: [60], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4931s
+[rosout][INFO] 2023-11-22 09:00:42,887: 60 add: input_from: [59, 42], output_to: [61], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4954s
+[rosout][INFO] 2023-11-22 09:00:42,892: 61 relu: input_from: [60], output_to: [62], output_shapes: [torch.Size([1, 8, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.4969s
+[rosout][INFO] 2023-11-22 09:00:42,896: 62 conv3d: input_from: [61], output_to: [63], output_shapes: [torch.Size([1, 20, 32, 256, 128])], barrier: False, local dim: 4;  accu_time 0.5602s
+[rosout][INFO] 2023-11-22 09:00:42,901: 63 permute: input_from: [62], output_to: [64], output_shapes: [torch.Size([1, 20, 256, 32, 128])], barrier: False, local dim: 4;  accu_time 0.5602s
+[rosout][INFO] 2023-11-22 09:00:42,906: 64 argmax: input_from: [63], output_to: [65], output_shapes: [torch.Size([1, 256, 32, 128])], barrier: False, local dim: 3;  accu_time 0.5626s
+[rosout][INFO] 2023-11-22 09:00:42,911: 65 type: input_from: [64], output_to: [66], output_shapes: [torch.Size([1, 256, 32, 128])], barrier: False, local dim: 3;  accu_time 0.5628s
+[rosout][INFO] 2023-11-22 09:00:42,916: 66 _end: input_from: [65], output_to: [-1], output_shapes: [torch.Size([1, 256, 32, 128])], barrier: True, local dim: None;  accu_time 0.5628s
+[rosout][INFO] 2023-11-22 09:00:42,922: total 67 ops (filtered from 73 ops); time 0.5628s (aligned by 1.0436 sleep_step 1).
+
+[rosout][INFO] 2023-11-22 09:00:42,933: Waiting for graph processing at the server
+[rosout][INFO] 2023-11-22 09:00:42,992: Got graph plan from server
+[rosout][INFO] 2023-11-22 09:00:42,999: client: init forward complete.
+[rosout][INFO] 2023-11-22 09:00:43,010: bw 0MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,016: bw 1MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,021: bw 2MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,027: bw 3MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,033: bw 4MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,038: bw 5MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,044: bw 6MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,049: bw 7MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,054: bw 8MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,060: bw 9MB/s offload at [] recv at [] sleep for 67 ops est time 0.5628s.
+[rosout][INFO] 2023-11-22 09:00:43,066: bw 10MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.5515s.
+[rosout][INFO] 2023-11-22 09:00:43,073: bw 11MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.5060s.
+[rosout][INFO] 2023-11-22 09:00:43,081: bw 12MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.4681s.
+[rosout][INFO] 2023-11-22 09:00:43,088: bw 13MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.4361s.
+[rosout][INFO] 2023-11-22 09:00:43,096: bw 14MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.4086s.
+[rosout][INFO] 2023-11-22 09:00:43,102: bw 15MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3848s.
+[rosout][INFO] 2023-11-22 09:00:43,110: bw 16MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3640s.
+[rosout][INFO] 2023-11-22 09:00:43,117: bw 17MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3456s.
+[rosout][INFO] 2023-11-22 09:00:43,124: bw 18MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3292s.
+[rosout][INFO] 2023-11-22 09:00:43,131: bw 19MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3146s.
+[rosout][INFO] 2023-11-22 09:00:43,139: bw 20MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.3015s.
+[rosout][INFO] 2023-11-22 09:00:43,146: bw 21MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2896s.
+[rosout][INFO] 2023-11-22 09:00:43,154: bw 22MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2787s.
+[rosout][INFO] 2023-11-22 09:00:43,161: bw 23MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2688s.
+[rosout][INFO] 2023-11-22 09:00:43,168: bw 24MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2598s.
+[rosout][INFO] 2023-11-22 09:00:43,175: bw 25MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2515s.
+[rosout][INFO] 2023-11-22 09:00:43,183: bw 26MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2438s.
+[rosout][INFO] 2023-11-22 09:00:43,190: bw 27MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2366s.
+[rosout][INFO] 2023-11-22 09:00:43,197: bw 28MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2300s.
+[rosout][INFO] 2023-11-22 09:00:43,204: bw 29MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2239s.
+[rosout][INFO] 2023-11-22 09:00:43,212: bw 30MB/s offload at [6] recv at [65] sleep for 6 ops est time 0.2181s.
+[rosout][INFO] 2023-11-22 09:00:43,217: Started send loop.
+[rosout][INFO] 2023-11-22 09:00:43,221: Started recv loop.
+[rosout][WARNING] 2023-11-22 09:00:45,235: Waiting for /Start call.
+[rosout][WARNING] 2023-11-22 09:00:47,242: Waiting for /Start call.
+[rosout][WARNING] 2023-11-22 09:00:49,251: Waiting for /Start call.
+[rosout][WARNING] 2023-11-22 09:00:51,259: Waiting for /Start call.
+[rosout][INFO] 2023-11-22 09:00:52,323: client: 0 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614851.711944; ends at 1700614852.3229184; dur 0.6110s
+[rosout][INFO] 2023-11-22 09:00:52,913: client: 1 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614852.3783224; ends at 1700614852.9133801; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:00:53,509: client: 2 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614852.9741015; ends at 1700614853.509488; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:00:54,111: client: 3 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614853.5761793; ends at 1700614854.1108637; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:00:54,715: client: 4 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614854.1808264; ends at 1700614854.7153342; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:00:55,315: client: 5 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614854.7798424; ends at 1700614855.3147564; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:00:55,917: client: 6 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614855.383188; ends at 1700614855.9172769; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:00:56,513: client: 7 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614855.978334; ends at 1700614856.5128438; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:00:57,114: client: 8 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614856.579729; ends at 1700614857.1144598; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:00:57,714: client: 9 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614857.1796403; ends at 1700614857.7137923; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:00:58,345: client: 10 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614857.8108041; ends at 1700614858.3455849; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:00:58,943: client: 11 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614858.408862; ends at 1700614858.9430625; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:00:59,546: client: 12 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614859.0122578; ends at 1700614859.546156; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:01:00,152: client: 13 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614859.6169345; ends at 1700614860.1520367; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:01:00,743: client: 14 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614860.208899; ends at 1700614860.7430584; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:01,338: client: 15 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614860.8037047; ends at 1700614861.3382332; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:01,932: client: 16 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614861.3973207; ends at 1700614861.9324143; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:01:02,532: client: 17 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614861.9980443; ends at 1700614862.532371; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:03,120: client: 18 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614862.5851877; ends at 1700614863.1200008; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:03,718: client: 19 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614863.1843948; ends at 1700614863.7183995; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:04,318: client: 20 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614863.783662; ends at 1700614864.3180315; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:04,920: client: 21 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614864.3865302; ends at 1700614864.9206674; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:05,516: client: 22 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614864.9826124; ends at 1700614865.5165777; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:06,116: client: 23 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614865.5817046; ends at 1700614866.1163235; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:06,723: client: 24 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614866.1894612; ends at 1700614866.7237215; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:07,326: client: 25 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614866.7916088; ends at 1700614867.325685; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:07,925: client: 26 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614867.391013; ends at 1700614867.9252238; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:08,514: client: 27 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614867.9800453; ends at 1700614868.5141954; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:09,112: client: 28 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614868.5780191; ends at 1700614869.1124656; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:09,715: client: 29 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614869.1809523; ends at 1700614869.7152548; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:10,312: client: 30 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614869.7775676; ends at 1700614870.3123; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:10,910: client: 31 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614870.3759775; ends at 1700614870.9106069; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:11,522: client: 32 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614870.9750292; ends at 1700614871.5225313; dur 0.5475s
+[rosout][INFO] 2023-11-22 09:01:12,121: client: 33 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614871.586713; ends at 1700614872.121108; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:12,736: client: 34 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614872.1926153; ends at 1700614872.7366853; dur 0.5441s
+[rosout][INFO] 2023-11-22 09:01:13,333: client: 35 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614872.799168; ends at 1700614873.3335407; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:13,933: client: 36 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614873.3994265; ends at 1700614873.933625; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:14,537: client: 37 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614874.0029542; ends at 1700614874.5370803; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:15,140: client: 38 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614874.6063104; ends at 1700614875.1405096; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:15,744: client: 39 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614875.2101367; ends at 1700614875.7443435; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:16,351: client: 40 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614875.816614; ends at 1700614876.35086; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:16,952: client: 41 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614876.4171455; ends at 1700614876.9519477; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:17,549: client: 42 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614877.0150318; ends at 1700614877.549391; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:18,148: client: 43 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614877.6134682; ends at 1700614878.1479814; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:18,746: client: 44 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614878.2109792; ends at 1700614878.7457922; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:19,350: client: 45 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614878.8149438; ends at 1700614879.3501103; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:01:19,950: client: 46 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614879.4158447; ends at 1700614879.9506135; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:20,549: client: 47 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614880.0154464; ends at 1700614880.549313; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:01:21,150: client: 48 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614880.6157572; ends at 1700614881.1500518; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:21,754: client: 49 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614881.2201598; ends at 1700614881.7542605; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:22,356: client: 50 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614881.8224006; ends at 1700614882.35628; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:01:22,960: client: 51 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614882.425308; ends at 1700614882.959824; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:23,654: client: 52 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614883.1197538; ends at 1700614883.6537356; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:24,241: client: 53 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614883.7066243; ends at 1700614884.2409315; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:24,844: client: 54 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614884.3098369; ends at 1700614884.844724; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:01:25,445: client: 55 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614884.9106987; ends at 1700614885.4454207; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:26,043: client: 56 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614885.5090857; ends at 1700614886.043447; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:26,640: client: 57 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614886.1061122; ends at 1700614886.640287; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:27,241: client: 58 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614886.7068815; ends at 1700614887.241559; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:27,843: client: 59 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614887.3090649; ends at 1700614887.8431687; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:28,442: client: 60 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614887.9087057; ends at 1700614888.4422712; dur 0.5336s
+[rosout][INFO] 2023-11-22 09:01:29,042: client: 61 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614888.5071924; ends at 1700614889.0420604; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:01:29,638: client: 62 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614889.1040883; ends at 1700614889.6380517; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:30,240: client: 63 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614889.706038; ends at 1700614890.2407808; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:30,837: client: 64 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614890.302628; ends at 1700614890.8372767; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:31,434: client: 65 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614890.8994474; ends at 1700614891.4343739; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:01:32,038: client: 66 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614891.5042007; ends at 1700614892.0383751; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:32,629: client: 67 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614892.0929446; ends at 1700614892.6289947; dur 0.5361s
+[rosout][INFO] 2023-11-22 09:01:33,230: client: 68 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614892.6957314; ends at 1700614893.230459; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:33,828: client: 69 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614893.2938054; ends at 1700614893.8284483; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:34,430: client: 70 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614893.8964589; ends at 1700614894.4303617; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:01:35,026: client: 71 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614894.4921763; ends at 1700614895.0263271; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:35,630: client: 72 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614895.0957844; ends at 1700614895.6306121; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:36,231: client: 73 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614895.697459; ends at 1700614896.2315302; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:36,830: client: 74 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614896.2962425; ends at 1700614896.8306942; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:37,430: client: 75 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614896.8952363; ends at 1700614897.4300604; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:01:38,036: client: 76 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614897.5006635; ends at 1700614898.035907; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:01:38,717: client: 77 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614898.1810298; ends at 1700614898.7176492; dur 0.5366s
+[rosout][INFO] 2023-11-22 09:01:39,317: client: 78 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614898.7832792; ends at 1700614899.3172336; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:39,916: client: 79 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614899.3824596; ends at 1700614899.9167323; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:40,523: client: 80 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614899.9879174; ends at 1700614900.5233152; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:01:41,128: client: 81 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614900.5917463; ends at 1700614901.1280446; dur 0.5363s
+[rosout][INFO] 2023-11-22 09:01:41,722: client: 82 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614901.187814; ends at 1700614901.722015; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:42,330: client: 83 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614901.7956882; ends at 1700614902.3306274; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:01:42,930: client: 84 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614902.3958316; ends at 1700614902.9303982; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:43,524: client: 85 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614902.9896646; ends at 1700614903.524089; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:44,107: client: 86 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614903.5723789; ends at 1700614904.107435; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:01:44,708: client: 87 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614904.1733625; ends at 1700614904.7081006; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:45,305: client: 88 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614904.7698195; ends at 1700614905.3053708; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:01:45,911: client: 89 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614905.3761313; ends at 1700614905.910811; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:46,513: client: 90 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614905.9787223; ends at 1700614906.5132983; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:47,118: client: 91 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614906.5830002; ends at 1700614907.1179576; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:01:47,722: client: 92 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614907.1878593; ends at 1700614907.7223203; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:48,325: client: 93 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614907.7907057; ends at 1700614908.32514; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:01:48,925: client: 94 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614908.3914058; ends at 1700614908.9254575; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:01:49,574: client: 95 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614909.0396984; ends at 1700614909.5740337; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:50,175: client: 96 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614909.6411664; ends at 1700614910.1754694; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:01:50,775: client: 97 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614910.2402537; ends at 1700614910.7752407; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:01:51,377: client: 98 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614910.8428235; ends at 1700614911.376984; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:51,981: client: 99 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614911.4450898; ends at 1700614911.98108; dur 0.5360s
+[rosout][INFO] 2023-11-22 09:01:52,584: client: 100 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614912.0494952; ends at 1700614912.584215; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:01:53,181: client: 101 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614912.645732; ends at 1700614913.1809778; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:01:53,907: client: 102 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614913.3729877; ends at 1700614913.9072149; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:01:54,506: client: 103 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614913.9709861; ends at 1700614914.5062354; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:01:55,110: client: 104 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614914.5761678; ends at 1700614915.110743; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:55,713: client: 105 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614915.178663; ends at 1700614915.713593; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:01:56,314: client: 106 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614915.7790642; ends at 1700614916.3140187; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:01:56,912: client: 107 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614916.3776033; ends at 1700614916.9122229; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:01:57,512: client: 108 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614916.9772542; ends at 1700614917.511768; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:01:58,114: client: 109 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614917.5804873; ends at 1700614918.114475; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:01:58,708: client: 110 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614918.1728675; ends at 1700614918.7078657; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:01:59,307: client: 111 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614918.7720747; ends at 1700614919.307171; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:01:59,909: client: 112 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614919.3746297; ends at 1700614919.9092188; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:02:00,507: client: 113 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614919.9725795; ends at 1700614920.5073886; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:02:01,105: client: 114 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614920.5708902; ends at 1700614921.1048274; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:02:01,697: client: 115 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614921.1586788; ends at 1700614921.697536; dur 0.5389s
+[rosout][INFO] 2023-11-22 09:02:02,295: client: 116 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614921.7613125; ends at 1700614922.2957742; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:02,896: client: 117 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614922.3615913; ends at 1700614922.8960693; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:03,497: client: 118 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614922.9629233; ends at 1700614923.4971752; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:04,102: client: 119 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614923.5680242; ends at 1700614924.102584; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:02:04,702: client: 120 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614924.167973; ends at 1700614924.7022781; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:05,305: client: 121 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614924.7705348; ends at 1700614925.3048368; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:05,907: client: 122 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614925.3721335; ends at 1700614925.9072156; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:02:06,506: client: 123 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614925.9718277; ends at 1700614926.5067418; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:02:07,109: client: 124 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614926.5749526; ends at 1700614927.1091588; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:07,709: client: 125 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614927.1741967; ends at 1700614927.7094078; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:02:08,311: client: 126 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614927.776966; ends at 1700614928.3107738; dur 0.5338s
+[rosout][INFO] 2023-11-22 09:02:08,960: client: 127 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614928.4266868; ends at 1700614928.9608073; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:09,562: client: 128 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614929.0266511; ends at 1700614929.56206; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:02:10,390: client: 129 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614929.8564644; ends at 1700614930.3905969; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:10,989: client: 130 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614930.454955; ends at 1700614930.9893851; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:11,583: client: 131 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614931.0496423; ends at 1700614931.5836933; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:12,188: client: 132 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614931.6519587; ends at 1700614932.1880946; dur 0.5361s
+[rosout][INFO] 2023-11-22 09:02:12,782: client: 133 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614932.248509; ends at 1700614932.7827492; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:13,382: client: 134 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614932.848524; ends at 1700614933.3823783; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:02:13,970: client: 135 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614933.4364188; ends at 1700614933.9705749; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:14,573: client: 136 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614934.0377645; ends at 1700614934.5728378; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:02:15,170: client: 137 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614934.635773; ends at 1700614935.1701198; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:15,770: client: 138 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614935.2354257; ends at 1700614935.770241; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:02:16,372: client: 139 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614935.837385; ends at 1700614936.3720706; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:02:16,971: client: 140 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614936.437011; ends at 1700614936.9713848; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:17,576: client: 141 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614937.0416272; ends at 1700614937.5761447; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:18,172: client: 142 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614937.638765; ends at 1700614938.1726885; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:02:18,769: client: 143 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614938.2353191; ends at 1700614938.7691963; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:02:19,368: client: 144 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614938.8341575; ends at 1700614939.3687966; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:02:19,969: client: 145 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614939.4348197; ends at 1700614939.969233; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:20,568: client: 146 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614940.0340645; ends at 1700614940.5682; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:21,162: client: 147 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614940.62752; ends at 1700614941.1620262; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:21,758: client: 148 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614941.2241182; ends at 1700614941.758377; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:22,357: client: 149 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614941.822688; ends at 1700614942.3576589; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:22,951: client: 150 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614942.4168618; ends at 1700614942.9513452; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:23,547: client: 151 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614943.011555; ends at 1700614943.5468066; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:02:24,149: client: 152 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614943.6149704; ends at 1700614944.1491976; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:24,746: client: 153 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614944.2125897; ends at 1700614944.7465878; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:02:25,346: client: 154 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614944.8115282; ends at 1700614945.3464894; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:25,933: client: 155 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614945.3990963; ends at 1700614945.9334302; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:26,531: client: 156 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614945.9967465; ends at 1700614946.5312126; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:27,135: client: 157 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614946.6005676; ends at 1700614947.13477; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:27,731: client: 158 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614947.1968205; ends at 1700614947.731278; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:28,328: client: 159 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614947.7933996; ends at 1700614948.3284893; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:02:28,929: client: 160 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614948.3940752; ends at 1700614948.9290342; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:29,534: client: 161 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614948.9996657; ends at 1700614949.5341306; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:30,139: client: 162 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614949.6046267; ends at 1700614950.139578; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:30,744: client: 163 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614950.2084126; ends at 1700614950.743886; dur 0.5355s
+[rosout][INFO] 2023-11-22 09:02:31,350: client: 164 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614950.8118868; ends at 1700614951.3507097; dur 0.5388s
+[rosout][INFO] 2023-11-22 09:02:31,953: client: 165 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614951.4185455; ends at 1700614951.952821; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:32,551: client: 166 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614952.0170212; ends at 1700614952.5513203; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:33,155: client: 167 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614952.620512; ends at 1700614953.1548827; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:33,748: client: 168 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614953.2141218; ends at 1700614953.7481847; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:34,383: client: 169 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614953.849378; ends at 1700614954.3836365; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:34,978: client: 170 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614954.4435558; ends at 1700614954.9785135; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:35,581: client: 171 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614955.045544; ends at 1700614955.5808635; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:02:36,182: client: 172 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614955.6480184; ends at 1700614956.182315; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:36,784: client: 173 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614956.248572; ends at 1700614956.7838516; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:02:37,384: client: 174 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614956.8495007; ends at 1700614957.384188; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:02:37,986: client: 175 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614957.4518814; ends at 1700614957.9860172; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:38,587: client: 176 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614958.0522184; ends at 1700614958.586965; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:02:39,187: client: 177 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614958.6530545; ends at 1700614959.1873355; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:39,787: client: 178 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614959.253019; ends at 1700614959.787335; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:40,388: client: 179 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614959.8535092; ends at 1700614960.388316; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:02:40,989: client: 180 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614960.4547155; ends at 1700614960.9892619; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:41,590: client: 181 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614961.0527883; ends at 1700614961.5897427; dur 0.5370s
+[rosout][INFO] 2023-11-22 09:02:42,193: client: 182 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614961.6582232; ends at 1700614962.1933923; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:02:42,796: client: 183 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614962.2617915; ends at 1700614962.7959042; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:43,396: client: 184 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614962.861635; ends at 1700614963.3962688; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:02:43,996: client: 185 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614963.4616628; ends at 1700614963.9958513; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:44,591: client: 186 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614964.0572624; ends at 1700614964.591163; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:02:45,187: client: 187 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614964.650863; ends at 1700614965.187473; dur 0.5366s
+[rosout][INFO] 2023-11-22 09:02:45,785: client: 188 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614965.2505078; ends at 1700614965.785491; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:46,387: client: 189 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614965.852081; ends at 1700614966.3872936; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:02:46,979: client: 190 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614966.4456224; ends at 1700614966.9796555; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:02:47,582: client: 191 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614967.0477664; ends at 1700614967.5821211; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:48,179: client: 192 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614967.6440725; ends at 1700614968.1794865; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:02:48,780: client: 193 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614968.245528; ends at 1700614968.779823; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:49,501: client: 194 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614968.9665625; ends at 1700614969.500862; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:02:50,101: client: 195 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614969.566778; ends at 1700614970.101208; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:50,707: client: 196 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614970.1705024; ends at 1700614970.7069304; dur 0.5364s
+[rosout][INFO] 2023-11-22 09:02:51,308: client: 197 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614970.7742965; ends at 1700614971.3085365; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:02:51,908: client: 198 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614971.3742087; ends at 1700614971.9086585; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:52,509: client: 199 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614971.9747293; ends at 1700614972.5091271; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:02:53,113: client: 200 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614972.5786695; ends at 1700614973.1134472; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:02:53,715: client: 201 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614973.1806476; ends at 1700614973.715668; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:02:54,317: client: 202 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614973.7823503; ends at 1700614974.316958; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:02:54,914: client: 203 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614974.3801727; ends at 1700614974.9147153; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:55,516: client: 204 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614974.9821446; ends at 1700614975.5162082; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:02:56,114: client: 205 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614975.579732; ends at 1700614976.1143832; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:02:56,709: client: 206 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614976.174104; ends at 1700614976.7087991; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:02:57,310: client: 207 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614976.7743206; ends at 1700614977.3097775; dur 0.5355s
+[rosout][INFO] 2023-11-22 09:02:57,906: client: 208 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614977.3715818; ends at 1700614977.906462; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:02:58,504: client: 209 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614977.9695692; ends at 1700614978.5044575; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:02:59,107: client: 210 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614978.5729237; ends at 1700614979.1074393; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:02:59,710: client: 211 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614979.1740875; ends at 1700614979.7098944; dur 0.5358s
+[rosout][INFO] 2023-11-22 09:03:00,305: client: 212 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614979.771271; ends at 1700614980.3052573; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:00,908: client: 213 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614980.3745055; ends at 1700614980.90854; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:01,513: client: 214 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614980.9758644; ends at 1700614981.5134816; dur 0.5376s
+[rosout][INFO] 2023-11-22 09:03:02,112: client: 215 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614981.5774937; ends at 1700614982.1118963; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:02,713: client: 216 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614982.1783445; ends at 1700614982.713154; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:03,316: client: 217 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614982.7817435; ends at 1700614983.3158104; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:03,916: client: 218 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614983.3797977; ends at 1700614983.9165792; dur 0.5368s
+[rosout][INFO] 2023-11-22 09:03:04,581: client: 219 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614984.047359; ends at 1700614984.5811992; dur 0.5338s
+[rosout][INFO] 2023-11-22 09:03:05,175: client: 220 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614984.6401925; ends at 1700614985.1749263; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:05,769: client: 221 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614985.235714; ends at 1700614985.7695825; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:03:06,368: client: 222 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614985.8342178; ends at 1700614986.3681264; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:03:06,974: client: 223 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614986.4386747; ends at 1700614986.9743028; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:03:07,572: client: 224 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614987.0373821; ends at 1700614987.5720212; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:03:08,175: client: 225 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614987.6404576; ends at 1700614988.1752372; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:08,776: client: 226 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614988.2411923; ends at 1700614988.7759929; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:09,379: client: 227 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614988.8454273; ends at 1700614989.3793957; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:09,982: client: 228 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614989.447629; ends at 1700614989.9824026; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:10,588: client: 229 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614990.0539691; ends at 1700614990.588394; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:11,189: client: 230 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614990.6538801; ends at 1700614991.1895394; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:03:11,788: client: 231 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614991.253815; ends at 1700614991.788252; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:12,389: client: 232 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614991.8553636; ends at 1700614992.3893797; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:12,990: client: 233 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614992.4558995; ends at 1700614992.9903939; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:13,590: client: 234 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614993.0560977; ends at 1700614993.5906932; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:03:14,185: client: 235 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614993.6486006; ends at 1700614994.1848187; dur 0.5362s
+[rosout][INFO] 2023-11-22 09:03:14,784: client: 236 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614994.249078; ends at 1700614994.784111; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:03:15,383: client: 237 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614994.8492043; ends at 1700614995.3835962; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:15,978: client: 238 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614995.4435813; ends at 1700614995.978422; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:16,575: client: 239 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614996.0413241; ends at 1700614996.5756464; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:17,180: client: 240 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614996.6457872; ends at 1700614997.1802604; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:17,780: client: 241 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614997.2463198; ends at 1700614997.7802489; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:03:18,382: client: 242 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614997.8474653; ends at 1700614998.3822591; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:18,981: client: 243 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614998.4458609; ends at 1700614998.9808953; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:03:19,580: client: 244 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614999.0446596; ends at 1700614999.5797868; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:03:20,178: client: 245 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700614999.642951; ends at 1700615000.1777751; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:20,773: client: 246 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615000.23961; ends at 1700615000.773639; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:21,368: client: 247 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615000.8340354; ends at 1700615001.3681967; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:03:21,967: client: 248 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615001.432588; ends at 1700615001.967079; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:22,567: client: 249 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615002.03324; ends at 1700615002.5677192; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:23,172: client: 250 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615002.6354246; ends at 1700615003.1725502; dur 0.5371s
+[rosout][INFO] 2023-11-22 09:03:23,773: client: 251 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615003.23896; ends at 1700615003.773693; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:24,362: client: 252 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615003.8284798; ends at 1700615004.3624637; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:24,953: client: 253 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615004.4185998; ends at 1700615004.952766; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:03:25,551: client: 254 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615005.0172772; ends at 1700615005.551744; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:26,149: client: 255 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615005.614592; ends at 1700615006.148964; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:26,747: client: 256 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615006.2131011; ends at 1700615006.7472944; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:03:27,350: client: 257 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615006.8094335; ends at 1700615007.3505614; dur 0.5411s
+[rosout][INFO] 2023-11-22 09:03:27,948: client: 258 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615007.4103482; ends at 1700615007.948167; dur 0.5378s
+[rosout][INFO] 2023-11-22 09:03:28,542: client: 259 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615008.0075085; ends at 1700615008.5419643; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:29,140: client: 260 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615008.606349; ends at 1700615009.1406438; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:29,740: client: 261 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615009.2055786; ends at 1700615009.74051; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:30,342: client: 262 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615009.807124; ends at 1700615010.3420744; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:03:30,941: client: 263 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615010.4067466; ends at 1700615010.9417052; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:03:31,537: client: 264 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615011.0018241; ends at 1700615011.5375228; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:03:32,133: client: 265 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615011.5979733; ends at 1700615012.1335118; dur 0.5355s
+[rosout][INFO] 2023-11-22 09:03:32,732: client: 266 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615012.1977382; ends at 1700615012.7320735; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:33,328: client: 267 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615012.7936504; ends at 1700615013.3281126; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:33,923: client: 268 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615013.3895464; ends at 1700615013.9236052; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:34,517: client: 269 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615013.9824593; ends at 1700615014.517165; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:35,119: client: 270 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615014.5841465; ends at 1700615015.1188695; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:35,715: client: 271 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615015.1808693; ends at 1700615015.7149298; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:36,316: client: 272 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615015.7818027; ends at 1700615016.3159215; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:36,914: client: 273 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615016.379629; ends at 1700615016.913959; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:37,513: client: 274 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615016.9779367; ends at 1700615017.5130875; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:03:38,113: client: 275 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615017.5789623; ends at 1700615018.1133687; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:38,709: client: 276 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615018.1751277; ends at 1700615018.7091289; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:39,309: client: 277 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615018.775253; ends at 1700615019.3096075; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:39,999: client: 278 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615019.4647512; ends at 1700615019.9990687; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:40,594: client: 279 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615020.0593584; ends at 1700615020.5942976; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:41,189: client: 280 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615020.6549268; ends at 1700615021.1896784; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:41,784: client: 281 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615021.2494943; ends at 1700615021.7838778; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:42,386: client: 282 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615021.852006; ends at 1700615022.3866172; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:03:42,990: client: 283 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615022.455488; ends at 1700615022.9903455; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:43,587: client: 284 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615023.052566; ends at 1700615023.587048; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:44,186: client: 285 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615023.651716; ends at 1700615024.186583; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:44,780: client: 286 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615024.2463105; ends at 1700615024.7806282; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:45,379: client: 287 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615024.8451517; ends at 1700615025.379317; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:03:45,978: client: 288 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615025.4431505; ends at 1700615025.97809; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:46,577: client: 289 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615026.043451; ends at 1700615026.5776114; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:03:47,176: client: 290 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615026.6416783; ends at 1700615027.1764517; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:03:47,769: client: 291 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615027.23444; ends at 1700615027.7690966; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:48,368: client: 292 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615027.8341448; ends at 1700615028.368635; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:48,965: client: 293 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615028.4312847; ends at 1700615028.9656496; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:49,566: client: 294 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615029.031722; ends at 1700615029.5666063; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:50,164: client: 295 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615029.630336; ends at 1700615030.164357; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:50,763: client: 296 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615030.2284758; ends at 1700615030.763097; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:03:51,358: client: 297 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615030.8238342; ends at 1700615031.3587017; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:51,956: client: 298 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615031.4211552; ends at 1700615031.9560442; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:03:52,553: client: 299 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615032.0193295; ends at 1700615032.553454; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:53,153: client: 300 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615032.6185496; ends at 1700615033.153203; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:03:53,752: client: 301 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615033.218187; ends at 1700615033.7524645; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:03:54,349: client: 302 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615033.8155296; ends at 1700615034.3496003; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:03:55,074: client: 303 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615034.5400035; ends at 1700615035.0743952; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:55,665: client: 304 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615035.1307232; ends at 1700615035.6651113; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:03:56,263: client: 305 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615035.7283485; ends at 1700615036.2633233; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:03:56,863: client: 306 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615036.32893; ends at 1700615036.8634527; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:57,462: client: 307 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615036.9274921; ends at 1700615037.4619844; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:58,064: client: 308 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615037.530106; ends at 1700615038.064599; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:03:58,659: client: 309 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615038.1251047; ends at 1700615038.6590765; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:03:59,254: client: 310 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615038.7197855; ends at 1700615039.2543728; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:03:59,850: client: 311 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615039.3150136; ends at 1700615039.8497827; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:00,452: client: 312 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615039.9140937; ends at 1700615040.4524255; dur 0.5383s
+[rosout][INFO] 2023-11-22 09:04:01,052: client: 313 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615040.5172899; ends at 1700615041.0519059; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:01,642: client: 314 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615041.1063886; ends at 1700615041.6425893; dur 0.5362s
+[rosout][INFO] 2023-11-22 09:04:02,238: client: 315 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615041.704326; ends at 1700615042.2384698; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:04:02,838: client: 316 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615042.3029919; ends at 1700615042.8381476; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:04:03,419: client: 317 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615042.884685; ends at 1700615043.4189062; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:04,017: client: 318 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615043.4827778; ends at 1700615044.0168087; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:04,615: client: 319 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615044.0805979; ends at 1700615044.6155274; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:05,210: client: 320 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615044.6759434; ends at 1700615045.2107186; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:05,806: client: 321 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615045.2712224; ends at 1700615045.8058074; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:06,410: client: 322 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615045.8732016; ends at 1700615046.4098327; dur 0.5366s
+[rosout][INFO] 2023-11-22 09:04:07,003: client: 323 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615046.4689147; ends at 1700615047.0031626; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:07,598: client: 324 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615047.063633; ends at 1700615047.597792; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:08,191: client: 325 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615047.6561923; ends at 1700615048.191074; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:08,794: client: 326 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615048.2599502; ends at 1700615048.794446; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:09,398: client: 327 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615048.8607295; ends at 1700615049.398228; dur 0.5375s
+[rosout][INFO] 2023-11-22 09:04:09,993: client: 328 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615049.4589229; ends at 1700615049.9931927; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:10,590: client: 329 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615050.055854; ends at 1700615050.5903802; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:11,188: client: 330 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615050.6541307; ends at 1700615051.1884315; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:11,785: client: 331 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615051.2508495; ends at 1700615051.7853148; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:12,388: client: 332 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615051.8531852; ends at 1700615052.3880978; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:12,990: client: 333 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615052.4551504; ends at 1700615052.9898148; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:13,575: client: 334 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615053.0407813; ends at 1700615053.5755467; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:14,176: client: 335 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615053.6413832; ends at 1700615054.176593; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:04:14,765: client: 336 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615054.2299564; ends at 1700615054.7651339; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:04:15,422: client: 337 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615054.8878534; ends at 1700615055.421894; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:16,023: client: 338 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615055.4892836; ends at 1700615056.0236852; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:04:16,621: client: 339 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615056.08651; ends at 1700615056.6208475; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:17,220: client: 340 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615056.6840017; ends at 1700615057.2204816; dur 0.5365s
+[rosout][INFO] 2023-11-22 09:04:17,819: client: 341 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615057.2848642; ends at 1700615057.8194456; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:18,417: client: 342 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615057.8829026; ends at 1700615058.4172065; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:19,012: client: 343 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615058.4783235; ends at 1700615059.0121508; dur 0.5338s
+[rosout][INFO] 2023-11-22 09:04:19,613: client: 344 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615059.0791245; ends at 1700615059.6136358; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:20,211: client: 345 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615059.6764941; ends at 1700615060.2112496; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:20,811: client: 346 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615060.2770655; ends at 1700615060.811286; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:21,409: client: 347 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615060.8737478; ends at 1700615061.4091501; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:04:22,012: client: 348 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615061.4785607; ends at 1700615062.0125866; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:22,613: client: 349 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615062.078559; ends at 1700615062.6130147; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:23,213: client: 350 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615062.6785102; ends at 1700615063.2132134; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:23,813: client: 351 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615063.278039; ends at 1700615063.8133843; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:04:24,409: client: 352 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615063.8752496; ends at 1700615064.4095924; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:25,008: client: 353 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615064.4740376; ends at 1700615065.0085773; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:25,605: client: 354 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615065.0703187; ends at 1700615065.6052635; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:26,206: client: 355 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615065.6719146; ends at 1700615066.206503; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:26,799: client: 356 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615066.2639635; ends at 1700615066.7988167; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:27,395: client: 357 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615066.860719; ends at 1700615067.3953538; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:27,996: client: 358 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615067.461528; ends at 1700615067.9961212; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:28,595: client: 359 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615068.0601678; ends at 1700615068.5950582; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:04:29,193: client: 360 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615068.6554823; ends at 1700615069.192897; dur 0.5374s
+[rosout][INFO] 2023-11-22 09:04:29,791: client: 361 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615069.25588; ends at 1700615069.791023; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:04:30,512: client: 362 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615069.978137; ends at 1700615070.5124018; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:31,112: client: 363 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615070.5774148; ends at 1700615071.112404; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:04:31,704: client: 364 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615071.1703906; ends at 1700615071.7043233; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:04:32,294: client: 365 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615071.7598076; ends at 1700615072.293992; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:32,886: client: 366 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615072.3504732; ends at 1700615072.885741; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:04:33,480: client: 367 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615072.9463058; ends at 1700615073.4798577; dur 0.5336s
+[rosout][INFO] 2023-11-22 09:04:34,070: client: 368 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615073.5360603; ends at 1700615074.0707574; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:34,665: client: 369 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615074.1306348; ends at 1700615074.6654127; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:35,259: client: 370 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615074.7247882; ends at 1700615075.2592435; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:35,855: client: 371 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615075.3216345; ends at 1700615075.8556354; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:36,453: client: 372 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615075.9190845; ends at 1700615076.4535787; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:37,049: client: 373 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615076.5144708; ends at 1700615077.0488024; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:37,645: client: 374 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615077.1103938; ends at 1700615077.6449523; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:38,244: client: 375 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615077.7102146; ends at 1700615078.2442508; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:38,842: client: 376 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615078.3083234; ends at 1700615078.842648; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:39,442: client: 377 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615078.9072635; ends at 1700615079.4420009; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:40,042: client: 378 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615079.5080009; ends at 1700615080.0423532; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:04:40,639: client: 379 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615080.1052332; ends at 1700615080.639501; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:41,237: client: 380 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615080.70282; ends at 1700615081.2371001; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:41,840: client: 381 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615081.3054025; ends at 1700615081.8397508; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:42,440: client: 382 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615081.9053795; ends at 1700615082.44008; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:43,039: client: 383 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615082.505055; ends at 1700615083.039375; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:43,636: client: 384 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615083.102412; ends at 1700615083.636523; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:04:44,230: client: 385 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615083.6962001; ends at 1700615084.2307572; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:44,826: client: 386 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615084.291196; ends at 1700615084.8263168; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:04:45,548: client: 387 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615085.0142882; ends at 1700615085.5482593; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:04:46,146: client: 388 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615085.6124928; ends at 1700615086.1463726; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:04:46,746: client: 389 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615086.2115953; ends at 1700615086.7463124; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:47,345: client: 390 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615086.8095918; ends at 1700615087.3450532; dur 0.5355s
+[rosout][INFO] 2023-11-22 09:04:47,947: client: 391 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615087.4096496; ends at 1700615087.947292; dur 0.5376s
+[rosout][INFO] 2023-11-22 09:04:48,543: client: 392 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615088.008515; ends at 1700615088.5430508; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:49,142: client: 393 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615088.6076922; ends at 1700615089.1424549; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:49,742: client: 394 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615089.2079666; ends at 1700615089.742651; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:04:50,343: client: 395 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615089.8082902; ends at 1700615090.3430593; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:50,946: client: 396 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615090.4118922; ends at 1700615090.9464848; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:51,541: client: 397 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615091.0064511; ends at 1700615091.5416873; dur 0.5352s
+[rosout][INFO] 2023-11-22 09:04:52,136: client: 398 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615091.6025295; ends at 1700615092.1366897; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:52,738: client: 399 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615092.2039988; ends at 1700615092.738488; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:53,333: client: 400 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615092.7985213; ends at 1700615093.332754; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:53,929: client: 401 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615093.3953037; ends at 1700615093.9292521; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:04:54,511: client: 402 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615093.9765446; ends at 1700615094.5108254; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:04:55,111: client: 403 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615094.5767422; ends at 1700615095.1113186; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:04:55,710: client: 404 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615095.1750484; ends at 1700615095.7106378; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:04:56,310: client: 405 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615095.7751455; ends at 1700615096.3099837; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:04:56,908: client: 406 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615096.3734813; ends at 1700615096.907967; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:57,507: client: 407 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615096.9724264; ends at 1700615097.506923; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:04:58,108: client: 408 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615097.574367; ends at 1700615098.1087747; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:04:58,705: client: 409 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615098.1708212; ends at 1700615098.705063; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:59,303: client: 410 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615098.768654; ends at 1700615099.3029015; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:04:59,901: client: 411 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615099.3670757; ends at 1700615099.9013565; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:05:00,500: client: 412 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615099.9659455; ends at 1700615100.5001323; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:01,097: client: 413 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615100.5625417; ends at 1700615101.097016; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:01,690: client: 414 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615101.155867; ends at 1700615101.6903694; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:02,283: client: 415 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615101.7481005; ends at 1700615102.2835255; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:05:02,877: client: 416 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615102.3432333; ends at 1700615102.8777056; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:03,472: client: 417 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615102.938458; ends at 1700615103.4727185; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:05:04,072: client: 418 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615103.5372598; ends at 1700615104.0721855; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:05:04,672: client: 419 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615104.1371331; ends at 1700615104.672054; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:05:05,277: client: 420 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615104.7368097; ends at 1700615105.2768488; dur 0.5400s
+[rosout][INFO] 2023-11-22 09:05:05,875: client: 421 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615105.3401127; ends at 1700615105.8750765; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:06,476: client: 422 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615105.9421334; ends at 1700615106.4762414; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:05:07,071: client: 423 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615106.5365353; ends at 1700615107.0715415; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:07,670: client: 424 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615107.1353796; ends at 1700615107.6699922; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:05:08,268: client: 425 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615107.7336586; ends at 1700615108.2682757; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:05:08,866: client: 426 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615108.331585; ends at 1700615108.8660018; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:09,461: client: 427 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615108.9272022; ends at 1700615109.4613109; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:05:10,064: client: 428 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615109.5282931; ends at 1700615110.0641108; dur 0.5358s
+[rosout][INFO] 2023-11-22 09:05:10,775: client: 429 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615110.2410042; ends at 1700615110.775132; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:05:11,364: client: 430 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615110.8301477; ends at 1700615111.3641152; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:11,964: client: 431 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615111.429622; ends at 1700615111.9637744; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:12,565: client: 432 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615112.0306344; ends at 1700615112.5650482; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:13,166: client: 433 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615112.6312494; ends at 1700615113.165997; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:13,771: client: 434 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615113.236113; ends at 1700615113.771213; dur 0.5351s
+[rosout][INFO] 2023-11-22 09:05:14,364: client: 435 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615113.8302703; ends at 1700615114.3642766; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:14,964: client: 436 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615114.4303405; ends at 1700615114.964691; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:15,567: client: 437 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615115.0330439; ends at 1700615115.567707; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:16,164: client: 438 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615115.629196; ends at 1700615116.1639972; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:16,763: client: 439 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615116.2290816; ends at 1700615116.7637935; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:17,364: client: 440 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615116.830019; ends at 1700615117.363948; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:05:17,965: client: 441 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615117.430483; ends at 1700615117.9652176; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:18,565: client: 442 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615118.0303378; ends at 1700615118.5651307; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:19,165: client: 443 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615118.6309817; ends at 1700615119.1649652; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:19,756: client: 444 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615119.2219763; ends at 1700615119.755951; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:20,346: client: 445 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615119.811552; ends at 1700615120.3460107; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:20,937: client: 446 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615120.402032; ends at 1700615120.9370553; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:21,541: client: 447 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615121.0038826; ends at 1700615121.5410125; dur 0.5371s
+[rosout][INFO] 2023-11-22 09:05:22,138: client: 448 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615121.6042132; ends at 1700615122.138669; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:22,736: client: 449 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615122.201736; ends at 1700615122.7365727; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:23,334: client: 450 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615122.7994485; ends at 1700615123.3338482; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:23,926: client: 451 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615123.3914883; ends at 1700615123.9262488; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:24,525: client: 452 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615123.9907155; ends at 1700615124.5250528; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:05:25,123: client: 453 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615124.5873413; ends at 1700615125.123018; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:05:25,727: client: 454 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615125.1925678; ends at 1700615125.7269232; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:26,321: client: 455 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615125.7869775; ends at 1700615126.3217225; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:26,919: client: 456 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615126.3842971; ends at 1700615126.9191935; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:05:27,507: client: 457 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615126.9732385; ends at 1700615127.507206; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:28,099: client: 458 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615127.5653253; ends at 1700615128.0992825; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:28,691: client: 459 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615128.1562457; ends at 1700615128.6916375; dur 0.5354s
+[rosout][INFO] 2023-11-22 09:05:29,291: client: 460 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615128.756098; ends at 1700615129.2910666; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:29,896: client: 461 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615129.3619967; ends at 1700615129.896384; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:30,481: client: 462 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615129.9455018; ends at 1700615130.481218; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:05:31,080: client: 463 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615130.545805; ends at 1700615131.080205; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:31,672: client: 464 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615131.1344435; ends at 1700615131.6726508; dur 0.5382s
+[rosout][INFO] 2023-11-22 09:05:32,260: client: 465 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615131.725188; ends at 1700615132.259837; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:05:32,860: client: 466 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615132.3254886; ends at 1700615132.8604298; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:05:33,456: client: 467 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615132.922486; ends at 1700615133.4565544; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:05:34,051: client: 468 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615133.516657; ends at 1700615134.0510178; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:34,649: client: 469 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615134.115594; ends at 1700615134.649624; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:35,248: client: 470 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615134.7137914; ends at 1700615135.2482789; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:35,847: client: 471 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615135.312656; ends at 1700615135.8476646; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:36,447: client: 472 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615135.9125082; ends at 1700615136.447534; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:37,048: client: 473 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615136.5132587; ends at 1700615137.0480487; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:37,647: client: 474 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615137.1121194; ends at 1700615137.646799; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:38,243: client: 475 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615137.709184; ends at 1700615138.2431939; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:38,841: client: 476 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615138.3053453; ends at 1700615138.8409402; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:05:39,436: client: 477 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615138.9028664; ends at 1700615139.4366841; dur 0.5338s
+[rosout][INFO] 2023-11-22 09:05:40,032: client: 478 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615139.4984577; ends at 1700615140.0326982; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:40,619: client: 479 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615140.0850492; ends at 1700615140.6192381; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:41,220: client: 480 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615140.6852574; ends at 1700615141.2201986; dur 0.5349s
+[rosout][INFO] 2023-11-22 09:05:41,821: client: 481 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615141.2874563; ends at 1700615141.8215642; dur 0.5341s
+[rosout][INFO] 2023-11-22 09:05:42,420: client: 482 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615141.8846; ends at 1700615142.4202304; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:05:43,143: client: 483 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615142.609262; ends at 1700615143.143207; dur 0.5339s
+[rosout][INFO] 2023-11-22 09:05:43,738: client: 484 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615143.20407; ends at 1700615143.7381027; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:44,340: client: 485 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615143.8057947; ends at 1700615144.3406105; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:44,933: client: 486 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615144.398542; ends at 1700615144.9333882; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:45,534: client: 487 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615144.9999216; ends at 1700615145.5341146; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:46,125: client: 488 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615145.5894916; ends at 1700615146.1247442; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:05:46,726: client: 489 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615146.192457; ends at 1700615146.7266986; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:05:47,334: client: 490 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615146.7985065; ends at 1700615147.334239; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:05:47,936: client: 491 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615147.402464; ends at 1700615147.9367893; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:05:48,530: client: 492 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615147.9955041; ends at 1700615148.530013; dur 0.5345s
+[rosout][INFO] 2023-11-22 09:05:49,128: client: 493 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615148.5940406; ends at 1700615149.1284158; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:49,729: client: 494 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615149.195373; ends at 1700615149.7293437; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:50,329: client: 495 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615149.795125; ends at 1700615150.3291075; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:05:50,915: client: 496 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615150.380521; ends at 1700615150.915179; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:51,523: client: 497 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615150.9822676; ends at 1700615151.5234993; dur 0.5412s
+[rosout][INFO] 2023-11-22 09:05:52,112: client: 498 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615151.5777383; ends at 1700615152.1122384; dur 0.5345s
+[rospy.core][INFO] 2023-11-22 09:05:52,450: signal_shutdown [signal-2]
+[rospy.core][INFO] 2023-11-22 09:05:52,464: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-22 09:05:52,473: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-22 09:05:52,475: topic[/clock] removing connection to http://robot2:44619/
+[rospy.core][INFO] 2023-11-22 09:05:52,615: signal_shutdown [signal-2]
+[rospy.impl.masterslave][INFO] 2023-11-22 09:05:52,679: signal-2
+[rospy.core][INFO] 2023-11-22 09:05:52,712: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-22 09:05:52,719: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-22 09:05:52,723: topic[/rosout] adding connection to [/rosout], count 1
+[rosout][INFO] 2023-11-22 09:05:52,713: client: 499 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615152.1785934; ends at 1700615152.7134588; dur 0.5349s
+[rospy.internal][INFO] 2023-11-22 09:05:52,732: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-22 09:05:52,737: topic[/clock] removing connection to http://robot2:44619/
+[rospy.impl.masterslave][INFO] 2023-11-22 09:05:52,739: signal-2
+[rosout][INFO] 2023-11-22 09:05:53,923: client: 500 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615153.387301; ends at 1700615153.9237413; dur 0.5364s
+[rosout][INFO] 2023-11-22 09:05:54,524: client: 501 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615153.9889119; ends at 1700615154.5244877; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:05:55,118: client: 502 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615154.58289; ends at 1700615155.1181884; dur 0.5353s
+[rosout][INFO] 2023-11-22 09:05:55,727: client: 503 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615155.1925998; ends at 1700615155.727416; dur 0.5348s
+[rosout][INFO] 2023-11-22 09:05:56,334: client: 504 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615155.7992094; ends at 1700615156.33386; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:05:56,938: client: 505 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615156.399122; ends at 1700615156.938153; dur 0.5390s
+[rosout][INFO] 2023-11-22 09:05:57,526: client: 506 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615156.9916744; ends at 1700615157.5260665; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:05:58,228: client: 507 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615157.693544; ends at 1700615158.2285082; dur 0.5350s
+[rosout][INFO] 2023-11-22 09:05:58,831: client: 508 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615158.29434; ends at 1700615158.8313315; dur 0.5370s
+[rosout][INFO] 2023-11-22 09:05:59,438: client: 509 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615158.903648; ends at 1700615159.4382644; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:06:00,042: client: 510 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615159.5077968; ends at 1700615160.0420382; dur 0.5342s
+[rosout][INFO] 2023-11-22 09:06:00,648: client: 511 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615160.1126251; ends at 1700615160.6482527; dur 0.5356s
+[rosout][INFO] 2023-11-22 09:06:01,251: client: 512 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615160.7156866; ends at 1700615161.2513838; dur 0.5357s
+[rosout][INFO] 2023-11-22 09:06:01,851: client: 513 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615161.3171473; ends at 1700615161.8514433; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:06:02,452: client: 514 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615161.9178238; ends at 1700615162.4520874; dur 0.5343s
+[rosout][INFO] 2023-11-22 09:06:03,054: client: 515 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615162.5196586; ends at 1700615163.0542626; dur 0.5346s
+[rosout][INFO] 2023-11-22 09:06:03,652: client: 516 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615163.118281; ends at 1700615163.652268; dur 0.5340s
+[rosout][INFO] 2023-11-22 09:06:04,250: client: 517 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615163.7152193; ends at 1700615164.2498846; dur 0.5347s
+[rosout][INFO] 2023-11-22 09:06:04,852: client: 518 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615164.3178487; ends at 1700615164.8522913; dur 0.5344s
+[rosout][INFO] 2023-11-22 09:06:05,454: client: 519 th inference; est bw 0.0MBps, est exec time 0.5628s;  starts at 1700615164.9164047; ends at 1700615165.4542365; dur 0.5378s

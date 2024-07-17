@@ -1,0 +1,1094 @@
+[rospy.client][INFO] 2023-11-22 07:42:37,511: init_node, name[/pose_follower], pid[124]
+[xmlrpc][INFO] 2023-11-22 07:42:37,513: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-11-22 07:42:37,515: Started XML-RPC server [http://robot2:41501/]
+[rospy.init][INFO] 2023-11-22 07:42:37,515: ROS Slave URI: [http://robot2:41501/]
+[rospy.impl.masterslave][INFO] 2023-11-22 07:42:37,516: _ready: http://robot2:41501/
+[rospy.registration][INFO] 2023-11-22 07:42:37,519: Registering with master node http://robot2:11311
+[xmlrpc][INFO] 2023-11-22 07:42:37,519: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-11-22 07:42:37,617: registered with master
+[rospy.rosout][INFO] 2023-11-22 07:42:37,618: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-11-22 07:42:37,631: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-11-22 07:42:37,634: initializing /clock core topic
+[rospy.simtime][INFO] 2023-11-22 07:42:37,639: connected to core topic /clock
+[rospy.internal][INFO] 2023-11-22 07:42:37,648: topic[/clock] adding connection to [http://robot2:44619/], count 0
+[rosout][INFO] 2023-11-22 07:42:37,653: Starting pose_follower pipeline.
+[rospy.internal][INFO] 2023-11-22 07:42:37,697: topic[/tf] adding connection to [http://robot2:44619/], count 0
+[rospy.internal][INFO] 2023-11-22 07:42:37,699: topic[/tf_static] adding connection to [http://robot2:44619/], count 0
+[rospy.internal][INFO] 2023-11-22 07:42:37,888: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-11-22 07:42:37,948: topic[/move_base/global_costmap/costmap] adding connection to [http://robot2:44619/], count 0
+[rospy.internal][INFO] 2023-11-22 07:42:37,962: topic[/move_base/global_costmap/costmap_updates] adding connection to [http://robot2:44619/], count 0
+[rosout][INFO] 2023-11-22 07:42:37,960: Created subscribtion for camera/rgb/image_raw
+[rosout][INFO] 2023-11-22 07:42:37,971: Created subscribtion for camera/depth/image_raw
+[rospy.internal][INFO] 2023-11-22 07:42:37,981: topic[/camera/rgb/image_raw] adding connection to [http://robot2:44619/], count 0
+[rospy.internal][INFO] 2023-11-22 07:42:37,982: topic[/camera/depth/image_raw] adding connection to [http://robot2:44619/], count 0
+[rosout][INFO] 2023-11-22 07:42:37,983: Initializing model.
+[rosout][WARNING] 2023-11-22 07:42:38,009: Main costmap not received.
+[rospy.internal][INFO] 2023-11-22 07:42:38,018: topic[/camera/depth/camera_info] adding connection to [http://robot2:44619/], count 0
+[rosout][INFO] 2023-11-22 07:42:38,189: Offload False; window 10s; debug True
+[utils.torch_utils][INFO] 2023-11-22 07:42:38,923: YOLOv5 🚀 9e8aa23 torch 1.13.0a0+340c4120.nv22.6 CUDA:0 (Xavier, 6854.05859375MB)
+
+[rospy.internal][INFO] 2023-11-22 07:42:51,222: topic impl's ref count is zero, deleting topic /camera/depth/camera_info...
+[rospy.internal][INFO] 2023-11-22 07:42:51,260: topic[/camera/depth/camera_info] removing connection to http://robot2:44619/
+[rosout][WARNING] 2023-11-22 07:42:51,220: Main costmap not received.
+[rosout][WARNING] 2023-11-22 07:42:51,305: Detected jump back in time of 12.702800s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:42:51,307: Got camera info.
+[rosout][INFO] 2023-11-22 07:42:51,325: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:42:51,454: Stationary: True
+[rosout][INFO] 2023-11-22 07:42:51,614: TF message found.
+[models.yolo][INFO] 2023-11-22 07:42:55,150: Fusing layers... 
+[utils.torch_utils][INFO] 2023-11-22 07:43:13,533: Model Summary: 501 layers, 77003244 parameters, 0 gradients
+[rosout][INFO] 2023-11-22 07:43:13,557: Using device: cuda:0
+[rosout][INFO] 2023-11-22 07:43:13,562: Model initialization finished.
+[rosout][WARNING] 2023-11-22 07:43:14,603: Detected jump back in time of 24.850019s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:43:14,744: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:43:17,155: Configuring torch to use deterministic behaviors.
+[rosout][INFO] 2023-11-22 07:43:17,161: parallel approach flex
+[rosout][INFO] 2023-11-22 07:43:17,165: constraint_latency False
+[rosout][INFO] 2023-11-22 07:43:17,178: Connecting to server 192.168.10.8:12345
+[rosout][INFO] 2023-11-22 07:43:17,190: Connected to server 192.168.10.8: 12345
+[rosout][INFO] 2023-11-22 07:43:17,200: Model parameter number 77.0032M.
+[rosout][INFO] 2023-11-22 07:43:33,973: Send model to server 294.2524MB.
+[rosout][INFO] 2023-11-22 07:43:34,229: client: started.
+[rosout][WARNING] 2023-11-22 07:43:34,234: Started.
+[rosout][INFO] 2023-11-22 07:43:34,947: client: send init input to server
+[rosout][INFO] 2023-11-22 07:43:34,959: Input size 3.5173MB
+[rosout][INFO] 2023-11-22 07:43:34,965: Forwarding for 1(+2 warmup and 3 repeat) times for initialization.
+[rosout][WARNING] 2023-11-22 07:43:39,465: Detected jump back in time of 24.856186s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:43:39,612: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:43:56,361: Forward of the original model takes average 0.9186s.
+[rosout][INFO] 2023-11-22 07:43:59,751: pickle.dumps size to time poly: 
+           2
+4.612e-16 x - 1.755e-09 x + 0.005003
+[rosout][INFO] 2023-11-22 07:43:59,766: pickle.loads size to time poly: 
+           2
+2.916e-16 x - 1.454e-09 x + 0.002513
+[rosout][INFO] 2023-11-22 07:43:59,788: Output size 0.0205MB
+[rosout][WARNING] 2023-11-22 07:44:04,405: Detected jump back in time of 24.794262s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:44:04,485: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:44:04,497: Local random exec takes average 0.9404s.
+[rosout][INFO] 2023-11-22 07:44:04,503: Using torch.profiler for op profile
+[rosout][WARNING] 2023-11-22 07:44:30,022: Detected jump back in time of 24.044139s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:44:30,205: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:44:52,103: Operator records (align ops time with factor 0.9067): 
+[rosout][INFO] 2023-11-22 07:44:52,260: 0 _start: input_from: [], output_to: [1], output_shapes: [torch.Size([1, 3, 960, 1280])], barrier: True, local dim: 3;  accu_time 0.0000s
+[rosout][INFO] 2023-11-22 07:44:52,270: 1 div: input_from: [0], output_to: [2, 3, 4, 5], output_shapes: [torch.Size([1, 3, 960, 1280])], barrier: False, local dim: 3;  accu_time 0.0023s
+[rosout][INFO] 2023-11-22 07:44:52,277: 2 __getitem__: input_from: [1], output_to: [6], output_shapes: [torch.Size([1, 3, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0039s
+[rosout][INFO] 2023-11-22 07:44:52,422: 3 __getitem__: input_from: [1], output_to: [6], output_shapes: [torch.Size([1, 3, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0043s
+[rosout][INFO] 2023-11-22 07:44:52,428: 4 __getitem__: input_from: [1], output_to: [6], output_shapes: [torch.Size([1, 3, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0044s
+[rosout][INFO] 2023-11-22 07:44:52,434: 5 __getitem__: input_from: [1], output_to: [6], output_shapes: [torch.Size([1, 3, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0044s
+[rosout][INFO] 2023-11-22 07:44:52,441: 6 cat: input_from: [2, 3, 4, 5], output_to: [7], output_shapes: [torch.Size([1, 12, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0059s
+[rosout][INFO] 2023-11-22 07:44:52,447: 7 conv2d: input_from: [6], output_to: [8], output_shapes: [torch.Size([1, 64, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0803s
+[rosout][INFO] 2023-11-22 07:44:52,456: 8 silu: input_from: [7], output_to: [9], output_shapes: [torch.Size([1, 64, 480, 640])], barrier: False, local dim: 3;  accu_time 0.0834s
+[rosout][INFO] 2023-11-22 07:44:52,463: 9 conv2d: input_from: [8], output_to: [10], output_shapes: [torch.Size([1, 128, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1129s
+[rosout][INFO] 2023-11-22 07:44:52,469: 10 silu: input_from: [9], output_to: [11, 28], output_shapes: [torch.Size([1, 128, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1144s
+[rosout][INFO] 2023-11-22 07:44:52,475: 11 conv2d: input_from: [10], output_to: [12], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1190s
+[rosout][INFO] 2023-11-22 07:44:52,483: 12 silu: input_from: [11], output_to: [13, 17], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1198s
+[rosout][INFO] 2023-11-22 07:44:52,492: 13 conv2d: input_from: [12], output_to: [14], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1229s
+[rosout][INFO] 2023-11-22 07:44:52,498: 14 silu: input_from: [13], output_to: [15], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1237s
+[rosout][INFO] 2023-11-22 07:44:52,506: 15 conv2d: input_from: [14], output_to: [16], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1328s
+[rosout][INFO] 2023-11-22 07:44:52,513: 16 silu: input_from: [15], output_to: [17], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1336s
+[rosout][INFO] 2023-11-22 07:44:52,519: 17 add: input_from: [12, 16], output_to: [18, 22], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1348s
+[rosout][INFO] 2023-11-22 07:44:52,525: 18 conv2d: input_from: [17], output_to: [19], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1378s
+[rosout][INFO] 2023-11-22 07:44:52,531: 19 silu: input_from: [18], output_to: [20], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1386s
+[rosout][INFO] 2023-11-22 07:44:52,537: 20 conv2d: input_from: [19], output_to: [21], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1477s
+[rosout][INFO] 2023-11-22 07:44:52,543: 21 silu: input_from: [20], output_to: [22], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1485s
+[rosout][INFO] 2023-11-22 07:44:52,549: 22 add: input_from: [17, 21], output_to: [23, 27], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1497s
+[rosout][INFO] 2023-11-22 07:44:52,557: 23 conv2d: input_from: [22], output_to: [24], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1527s
+[rosout][INFO] 2023-11-22 07:44:52,562: 24 silu: input_from: [23], output_to: [25], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1535s
+[rosout][INFO] 2023-11-22 07:44:52,568: 25 conv2d: input_from: [24], output_to: [26], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1626s
+[rosout][INFO] 2023-11-22 07:44:52,575: 26 silu: input_from: [25], output_to: [27], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1634s
+[rosout][INFO] 2023-11-22 07:44:52,581: 27 add: input_from: [22, 26], output_to: [30], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1646s
+[rosout][INFO] 2023-11-22 07:44:52,588: 28 conv2d: input_from: [10], output_to: [29], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1692s
+[rosout][INFO] 2023-11-22 07:44:52,594: 29 silu: input_from: [28], output_to: [30], output_shapes: [torch.Size([1, 64, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1700s
+[rosout][INFO] 2023-11-22 07:44:52,599: 30 cat: input_from: [27, 29], output_to: [31], output_shapes: [torch.Size([1, 128, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1717s
+[rosout][INFO] 2023-11-22 07:44:52,604: 31 conv2d: input_from: [30], output_to: [32], output_shapes: [torch.Size([1, 128, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1808s
+[rosout][INFO] 2023-11-22 07:44:52,610: 32 silu: input_from: [31], output_to: [33], output_shapes: [torch.Size([1, 128, 240, 320])], barrier: False, local dim: 3;  accu_time 0.1824s
+[rosout][INFO] 2023-11-22 07:44:52,616: 33 conv2d: input_from: [32], output_to: [34], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2112s
+[rosout][INFO] 2023-11-22 07:44:52,621: 34 silu: input_from: [33], output_to: [35, 82], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2120s
+[rosout][INFO] 2023-11-22 07:44:52,627: 35 conv2d: input_from: [34], output_to: [36], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2162s
+[rosout][INFO] 2023-11-22 07:44:52,632: 36 silu: input_from: [35], output_to: [37, 41], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2166s
+[rosout][INFO] 2023-11-22 07:44:52,638: 37 conv2d: input_from: [36], output_to: [38], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2192s
+[rosout][INFO] 2023-11-22 07:44:52,644: 38 silu: input_from: [37], output_to: [39], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2196s
+[rosout][INFO] 2023-11-22 07:44:52,650: 39 conv2d: input_from: [38], output_to: [40], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2274s
+[rosout][INFO] 2023-11-22 07:44:52,658: 40 silu: input_from: [39], output_to: [41], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2278s
+[rosout][INFO] 2023-11-22 07:44:52,664: 41 add: input_from: [36, 40], output_to: [42, 46], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2283s
+[rosout][INFO] 2023-11-22 07:44:52,669: 42 conv2d: input_from: [41], output_to: [43], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2309s
+[rosout][INFO] 2023-11-22 07:44:52,676: 43 silu: input_from: [42], output_to: [44], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2313s
+[rosout][INFO] 2023-11-22 07:44:52,683: 44 conv2d: input_from: [43], output_to: [45], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2391s
+[rosout][INFO] 2023-11-22 07:44:52,688: 45 silu: input_from: [44], output_to: [46], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2395s
+[rosout][INFO] 2023-11-22 07:44:52,696: 46 add: input_from: [41, 45], output_to: [47, 51], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2401s
+[rosout][INFO] 2023-11-22 07:44:52,703: 47 conv2d: input_from: [46], output_to: [48], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2427s
+[rosout][INFO] 2023-11-22 07:44:52,711: 48 silu: input_from: [47], output_to: [49], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2430s
+[rosout][INFO] 2023-11-22 07:44:52,716: 49 conv2d: input_from: [48], output_to: [50], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2508s
+[rosout][INFO] 2023-11-22 07:44:52,722: 50 silu: input_from: [49], output_to: [51], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2512s
+[rosout][INFO] 2023-11-22 07:44:52,727: 51 add: input_from: [46, 50], output_to: [52, 56], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2518s
+[rosout][INFO] 2023-11-22 07:44:52,734: 52 conv2d: input_from: [51], output_to: [53], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2544s
+[rosout][INFO] 2023-11-22 07:44:52,740: 53 silu: input_from: [52], output_to: [54], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2548s
+[rosout][INFO] 2023-11-22 07:44:52,745: 54 conv2d: input_from: [53], output_to: [55], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2625s
+[rosout][INFO] 2023-11-22 07:44:52,749: 55 silu: input_from: [54], output_to: [56], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2630s
+[rosout][INFO] 2023-11-22 07:44:52,755: 56 add: input_from: [51, 55], output_to: [57, 61], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2635s
+[rosout][INFO] 2023-11-22 07:44:52,761: 57 conv2d: input_from: [56], output_to: [58], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2661s
+[rosout][INFO] 2023-11-22 07:44:52,768: 58 silu: input_from: [57], output_to: [59], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2665s
+[rosout][INFO] 2023-11-22 07:44:52,772: 59 conv2d: input_from: [58], output_to: [60], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2743s
+[rosout][INFO] 2023-11-22 07:44:52,778: 60 silu: input_from: [59], output_to: [61], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2747s
+[rosout][INFO] 2023-11-22 07:44:52,783: 61 add: input_from: [56, 60], output_to: [62, 66], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2753s
+[rosout][INFO] 2023-11-22 07:44:52,788: 62 conv2d: input_from: [61], output_to: [63], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2779s
+[rosout][INFO] 2023-11-22 07:44:52,792: 63 silu: input_from: [62], output_to: [64], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2783s
+[rosout][INFO] 2023-11-22 07:44:52,796: 64 conv2d: input_from: [63], output_to: [65], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2860s
+[rosout][INFO] 2023-11-22 07:44:52,801: 65 silu: input_from: [64], output_to: [66], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2864s
+[rosout][INFO] 2023-11-22 07:44:52,806: 66 add: input_from: [61, 65], output_to: [67, 71], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2870s
+[rosout][INFO] 2023-11-22 07:44:52,811: 67 conv2d: input_from: [66], output_to: [68], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2896s
+[rosout][INFO] 2023-11-22 07:44:52,816: 68 silu: input_from: [67], output_to: [69], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2900s
+[rosout][INFO] 2023-11-22 07:44:52,821: 69 conv2d: input_from: [68], output_to: [70], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2978s
+[rosout][INFO] 2023-11-22 07:44:52,827: 70 silu: input_from: [69], output_to: [71], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2982s
+[rosout][INFO] 2023-11-22 07:44:52,832: 71 add: input_from: [66, 70], output_to: [72, 76], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.2988s
+[rosout][INFO] 2023-11-22 07:44:52,842: 72 conv2d: input_from: [71], output_to: [73], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3013s
+[rosout][INFO] 2023-11-22 07:44:52,847: 73 silu: input_from: [72], output_to: [74], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3017s
+[rosout][INFO] 2023-11-22 07:44:52,852: 74 conv2d: input_from: [73], output_to: [75], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3095s
+[rosout][INFO] 2023-11-22 07:44:52,858: 75 silu: input_from: [74], output_to: [76], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3099s
+[rosout][INFO] 2023-11-22 07:44:52,862: 76 add: input_from: [71, 75], output_to: [77, 81], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3105s
+[rosout][INFO] 2023-11-22 07:44:52,866: 77 conv2d: input_from: [76], output_to: [78], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3131s
+[rosout][INFO] 2023-11-22 07:44:52,871: 78 silu: input_from: [77], output_to: [79], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3135s
+[rosout][INFO] 2023-11-22 07:44:52,876: 79 conv2d: input_from: [78], output_to: [80], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3212s
+[rosout][INFO] 2023-11-22 07:44:52,884: 80 silu: input_from: [79], output_to: [81], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3216s
+[rosout][INFO] 2023-11-22 07:44:52,891: 81 add: input_from: [76, 80], output_to: [84], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3222s
+[rosout][INFO] 2023-11-22 07:44:52,896: 82 conv2d: input_from: [34], output_to: [83], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3264s
+[rosout][INFO] 2023-11-22 07:44:52,903: 83 silu: input_from: [82], output_to: [84], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3268s
+[rosout][INFO] 2023-11-22 07:44:52,908: 84 cat: input_from: [81, 83], output_to: [85], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3277s
+[rosout][INFO] 2023-11-22 07:44:52,913: 85 conv2d: input_from: [84], output_to: [86], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3360s
+[rosout][INFO] 2023-11-22 07:44:52,917: 86 silu: input_from: [85], output_to: [87, 243], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.3368s
+[rosout][INFO] 2023-11-22 07:44:52,922: 87 conv2d: input_from: [86], output_to: [88], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3652s
+[rosout][INFO] 2023-11-22 07:44:52,926: 88 silu: input_from: [87], output_to: [89, 136], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3656s
+[rosout][INFO] 2023-11-22 07:44:52,931: 89 conv2d: input_from: [88], output_to: [90], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3692s
+[rosout][INFO] 2023-11-22 07:44:52,936: 90 silu: input_from: [89], output_to: [91, 95], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3694s
+[rosout][INFO] 2023-11-22 07:44:52,941: 91 conv2d: input_from: [90], output_to: [92], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3714s
+[rosout][INFO] 2023-11-22 07:44:52,946: 92 silu: input_from: [91], output_to: [93], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3716s
+[rosout][INFO] 2023-11-22 07:44:52,952: 93 conv2d: input_from: [92], output_to: [94], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3794s
+[rosout][INFO] 2023-11-22 07:44:52,957: 94 silu: input_from: [93], output_to: [95], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3796s
+[rosout][INFO] 2023-11-22 07:44:52,962: 95 add: input_from: [90, 94], output_to: [96, 100], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3799s
+[rosout][INFO] 2023-11-22 07:44:52,966: 96 conv2d: input_from: [95], output_to: [97], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3819s
+[rosout][INFO] 2023-11-22 07:44:52,971: 97 silu: input_from: [96], output_to: [98], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3821s
+[rosout][INFO] 2023-11-22 07:44:52,976: 98 conv2d: input_from: [97], output_to: [99], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3899s
+[rosout][INFO] 2023-11-22 07:44:52,982: 99 silu: input_from: [98], output_to: [100], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3901s
+[rosout][INFO] 2023-11-22 07:44:52,988: 100 add: input_from: [95, 99], output_to: [101, 105], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3904s
+[rosout][INFO] 2023-11-22 07:44:52,993: 101 conv2d: input_from: [100], output_to: [102], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3924s
+[rosout][INFO] 2023-11-22 07:44:52,999: 102 silu: input_from: [101], output_to: [103], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.3926s
+[rosout][INFO] 2023-11-22 07:44:53,004: 103 conv2d: input_from: [102], output_to: [104], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4004s
+[rosout][INFO] 2023-11-22 07:44:53,009: 104 silu: input_from: [103], output_to: [105], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4006s
+[rosout][INFO] 2023-11-22 07:44:53,014: 105 add: input_from: [100, 104], output_to: [106, 110], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4009s
+[rosout][INFO] 2023-11-22 07:44:53,018: 106 conv2d: input_from: [105], output_to: [107], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4029s
+[rosout][INFO] 2023-11-22 07:44:53,023: 107 silu: input_from: [106], output_to: [108], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4031s
+[rosout][INFO] 2023-11-22 07:44:53,028: 108 conv2d: input_from: [107], output_to: [109], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4109s
+[rosout][INFO] 2023-11-22 07:44:53,033: 109 silu: input_from: [108], output_to: [110], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4111s
+[rosout][INFO] 2023-11-22 07:44:53,038: 110 add: input_from: [105, 109], output_to: [111, 115], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4114s
+[rosout][INFO] 2023-11-22 07:44:53,045: 111 conv2d: input_from: [110], output_to: [112], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4134s
+[rosout][INFO] 2023-11-22 07:44:53,050: 112 silu: input_from: [111], output_to: [113], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4136s
+[rosout][INFO] 2023-11-22 07:44:53,056: 113 conv2d: input_from: [112], output_to: [114], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4214s
+[rosout][INFO] 2023-11-22 07:44:53,062: 114 silu: input_from: [113], output_to: [115], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4216s
+[rosout][INFO] 2023-11-22 07:44:53,067: 115 add: input_from: [110, 114], output_to: [116, 120], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4219s
+[rosout][INFO] 2023-11-22 07:44:53,073: 116 conv2d: input_from: [115], output_to: [117], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4239s
+[rosout][INFO] 2023-11-22 07:44:53,078: 117 silu: input_from: [116], output_to: [118], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4241s
+[rosout][INFO] 2023-11-22 07:44:53,083: 118 conv2d: input_from: [117], output_to: [119], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4319s
+[rosout][INFO] 2023-11-22 07:44:53,088: 119 silu: input_from: [118], output_to: [120], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4321s
+[rosout][INFO] 2023-11-22 07:44:53,093: 120 add: input_from: [115, 119], output_to: [121, 125], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4324s
+[rosout][INFO] 2023-11-22 07:44:53,097: 121 conv2d: input_from: [120], output_to: [122], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4344s
+[rosout][INFO] 2023-11-22 07:44:53,103: 122 silu: input_from: [121], output_to: [123], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4346s
+[rosout][INFO] 2023-11-22 07:44:53,107: 123 conv2d: input_from: [122], output_to: [124], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4424s
+[rosout][INFO] 2023-11-22 07:44:53,111: 124 silu: input_from: [123], output_to: [125], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4426s
+[rosout][INFO] 2023-11-22 07:44:53,116: 125 add: input_from: [120, 124], output_to: [126, 130], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4429s
+[rosout][INFO] 2023-11-22 07:44:53,121: 126 conv2d: input_from: [125], output_to: [127], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4449s
+[rosout][INFO] 2023-11-22 07:44:53,128: 127 silu: input_from: [126], output_to: [128], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4451s
+[rosout][INFO] 2023-11-22 07:44:53,132: 128 conv2d: input_from: [127], output_to: [129], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4529s
+[rosout][INFO] 2023-11-22 07:44:53,137: 129 silu: input_from: [128], output_to: [130], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4531s
+[rosout][INFO] 2023-11-22 07:44:53,142: 130 add: input_from: [125, 129], output_to: [131, 135], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4534s
+[rosout][INFO] 2023-11-22 07:44:53,146: 131 conv2d: input_from: [130], output_to: [132], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4554s
+[rosout][INFO] 2023-11-22 07:44:53,151: 132 silu: input_from: [131], output_to: [133], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4556s
+[rosout][INFO] 2023-11-22 07:44:53,156: 133 conv2d: input_from: [132], output_to: [134], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4634s
+[rosout][INFO] 2023-11-22 07:44:53,160: 134 silu: input_from: [133], output_to: [135], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4636s
+[rosout][INFO] 2023-11-22 07:44:53,165: 135 add: input_from: [130, 134], output_to: [138], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4639s
+[rosout][INFO] 2023-11-22 07:44:53,170: 136 conv2d: input_from: [88], output_to: [137], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4676s
+[rosout][INFO] 2023-11-22 07:44:53,175: 137 silu: input_from: [136], output_to: [138], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4678s
+[rosout][INFO] 2023-11-22 07:44:53,180: 138 cat: input_from: [135, 137], output_to: [139], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4682s
+[rosout][INFO] 2023-11-22 07:44:53,188: 139 conv2d: input_from: [138], output_to: [140], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4753s
+[rosout][INFO] 2023-11-22 07:44:53,196: 140 silu: input_from: [139], output_to: [141, 220], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.4757s
+[rosout][INFO] 2023-11-22 07:44:53,202: 141 conv2d: input_from: [140], output_to: [142], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.4997s
+[rosout][INFO] 2023-11-22 07:44:53,208: 142 silu: input_from: [141], output_to: [143, 160], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.4999s
+[rosout][INFO] 2023-11-22 07:44:53,212: 143 conv2d: input_from: [142], output_to: [144], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5022s
+[rosout][INFO] 2023-11-22 07:44:53,217: 144 silu: input_from: [143], output_to: [145, 149], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5023s
+[rosout][INFO] 2023-11-22 07:44:53,227: 145 conv2d: input_from: [144], output_to: [146], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5036s
+[rosout][INFO] 2023-11-22 07:44:53,232: 146 silu: input_from: [145], output_to: [147], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5037s
+[rosout][INFO] 2023-11-22 07:44:53,238: 147 conv2d: input_from: [146], output_to: [148], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5090s
+[rosout][INFO] 2023-11-22 07:44:53,243: 148 silu: input_from: [147], output_to: [149], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5091s
+[rosout][INFO] 2023-11-22 07:44:53,249: 149 add: input_from: [144, 148], output_to: [150, 154], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5092s
+[rosout][INFO] 2023-11-22 07:44:53,255: 150 conv2d: input_from: [149], output_to: [151], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5105s
+[rosout][INFO] 2023-11-22 07:44:53,260: 151 silu: input_from: [150], output_to: [152], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5106s
+[rosout][INFO] 2023-11-22 07:44:53,266: 152 conv2d: input_from: [151], output_to: [153], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5159s
+[rosout][INFO] 2023-11-22 07:44:53,272: 153 silu: input_from: [152], output_to: [154], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5160s
+[rosout][INFO] 2023-11-22 07:44:53,277: 154 add: input_from: [149, 153], output_to: [155, 159], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5161s
+[rosout][INFO] 2023-11-22 07:44:53,282: 155 conv2d: input_from: [154], output_to: [156], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5174s
+[rosout][INFO] 2023-11-22 07:44:53,288: 156 silu: input_from: [155], output_to: [157], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5175s
+[rosout][INFO] 2023-11-22 07:44:53,293: 157 conv2d: input_from: [156], output_to: [158], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5228s
+[rosout][INFO] 2023-11-22 07:44:53,298: 158 silu: input_from: [157], output_to: [159], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5229s
+[rosout][INFO] 2023-11-22 07:44:53,305: 159 add: input_from: [154, 158], output_to: [162], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5230s
+[rosout][INFO] 2023-11-22 07:44:53,309: 160 conv2d: input_from: [142], output_to: [161], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5254s
+[rosout][INFO] 2023-11-22 07:44:53,318: 161 silu: input_from: [160], output_to: [162], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5255s
+[rosout][INFO] 2023-11-22 07:44:53,324: 162 cat: input_from: [159, 161], output_to: [163], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5256s
+[rosout][INFO] 2023-11-22 07:44:53,331: 163 conv2d: input_from: [162], output_to: [164], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5296s
+[rosout][INFO] 2023-11-22 07:44:53,337: 164 silu: input_from: [163], output_to: [165, 197], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5298s
+[rosout][INFO] 2023-11-22 07:44:53,343: 165 conv2d: input_from: [164], output_to: [166], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5456s
+[rosout][INFO] 2023-11-22 07:44:53,348: 166 silu: input_from: [165], output_to: [167], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5457s
+[rosout][INFO] 2023-11-22 07:44:53,353: 167 conv2d: input_from: [166], output_to: [168], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5469s
+[rosout][INFO] 2023-11-22 07:44:53,358: 168 silu: input_from: [167], output_to: [169, 170, 171, 172], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5469s
+[rosout][INFO] 2023-11-22 07:44:53,363: 169 max_pool2d: input_from: [168], output_to: [172], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5471s
+[rosout][INFO] 2023-11-22 07:44:53,369: 170 max_pool2d: input_from: [168], output_to: [172], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5473s
+[rosout][INFO] 2023-11-22 07:44:53,373: 171 max_pool2d: input_from: [168], output_to: [172], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5477s
+[rosout][INFO] 2023-11-22 07:44:53,380: 172 cat: input_from: [168, 169, 170, 171], output_to: [173], output_shapes: [torch.Size([1, 2048, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5478s
+[rosout][INFO] 2023-11-22 07:44:53,384: 173 conv2d: input_from: [172], output_to: [174], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5520s
+[rosout][INFO] 2023-11-22 07:44:53,390: 174 silu: input_from: [173], output_to: [175, 189], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5521s
+[rosout][INFO] 2023-11-22 07:44:53,394: 175 conv2d: input_from: [174], output_to: [176], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5533s
+[rosout][INFO] 2023-11-22 07:44:53,401: 176 silu: input_from: [175], output_to: [177], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5533s
+[rosout][INFO] 2023-11-22 07:44:53,406: 177 conv2d: input_from: [176], output_to: [178], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5540s
+[rosout][INFO] 2023-11-22 07:44:53,411: 178 silu: input_from: [177], output_to: [179], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5540s
+[rosout][INFO] 2023-11-22 07:44:53,416: 179 conv2d: input_from: [178], output_to: [180], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5577s
+[rosout][INFO] 2023-11-22 07:44:53,422: 180 silu: input_from: [179], output_to: [181], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5577s
+[rosout][INFO] 2023-11-22 07:44:53,427: 181 conv2d: input_from: [180], output_to: [182], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5584s
+[rosout][INFO] 2023-11-22 07:44:53,432: 182 silu: input_from: [181], output_to: [183], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5585s
+[rosout][INFO] 2023-11-22 07:44:53,439: 183 conv2d: input_from: [182], output_to: [184], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5622s
+[rosout][INFO] 2023-11-22 07:44:53,445: 184 silu: input_from: [183], output_to: [185], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5622s
+[rosout][INFO] 2023-11-22 07:44:53,450: 185 conv2d: input_from: [184], output_to: [186], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5629s
+[rosout][INFO] 2023-11-22 07:44:53,455: 186 silu: input_from: [185], output_to: [187], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5629s
+[rosout][INFO] 2023-11-22 07:44:53,461: 187 conv2d: input_from: [186], output_to: [188], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5666s
+[rosout][INFO] 2023-11-22 07:44:53,466: 188 silu: input_from: [187], output_to: [191], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5667s
+[rosout][INFO] 2023-11-22 07:44:53,472: 189 conv2d: input_from: [174], output_to: [190], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5679s
+[rosout][INFO] 2023-11-22 07:44:53,478: 190 silu: input_from: [189], output_to: [191], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5679s
+[rosout][INFO] 2023-11-22 07:44:53,484: 191 cat: input_from: [188, 190], output_to: [192], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5680s
+[rosout][INFO] 2023-11-22 07:44:53,491: 192 conv2d: input_from: [191], output_to: [193], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5702s
+[rosout][INFO] 2023-11-22 07:44:53,495: 193 silu: input_from: [192], output_to: [194], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5703s
+[rosout][INFO] 2023-11-22 07:44:53,501: 194 conv2d: input_from: [193], output_to: [195], output_shapes: [torch.Size([1, 768, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5720s
+[rosout][INFO] 2023-11-22 07:44:53,507: 195 silu: input_from: [194], output_to: [196, 309], output_shapes: [torch.Size([1, 768, 15, 20])], barrier: False, local dim: 3;  accu_time 0.5721s
+[rosout][INFO] 2023-11-22 07:44:53,512: 196 interpolate: input_from: [195], output_to: [197], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5721s
+[rosout][INFO] 2023-11-22 07:44:53,517: 197 cat: input_from: [196, 164], output_to: [198, 212], output_shapes: [torch.Size([1, 1536, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5726s
+[rosout][INFO] 2023-11-22 07:44:53,522: 198 conv2d: input_from: [197], output_to: [199], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5770s
+[rosout][INFO] 2023-11-22 07:44:53,528: 199 silu: input_from: [198], output_to: [200], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5770s
+[rosout][INFO] 2023-11-22 07:44:53,535: 200 conv2d: input_from: [199], output_to: [201], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5783s
+[rosout][INFO] 2023-11-22 07:44:53,541: 201 silu: input_from: [200], output_to: [202], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5784s
+[rosout][INFO] 2023-11-22 07:44:53,546: 202 conv2d: input_from: [201], output_to: [203], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5837s
+[rosout][INFO] 2023-11-22 07:44:53,552: 203 silu: input_from: [202], output_to: [204], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5838s
+[rosout][INFO] 2023-11-22 07:44:53,557: 204 conv2d: input_from: [203], output_to: [205], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5851s
+[rosout][INFO] 2023-11-22 07:44:53,562: 205 silu: input_from: [204], output_to: [206], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5852s
+[rosout][INFO] 2023-11-22 07:44:53,567: 206 conv2d: input_from: [205], output_to: [207], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5905s
+[rosout][INFO] 2023-11-22 07:44:53,572: 207 silu: input_from: [206], output_to: [208], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5906s
+[rosout][INFO] 2023-11-22 07:44:53,577: 208 conv2d: input_from: [207], output_to: [209], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5919s
+[rosout][INFO] 2023-11-22 07:44:53,583: 209 silu: input_from: [208], output_to: [210], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5920s
+[rosout][INFO] 2023-11-22 07:44:53,587: 210 conv2d: input_from: [209], output_to: [211], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5973s
+[rosout][INFO] 2023-11-22 07:44:53,593: 211 silu: input_from: [210], output_to: [214], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.5974s
+[rosout][INFO] 2023-11-22 07:44:53,598: 212 conv2d: input_from: [197], output_to: [213], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6017s
+[rosout][INFO] 2023-11-22 07:44:53,603: 213 silu: input_from: [212], output_to: [214], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6018s
+[rosout][INFO] 2023-11-22 07:44:53,608: 214 cat: input_from: [211, 213], output_to: [215], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6020s
+[rosout][INFO] 2023-11-22 07:44:53,612: 215 conv2d: input_from: [214], output_to: [216], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6060s
+[rosout][INFO] 2023-11-22 07:44:53,616: 216 silu: input_from: [215], output_to: [217], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6061s
+[rosout][INFO] 2023-11-22 07:44:53,621: 217 conv2d: input_from: [216], output_to: [218], output_shapes: [torch.Size([1, 512, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6094s
+[rosout][INFO] 2023-11-22 07:44:53,626: 218 silu: input_from: [217], output_to: [219, 287], output_shapes: [torch.Size([1, 512, 30, 40])], barrier: False, local dim: 3;  accu_time 0.6095s
+[rosout][INFO] 2023-11-22 07:44:53,632: 219 interpolate: input_from: [218], output_to: [220], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6095s
+[rosout][INFO] 2023-11-22 07:44:53,636: 220 cat: input_from: [219, 140], output_to: [221, 235], output_shapes: [torch.Size([1, 1024, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6109s
+[rosout][INFO] 2023-11-22 07:44:53,641: 221 conv2d: input_from: [220], output_to: [222], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6176s
+[rosout][INFO] 2023-11-22 07:44:53,645: 222 silu: input_from: [221], output_to: [223], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6178s
+[rosout][INFO] 2023-11-22 07:44:53,650: 223 conv2d: input_from: [222], output_to: [224], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6198s
+[rosout][INFO] 2023-11-22 07:44:53,656: 224 silu: input_from: [223], output_to: [225], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6200s
+[rosout][INFO] 2023-11-22 07:44:53,660: 225 conv2d: input_from: [224], output_to: [226], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6278s
+[rosout][INFO] 2023-11-22 07:44:53,666: 226 silu: input_from: [225], output_to: [227], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6280s
+[rosout][INFO] 2023-11-22 07:44:53,670: 227 conv2d: input_from: [226], output_to: [228], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6300s
+[rosout][INFO] 2023-11-22 07:44:53,675: 228 silu: input_from: [227], output_to: [229], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6302s
+[rosout][INFO] 2023-11-22 07:44:53,680: 229 conv2d: input_from: [228], output_to: [230], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6380s
+[rosout][INFO] 2023-11-22 07:44:53,685: 230 silu: input_from: [229], output_to: [231], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6382s
+[rosout][INFO] 2023-11-22 07:44:53,690: 231 conv2d: input_from: [230], output_to: [232], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6402s
+[rosout][INFO] 2023-11-22 07:44:53,695: 232 silu: input_from: [231], output_to: [233], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6404s
+[rosout][INFO] 2023-11-22 07:44:53,700: 233 conv2d: input_from: [232], output_to: [234], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6482s
+[rosout][INFO] 2023-11-22 07:44:53,705: 234 silu: input_from: [233], output_to: [237], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6484s
+[rosout][INFO] 2023-11-22 07:44:53,710: 235 conv2d: input_from: [220], output_to: [236], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6551s
+[rosout][INFO] 2023-11-22 07:44:53,714: 236 silu: input_from: [235], output_to: [237], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6554s
+[rosout][INFO] 2023-11-22 07:44:53,719: 237 cat: input_from: [234, 236], output_to: [238], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6558s
+[rosout][INFO] 2023-11-22 07:44:53,726: 238 conv2d: input_from: [237], output_to: [239], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6628s
+[rosout][INFO] 2023-11-22 07:44:53,731: 239 silu: input_from: [238], output_to: [240], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6632s
+[rosout][INFO] 2023-11-22 07:44:53,736: 240 conv2d: input_from: [239], output_to: [241], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6669s
+[rosout][INFO] 2023-11-22 07:44:53,742: 241 silu: input_from: [240], output_to: [242, 265], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.6671s
+[rosout][INFO] 2023-11-22 07:44:53,747: 242 interpolate: input_from: [241], output_to: [243], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6671s
+[rosout][INFO] 2023-11-22 07:44:53,753: 243 cat: input_from: [242, 86], output_to: [244, 258], output_shapes: [torch.Size([1, 512, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6697s
+[rosout][INFO] 2023-11-22 07:44:53,758: 244 conv2d: input_from: [243], output_to: [245], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6768s
+[rosout][INFO] 2023-11-22 07:44:53,762: 245 silu: input_from: [244], output_to: [246], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6772s
+[rosout][INFO] 2023-11-22 07:44:53,768: 246 conv2d: input_from: [245], output_to: [247], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6798s
+[rosout][INFO] 2023-11-22 07:44:53,772: 247 silu: input_from: [246], output_to: [248], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6802s
+[rosout][INFO] 2023-11-22 07:44:53,778: 248 conv2d: input_from: [247], output_to: [249], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6879s
+[rosout][INFO] 2023-11-22 07:44:53,783: 249 silu: input_from: [248], output_to: [250], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6883s
+[rosout][INFO] 2023-11-22 07:44:53,788: 250 conv2d: input_from: [249], output_to: [251], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6909s
+[rosout][INFO] 2023-11-22 07:44:53,793: 251 silu: input_from: [250], output_to: [252], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6913s
+[rosout][INFO] 2023-11-22 07:44:53,797: 252 conv2d: input_from: [251], output_to: [253], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6991s
+[rosout][INFO] 2023-11-22 07:44:53,802: 253 silu: input_from: [252], output_to: [254], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.6995s
+[rosout][INFO] 2023-11-22 07:44:53,807: 254 conv2d: input_from: [253], output_to: [255], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7021s
+[rosout][INFO] 2023-11-22 07:44:53,811: 255 silu: input_from: [254], output_to: [256], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7025s
+[rosout][INFO] 2023-11-22 07:44:53,815: 256 conv2d: input_from: [255], output_to: [257], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7102s
+[rosout][INFO] 2023-11-22 07:44:53,820: 257 silu: input_from: [256], output_to: [260], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7106s
+[rosout][INFO] 2023-11-22 07:44:53,825: 258 conv2d: input_from: [243], output_to: [259], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7177s
+[rosout][INFO] 2023-11-22 07:44:53,829: 259 silu: input_from: [258], output_to: [260], output_shapes: [torch.Size([1, 128, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7181s
+[rosout][INFO] 2023-11-22 07:44:53,834: 260 cat: input_from: [257, 259], output_to: [261], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7190s
+[rosout][INFO] 2023-11-22 07:44:53,838: 261 conv2d: input_from: [260], output_to: [262], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7273s
+[rosout][INFO] 2023-11-22 07:44:53,843: 262 silu: input_from: [261], output_to: [263, 329], output_shapes: [torch.Size([1, 256, 120, 160])], barrier: False, local dim: 3;  accu_time 0.7281s
+[rosout][INFO] 2023-11-22 07:44:53,849: 263 conv2d: input_from: [262], output_to: [264], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7427s
+[rosout][INFO] 2023-11-22 07:44:53,857: 264 silu: input_from: [263], output_to: [265], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7429s
+[rosout][INFO] 2023-11-22 07:44:53,861: 265 cat: input_from: [264, 241], output_to: [266, 280], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7433s
+[rosout][INFO] 2023-11-22 07:44:53,866: 266 conv2d: input_from: [265], output_to: [267], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7469s
+[rosout][INFO] 2023-11-22 07:44:53,869: 267 silu: input_from: [266], output_to: [268], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7471s
+[rosout][INFO] 2023-11-22 07:44:53,873: 268 conv2d: input_from: [267], output_to: [269], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7491s
+[rosout][INFO] 2023-11-22 07:44:53,877: 269 silu: input_from: [268], output_to: [270], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7493s
+[rosout][INFO] 2023-11-22 07:44:53,881: 270 conv2d: input_from: [269], output_to: [271], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7572s
+[rosout][INFO] 2023-11-22 07:44:53,887: 271 silu: input_from: [270], output_to: [272], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7574s
+[rosout][INFO] 2023-11-22 07:44:53,891: 272 conv2d: input_from: [271], output_to: [273], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7594s
+[rosout][INFO] 2023-11-22 07:44:53,895: 273 silu: input_from: [272], output_to: [274], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7596s
+[rosout][INFO] 2023-11-22 07:44:53,899: 274 conv2d: input_from: [273], output_to: [275], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7674s
+[rosout][INFO] 2023-11-22 07:44:53,903: 275 silu: input_from: [274], output_to: [276], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7676s
+[rosout][INFO] 2023-11-22 07:44:53,909: 276 conv2d: input_from: [275], output_to: [277], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7696s
+[rosout][INFO] 2023-11-22 07:44:53,916: 277 silu: input_from: [276], output_to: [278], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7698s
+[rosout][INFO] 2023-11-22 07:44:53,921: 278 conv2d: input_from: [277], output_to: [279], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7776s
+[rosout][INFO] 2023-11-22 07:44:53,924: 279 silu: input_from: [278], output_to: [282], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7778s
+[rosout][INFO] 2023-11-22 07:44:53,930: 280 conv2d: input_from: [265], output_to: [281], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7814s
+[rosout][INFO] 2023-11-22 07:44:53,934: 281 silu: input_from: [280], output_to: [282], output_shapes: [torch.Size([1, 256, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7816s
+[rosout][INFO] 2023-11-22 07:44:53,939: 282 cat: input_from: [279, 281], output_to: [283], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7820s
+[rosout][INFO] 2023-11-22 07:44:53,944: 283 conv2d: input_from: [282], output_to: [284], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7891s
+[rosout][INFO] 2023-11-22 07:44:53,949: 284 silu: input_from: [283], output_to: [285, 356], output_shapes: [torch.Size([1, 512, 60, 80])], barrier: False, local dim: 3;  accu_time 0.7895s
+[rosout][INFO] 2023-11-22 07:44:53,954: 285 conv2d: input_from: [284], output_to: [286], output_shapes: [torch.Size([1, 512, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8059s
+[rosout][INFO] 2023-11-22 07:44:53,959: 286 silu: input_from: [285], output_to: [287], output_shapes: [torch.Size([1, 512, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8060s
+[rosout][INFO] 2023-11-22 07:44:53,965: 287 cat: input_from: [286, 218], output_to: [288, 302], output_shapes: [torch.Size([1, 1024, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8062s
+[rosout][INFO] 2023-11-22 07:44:53,970: 288 conv2d: input_from: [287], output_to: [289], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8092s
+[rosout][INFO] 2023-11-22 07:44:53,975: 289 silu: input_from: [288], output_to: [290], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8093s
+[rosout][INFO] 2023-11-22 07:44:53,980: 290 conv2d: input_from: [289], output_to: [291], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8106s
+[rosout][INFO] 2023-11-22 07:44:53,986: 291 silu: input_from: [290], output_to: [292], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8107s
+[rosout][INFO] 2023-11-22 07:44:53,992: 292 conv2d: input_from: [291], output_to: [293], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8160s
+[rosout][INFO] 2023-11-22 07:44:53,998: 293 silu: input_from: [292], output_to: [294], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8161s
+[rosout][INFO] 2023-11-22 07:44:54,003: 294 conv2d: input_from: [293], output_to: [295], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8174s
+[rosout][INFO] 2023-11-22 07:44:54,008: 295 silu: input_from: [294], output_to: [296], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8175s
+[rosout][INFO] 2023-11-22 07:44:54,013: 296 conv2d: input_from: [295], output_to: [297], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8228s
+[rosout][INFO] 2023-11-22 07:44:54,018: 297 silu: input_from: [296], output_to: [298], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8229s
+[rosout][INFO] 2023-11-22 07:44:54,024: 298 conv2d: input_from: [297], output_to: [299], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8242s
+[rosout][INFO] 2023-11-22 07:44:54,029: 299 silu: input_from: [298], output_to: [300], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8242s
+[rosout][INFO] 2023-11-22 07:44:54,039: 300 conv2d: input_from: [299], output_to: [301], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8296s
+[rosout][INFO] 2023-11-22 07:44:54,043: 301 silu: input_from: [300], output_to: [304], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8296s
+[rosout][INFO] 2023-11-22 07:44:54,051: 302 conv2d: input_from: [287], output_to: [303], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8327s
+[rosout][INFO] 2023-11-22 07:44:54,058: 303 silu: input_from: [302], output_to: [304], output_shapes: [torch.Size([1, 384, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8328s
+[rosout][INFO] 2023-11-22 07:44:54,068: 304 cat: input_from: [301, 303], output_to: [305], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8329s
+[rosout][WARNING] 2023-11-22 07:44:54,069: Detected jump back in time of 24.849761s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:44:54,076: 305 conv2d: input_from: [304], output_to: [306], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8369s
+[rosout][INFO] 2023-11-22 07:44:54,088: 306 silu: input_from: [305], output_to: [307, 383], output_shapes: [torch.Size([1, 768, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8371s
+[rosout][INFO] 2023-11-22 07:44:54,094: 307 conv2d: input_from: [306], output_to: [308], output_shapes: [torch.Size([1, 768, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8491s
+[rosout][INFO] 2023-11-22 07:44:54,099: 308 silu: input_from: [307], output_to: [309], output_shapes: [torch.Size([1, 768, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8491s
+[rosout][INFO] 2023-11-22 07:44:54,103: 309 cat: input_from: [308, 195], output_to: [310, 324], output_shapes: [torch.Size([1, 1536, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8492s
+[rosout][INFO] 2023-11-22 07:44:54,108: 310 conv2d: input_from: [309], output_to: [311], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8509s
+[rosout][INFO] 2023-11-22 07:44:54,113: 311 silu: input_from: [310], output_to: [312], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8509s
+[rosout][INFO] 2023-11-22 07:44:54,118: 312 conv2d: input_from: [311], output_to: [313], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8516s
+[rosout][INFO] 2023-11-22 07:44:54,122: 313 silu: input_from: [312], output_to: [314], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8517s
+[rosout][INFO] 2023-11-22 07:44:54,126: 314 conv2d: input_from: [313], output_to: [315], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8554s
+[rosout][INFO] 2023-11-22 07:44:54,131: 315 silu: input_from: [314], output_to: [316], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8554s
+[rosout][INFO] 2023-11-22 07:44:54,151: 316 conv2d: input_from: [315], output_to: [317], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8561s
+[rosout][INFO] 2023-11-22 07:44:54,156: 317 silu: input_from: [316], output_to: [318], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8561s
+[rosout][INFO] 2023-11-22 07:44:54,163: 318 conv2d: input_from: [317], output_to: [319], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8598s
+[rosout][INFO] 2023-11-22 07:44:54,168: 319 silu: input_from: [318], output_to: [320], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8598s
+[rosout][INFO] 2023-11-22 07:44:54,172: 320 conv2d: input_from: [319], output_to: [321], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8605s
+[rosout][INFO] 2023-11-22 07:44:54,178: 321 silu: input_from: [320], output_to: [322], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8606s
+[rosout][INFO] 2023-11-22 07:44:54,184: 322 conv2d: input_from: [321], output_to: [323], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8642s
+[rosout][INFO] 2023-11-22 07:44:54,190: 323 silu: input_from: [322], output_to: [326], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8643s
+[rosout][INFO] 2023-11-22 07:44:54,195: 324 conv2d: input_from: [309], output_to: [325], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8660s
+[rosout][INFO] 2023-11-22 07:44:54,201: 325 silu: input_from: [324], output_to: [326], output_shapes: [torch.Size([1, 512, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8660s
+[rosout][INFO] 2023-11-22 07:44:54,205: 326 cat: input_from: [323, 325], output_to: [327], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8661s
+[rosout][INFO] 2023-11-22 07:44:54,210: 327 conv2d: input_from: [326], output_to: [328], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8684s
+[rosout][INFO] 2023-11-22 07:44:54,217: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:44:54,218: 328 silu: input_from: [327], output_to: [410], output_shapes: [torch.Size([1, 1024, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8684s
+[rosout][INFO] 2023-11-22 07:44:54,228: 329 conv2d: input_from: [262], output_to: [330], output_shapes: [torch.Size([1, 171, 120, 160])], barrier: False, local dim: 3;  accu_time 0.8740s
+[rosout][INFO] 2023-11-22 07:44:54,386: 330 view: input_from: [329], output_to: [331], output_shapes: [torch.Size([1, 3, 57, 120, 160])], barrier: False, local dim: 4;  accu_time 0.8740s
+[rosout][INFO] 2023-11-22 07:44:54,395: 331 permute: input_from: [330], output_to: [332], output_shapes: [torch.Size([1, 3, 120, 160, 57])], barrier: False, local dim: 3;  accu_time 0.8740s
+[rosout][INFO] 2023-11-22 07:44:54,401: 332 contiguous: input_from: [331], output_to: [333], output_shapes: [torch.Size([1, 3, 120, 160, 57])], barrier: False, local dim: 3;  accu_time 0.8755s
+[rosout][INFO] 2023-11-22 07:44:54,408: 333 sigmoid: input_from: [332], output_to: [334, 339, 340, 344, 345, 348, 349, 351, 352, 354, 355], output_shapes: [torch.Size([1, 3, 120, 160, 57])], barrier: False, local dim: 3;  accu_time 0.8761s
+[rosout][INFO] 2023-11-22 07:44:54,416: 334 __getitem__: input_from: [333], output_to: [335], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8761s
+[rosout][INFO] 2023-11-22 07:44:54,422: 335 mul: input_from: [334], output_to: [336], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8761s
+[rosout][INFO] 2023-11-22 07:44:54,429: 336 sub: input_from: [335], output_to: [337], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8762s
+[rosout][INFO] 2023-11-22 07:44:54,434: 337 add: input_from: [336], output_to: [338], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8762s
+[rosout][INFO] 2023-11-22 07:44:54,439: 338 mul: input_from: [337], output_to: [339], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8763s
+[rosout][INFO] 2023-11-22 07:44:54,443: 339 __setitem__: input_from: [333, 338], output_to: [340, 344, 345, 348, 349, 351, 352, 354, 355], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8764s
+[rosout][INFO] 2023-11-22 07:44:54,448: 340 __getitem__: input_from: [333, 339], output_to: [341], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8764s
+[rosout][INFO] 2023-11-22 07:44:54,452: 341 mul: input_from: [340], output_to: [342], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8764s
+[rosout][INFO] 2023-11-22 07:44:54,456: 342 pow: input_from: [341], output_to: [343], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8765s
+[rosout][INFO] 2023-11-22 07:44:54,462: 343 mul: input_from: [342], output_to: [344], output_shapes: [torch.Size([1, 3, 120, 160, 2])], barrier: False, local dim: 3;  accu_time 0.8765s
+[rosout][INFO] 2023-11-22 07:44:54,466: 344 __setitem__: input_from: [333, 343, 339], output_to: [345, 348, 349, 351, 352, 354, 355], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8766s
+[rosout][INFO] 2023-11-22 07:44:54,471: 345 __getitem__: input_from: [333, 339, 344], output_to: [346], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8766s
+[rosout][INFO] 2023-11-22 07:44:54,477: 346 mul: input_from: [345], output_to: [347], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8771s
+[rosout][INFO] 2023-11-22 07:44:54,483: 347 sub: input_from: [346], output_to: [348], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8774s
+[rosout][INFO] 2023-11-22 07:44:54,488: 348 __setitem__: input_from: [333, 347, 339, 344], output_to: [349, 351, 352, 354, 355], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8779s
+[rosout][INFO] 2023-11-22 07:44:54,492: 349 __getitem__: input_from: [333, 339, 344, 348], output_to: [350], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8779s
+[rosout][INFO] 2023-11-22 07:44:54,497: 350 mul_: input_from: [349], output_to: [351], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8786s
+[rosout][INFO] 2023-11-22 07:44:54,502: 351 __setitem__: input_from: [333, 350, 339, 344, 348], output_to: [352, 354, 355], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8792s
+[rosout][INFO] 2023-11-22 07:44:54,506: 352 __getitem__: input_from: [333, 339, 344, 348, 351], output_to: [353], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8792s
+[rosout][INFO] 2023-11-22 07:44:54,513: 353 add_: input_from: [352], output_to: [354], output_shapes: [torch.Size([1, 3, 120, 160, 34])], barrier: False, local dim: 3;  accu_time 0.8799s
+[rosout][INFO] 2023-11-22 07:44:54,519: 354 __setitem__: input_from: [333, 353, 339, 344, 348, 351], output_to: [355], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8805s
+[rosout][INFO] 2023-11-22 07:44:54,523: 355 view: input_from: [333, 339, 344, 348, 351, 354], output_to: [437], output_shapes: [torch.Size([1, 57600, 57])], barrier: False, local dim: 1;  accu_time 0.8805s
+[rosout][INFO] 2023-11-22 07:44:54,527: 356 conv2d: input_from: [284], output_to: [357], output_shapes: [torch.Size([1, 171, 60, 80])], barrier: False, local dim: 3;  accu_time 0.8831s
+[rosout][INFO] 2023-11-22 07:44:54,532: 357 view: input_from: [356], output_to: [358], output_shapes: [torch.Size([1, 3, 57, 60, 80])], barrier: False, local dim: 4;  accu_time 0.8831s
+[rosout][INFO] 2023-11-22 07:44:54,537: 358 permute: input_from: [357], output_to: [359], output_shapes: [torch.Size([1, 3, 60, 80, 57])], barrier: False, local dim: 3;  accu_time 0.8831s
+[rosout][INFO] 2023-11-22 07:44:54,542: 359 contiguous: input_from: [358], output_to: [360], output_shapes: [torch.Size([1, 3, 60, 80, 57])], barrier: False, local dim: 3;  accu_time 0.8834s
+[rosout][INFO] 2023-11-22 07:44:54,547: 360 sigmoid: input_from: [359], output_to: [361, 366, 367, 371, 372, 375, 376, 378, 379, 381, 382], output_shapes: [torch.Size([1, 3, 60, 80, 57])], barrier: False, local dim: 3;  accu_time 0.8835s
+[rosout][INFO] 2023-11-22 07:44:54,553: 361 __getitem__: input_from: [360], output_to: [362], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8835s
+[rosout][INFO] 2023-11-22 07:44:54,561: 362 mul: input_from: [361], output_to: [363], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,566: 363 sub: input_from: [362], output_to: [364], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,571: 364 add: input_from: [363], output_to: [365], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,575: 365 mul: input_from: [364], output_to: [366], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,579: 366 __setitem__: input_from: [360, 365], output_to: [367, 371, 372, 375, 376, 378, 379, 381, 382], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,585: 367 __getitem__: input_from: [360, 366], output_to: [368], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8836s
+[rosout][INFO] 2023-11-22 07:44:54,591: 368 mul: input_from: [367], output_to: [369], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8837s
+[rosout][INFO] 2023-11-22 07:44:54,596: 369 pow: input_from: [368], output_to: [370], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8837s
+[rosout][INFO] 2023-11-22 07:44:54,601: 370 mul: input_from: [369], output_to: [371], output_shapes: [torch.Size([1, 3, 60, 80, 2])], barrier: False, local dim: 3;  accu_time 0.8837s
+[rosout][INFO] 2023-11-22 07:44:54,606: 371 __setitem__: input_from: [360, 370, 366], output_to: [372, 375, 376, 378, 379, 381, 382], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8837s
+[rosout][INFO] 2023-11-22 07:44:54,613: 372 __getitem__: input_from: [360, 366, 371], output_to: [373], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8837s
+[rosout][INFO] 2023-11-22 07:44:54,617: 373 mul: input_from: [372], output_to: [374], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8839s
+[rosout][INFO] 2023-11-22 07:44:54,623: 374 sub: input_from: [373], output_to: [375], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8840s
+[rosout][INFO] 2023-11-22 07:44:54,629: 375 __setitem__: input_from: [360, 374, 366, 371], output_to: [376, 378, 379, 381, 382], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8841s
+[rosout][INFO] 2023-11-22 07:44:54,635: 376 __getitem__: input_from: [360, 366, 371, 375], output_to: [377], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8841s
+[rosout][INFO] 2023-11-22 07:44:54,641: 377 mul_: input_from: [376], output_to: [378], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8843s
+[rosout][INFO] 2023-11-22 07:44:54,647: 378 __setitem__: input_from: [360, 377, 366, 371, 375], output_to: [379, 381, 382], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8844s
+[rosout][INFO] 2023-11-22 07:44:54,655: 379 __getitem__: input_from: [360, 366, 371, 375, 378], output_to: [380], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8844s
+[rosout][INFO] 2023-11-22 07:44:54,659: 380 add_: input_from: [379], output_to: [381], output_shapes: [torch.Size([1, 3, 60, 80, 34])], barrier: False, local dim: 3;  accu_time 0.8846s
+[rosout][INFO] 2023-11-22 07:44:54,664: 381 __setitem__: input_from: [360, 380, 366, 371, 375, 378], output_to: [382], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8848s
+[rosout][INFO] 2023-11-22 07:44:54,669: 382 view: input_from: [360, 366, 371, 375, 378, 381], output_to: [437], output_shapes: [torch.Size([1, 14400, 57])], barrier: False, local dim: 1;  accu_time 0.8848s
+[rosout][INFO] 2023-11-22 07:44:54,673: 383 conv2d: input_from: [306], output_to: [384], output_shapes: [torch.Size([1, 171, 30, 40])], barrier: False, local dim: 3;  accu_time 0.8863s
+[rosout][INFO] 2023-11-22 07:44:54,678: 384 view: input_from: [383], output_to: [385], output_shapes: [torch.Size([1, 3, 57, 30, 40])], barrier: False, local dim: 4;  accu_time 0.8863s
+[rosout][INFO] 2023-11-22 07:44:54,683: 385 permute: input_from: [384], output_to: [386], output_shapes: [torch.Size([1, 3, 30, 40, 57])], barrier: False, local dim: 3;  accu_time 0.8863s
+[rosout][INFO] 2023-11-22 07:44:54,689: 386 contiguous: input_from: [385], output_to: [387], output_shapes: [torch.Size([1, 3, 30, 40, 57])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,694: 387 sigmoid: input_from: [386], output_to: [388, 393, 394, 398, 399, 402, 403, 405, 406, 408, 409], output_shapes: [torch.Size([1, 3, 30, 40, 57])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,699: 388 __getitem__: input_from: [387], output_to: [389], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,705: 389 mul: input_from: [388], output_to: [390], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,710: 390 sub: input_from: [389], output_to: [391], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,716: 391 add: input_from: [390], output_to: [392], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8864s
+[rosout][INFO] 2023-11-22 07:44:54,720: 392 mul: input_from: [391], output_to: [393], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,726: 393 __setitem__: input_from: [387, 392], output_to: [394, 398, 399, 402, 403, 405, 406, 408, 409], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,730: 394 __getitem__: input_from: [387, 393], output_to: [395], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,736: 395 mul: input_from: [394], output_to: [396], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,741: 396 pow: input_from: [395], output_to: [397], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,746: 397 mul: input_from: [396], output_to: [398], output_shapes: [torch.Size([1, 3, 30, 40, 2])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,751: 398 __setitem__: input_from: [387, 397, 393], output_to: [399, 402, 403, 405, 406, 408, 409], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,756: 399 __getitem__: input_from: [387, 393, 398], output_to: [400], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8865s
+[rosout][INFO] 2023-11-22 07:44:54,761: 400 mul: input_from: [399], output_to: [401], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8866s
+[rosout][INFO] 2023-11-22 07:44:54,765: 401 sub: input_from: [400], output_to: [402], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8866s
+[rosout][INFO] 2023-11-22 07:44:54,770: 402 __setitem__: input_from: [387, 401, 393, 398], output_to: [403, 405, 406, 408, 409], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8866s
+[rosout][INFO] 2023-11-22 07:44:54,774: 403 __getitem__: input_from: [387, 393, 398, 402], output_to: [404], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8866s
+[rosout][INFO] 2023-11-22 07:44:54,778: 404 mul_: input_from: [403], output_to: [405], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8867s
+[rosout][INFO] 2023-11-22 07:44:54,782: 405 __setitem__: input_from: [387, 404, 393, 398, 402], output_to: [406, 408, 409], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8867s
+[rosout][INFO] 2023-11-22 07:44:54,787: 406 __getitem__: input_from: [387, 393, 398, 402, 405], output_to: [407], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8867s
+[rosout][INFO] 2023-11-22 07:44:54,793: 407 add_: input_from: [406], output_to: [408], output_shapes: [torch.Size([1, 3, 30, 40, 34])], barrier: False, local dim: 3;  accu_time 0.8868s
+[rosout][INFO] 2023-11-22 07:44:54,800: 408 __setitem__: input_from: [387, 407, 393, 398, 402, 405], output_to: [409], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8868s
+[rosout][INFO] 2023-11-22 07:44:54,806: 409 view: input_from: [387, 393, 398, 402, 405, 408], output_to: [437], output_shapes: [torch.Size([1, 3600, 57])], barrier: False, local dim: 1;  accu_time 0.8868s
+[rosout][INFO] 2023-11-22 07:44:54,812: 410 conv2d: input_from: [328], output_to: [411], output_shapes: [torch.Size([1, 171, 15, 20])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,818: 411 view: input_from: [410], output_to: [412], output_shapes: [torch.Size([1, 3, 57, 15, 20])], barrier: False, local dim: 4;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,824: 412 permute: input_from: [411], output_to: [413], output_shapes: [torch.Size([1, 3, 15, 20, 57])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,830: 413 contiguous: input_from: [412], output_to: [414], output_shapes: [torch.Size([1, 3, 15, 20, 57])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,835: 414 sigmoid: input_from: [413], output_to: [415, 420, 421, 425, 426, 429, 430, 432, 433, 435, 436], output_shapes: [torch.Size([1, 3, 15, 20, 57])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,841: 415 __getitem__: input_from: [414], output_to: [416], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,845: 416 mul: input_from: [415], output_to: [417], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,851: 417 sub: input_from: [416], output_to: [418], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,855: 418 add: input_from: [417], output_to: [419], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,860: 419 mul: input_from: [418], output_to: [420], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8874s
+[rosout][INFO] 2023-11-22 07:44:54,864: 420 __setitem__: input_from: [414, 419], output_to: [421, 425, 426, 429, 430, 432, 433, 435, 436], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,869: 421 __getitem__: input_from: [414, 420], output_to: [422], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,875: 422 mul: input_from: [421], output_to: [423], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,880: 423 pow: input_from: [422], output_to: [424], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,886: 424 mul: input_from: [423], output_to: [425], output_shapes: [torch.Size([1, 3, 15, 20, 2])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,891: 425 __setitem__: input_from: [414, 424, 420], output_to: [426, 429, 430, 432, 433, 435, 436], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,898: 426 __getitem__: input_from: [414, 420, 425], output_to: [427], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,904: 427 mul: input_from: [426], output_to: [428], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,911: 428 sub: input_from: [427], output_to: [429], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,919: 429 __setitem__: input_from: [414, 428, 420, 425], output_to: [430, 432, 433, 435, 436], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,924: 430 __getitem__: input_from: [414, 420, 425, 429], output_to: [431], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,931: 431 mul_: input_from: [430], output_to: [432], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8875s
+[rosout][INFO] 2023-11-22 07:44:54,936: 432 __setitem__: input_from: [414, 431, 420, 425, 429], output_to: [433, 435, 436], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8876s
+[rosout][INFO] 2023-11-22 07:44:54,942: 433 __getitem__: input_from: [414, 420, 425, 429, 432], output_to: [434], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8876s
+[rosout][INFO] 2023-11-22 07:44:54,948: 434 add_: input_from: [433], output_to: [435], output_shapes: [torch.Size([1, 3, 15, 20, 34])], barrier: False, local dim: 3;  accu_time 0.8876s
+[rosout][INFO] 2023-11-22 07:44:54,955: 435 __setitem__: input_from: [414, 434, 420, 425, 429, 432], output_to: [436], output_shapes: [], barrier: False, local dim: 3;  accu_time 0.8876s
+[rosout][INFO] 2023-11-22 07:44:54,960: 436 view: input_from: [414, 420, 425, 429, 432, 435], output_to: [437], output_shapes: [torch.Size([1, 900, 57])], barrier: False, local dim: 1;  accu_time 0.8876s
+[rosout][INFO] 2023-11-22 07:44:54,966: 437 cat: input_from: [355, 382, 409, 436], output_to: [438, 440, 441, 443, 444], output_shapes: [torch.Size([1, 76500, 57])], barrier: False, local dim: 1;  accu_time 0.8885s
+[rosout][INFO] 2023-11-22 07:44:54,973: 438 __getitem__: input_from: [437], output_to: [439], output_shapes: [torch.Size([1, 76500, 4])], barrier: False, local dim: 1;  accu_time 0.8885s
+[rosout][INFO] 2023-11-22 07:44:54,980: 439 div_: input_from: [438], output_to: [440], output_shapes: [torch.Size([1, 76500, 4])], barrier: False, local dim: 1;  accu_time 0.8887s
+[rosout][INFO] 2023-11-22 07:44:54,985: 440 __setitem__: input_from: [437, 439], output_to: [441, 443, 444], output_shapes: [], barrier: False, local dim: 1;  accu_time 0.8890s
+[rosout][INFO] 2023-11-22 07:44:54,991: 441 __getitem__: input_from: [437, 440], output_to: [442], output_shapes: [torch.Size([1, 76500, 34])], barrier: False, local dim: 1;  accu_time 0.8890s
+[rosout][INFO] 2023-11-22 07:44:54,997: 442 div_: input_from: [441], output_to: [443], output_shapes: [torch.Size([1, 76500, 34])], barrier: False, local dim: 1;  accu_time 0.8898s
+[rosout][INFO] 2023-11-22 07:44:55,002: 443 __setitem__: input_from: [437, 442, 440], output_to: [444], output_shapes: [], barrier: False, local dim: 1;  accu_time 0.8907s
+[rosout][INFO] 2023-11-22 07:44:55,010: 444 cat: input_from: [437, 440, 443], output_to: [445, 447, 495, 497], output_shapes: [torch.Size([1, 76500, 57])], barrier: False, local dim: 1;  accu_time 0.8914s
+[rosout][INFO] 2023-11-22 07:44:55,017: 445 __getitem__: input_from: [444], output_to: [446], output_shapes: [torch.Size([1, 76500])], barrier: False, local dim: 1;  accu_time 0.8914s
+[rosout][INFO] 2023-11-22 07:44:55,023: 446 gt: input_from: [445], output_to: [448], output_shapes: [torch.Size([1, 76500])], barrier: False, local dim: 1;  accu_time 0.8915s
+[rosout][INFO] 2023-11-22 07:44:55,030: 447 unbind: input_from: [444], output_to: [449], output_shapes: [torch.Size([76500, 57])], barrier: False, local dim: 0;  accu_time 0.8915s
+[rosout][INFO] 2023-11-22 07:44:55,036: 448 __getitem__: input_from: [446], output_to: [449], output_shapes: [torch.Size([76500])], barrier: False, local dim: 0;  accu_time 0.8915s
+[rosout][INFO] 2023-11-22 07:44:55,042: 449 __getitem__: input_from: [447, 448], output_to: [450, 451, 453, 454, 476, 478], output_shapes: [torch.Size([755, 57])], barrier: False, local dim: 0;  accu_time 0.8926s
+[rosout][INFO] 2023-11-22 07:44:55,048: 450 __getitem__: input_from: [449], output_to: [452], output_shapes: [torch.Size([755, 18])], barrier: False, local dim: 0;  accu_time 0.8928s
+[rosout][INFO] 2023-11-22 07:44:55,053: 451 __getitem__: input_from: [449], output_to: [452], output_shapes: [torch.Size([755, 1])], barrier: False, local dim: 0;  accu_time 0.8929s
+[rosout][INFO] 2023-11-22 07:44:55,058: 452 mul_: input_from: [450, 451], output_to: [453], output_shapes: [torch.Size([755, 18])], barrier: False, local dim: 0;  accu_time 0.9356s
+[rosout][INFO] 2023-11-22 07:44:55,063: 453 __setitem__: input_from: [449, 452], output_to: [454, 476, 478], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9360s
+[rosout][INFO] 2023-11-22 07:44:55,068: 454 __getitem__: input_from: [449, 453], output_to: [455, 456, 457, 461, 462, 466, 467, 471, 472], output_shapes: [torch.Size([755, 4])], barrier: False, local dim: 0;  accu_time 0.9363s
+[rosout][INFO] 2023-11-22 07:44:55,074: 455 clone: input_from: [454], output_to: [460, 465, 470, 475, 480], output_shapes: [torch.Size([755, 4])], barrier: False, local dim: 0;  accu_time 0.9367s
+[rosout][INFO] 2023-11-22 07:44:55,079: 456 __getitem__: input_from: [454], output_to: [459], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9368s
+[rosout][INFO] 2023-11-22 07:44:55,084: 457 __getitem__: input_from: [454], output_to: [458], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9369s
+[rosout][INFO] 2023-11-22 07:44:55,089: 458 div: input_from: [457], output_to: [459], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9425s
+[rosout][INFO] 2023-11-22 07:44:55,098: 459 sub: input_from: [456, 458], output_to: [460], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9427s
+[rosout][INFO] 2023-11-22 07:44:55,104: 460 __setitem__: input_from: [455, 459], output_to: [465, 470, 475, 480], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9429s
+[rosout][INFO] 2023-11-22 07:44:55,109: 461 __getitem__: input_from: [454], output_to: [464], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9430s
+[rosout][INFO] 2023-11-22 07:44:55,115: 462 __getitem__: input_from: [454], output_to: [463], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9431s
+[rosout][INFO] 2023-11-22 07:44:55,122: 463 div: input_from: [462], output_to: [464], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9432s
+[rosout][INFO] 2023-11-22 07:44:55,131: 464 sub: input_from: [461, 463], output_to: [465], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9433s
+[rosout][INFO] 2023-11-22 07:44:55,137: 465 __setitem__: input_from: [455, 464, 460], output_to: [470, 475, 480], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9435s
+[rosout][INFO] 2023-11-22 07:44:55,143: 466 __getitem__: input_from: [454], output_to: [469], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9436s
+[rosout][INFO] 2023-11-22 07:44:55,149: 467 __getitem__: input_from: [454], output_to: [468], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9436s
+[rosout][INFO] 2023-11-22 07:44:55,154: 468 div: input_from: [467], output_to: [469], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9439s
+[rosout][INFO] 2023-11-22 07:44:55,160: 469 add: input_from: [466, 468], output_to: [470], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9441s
+[rosout][INFO] 2023-11-22 07:44:55,164: 470 __setitem__: input_from: [455, 469, 460, 465], output_to: [475, 480], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9442s
+[rosout][INFO] 2023-11-22 07:44:55,174: 471 __getitem__: input_from: [454], output_to: [474], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9443s
+[rosout][INFO] 2023-11-22 07:44:55,182: 472 __getitem__: input_from: [454], output_to: [473], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9443s
+[rosout][INFO] 2023-11-22 07:44:55,188: 473 div: input_from: [472], output_to: [474], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9445s
+[rosout][INFO] 2023-11-22 07:44:55,195: 474 add: input_from: [471, 473], output_to: [475], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9446s
+[rosout][INFO] 2023-11-22 07:44:55,201: 475 __setitem__: input_from: [455, 474, 460, 465, 470], output_to: [480], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9447s
+[rosout][INFO] 2023-11-22 07:44:55,208: 476 __getitem__: input_from: [449, 453], output_to: [477], output_shapes: [torch.Size([755, 18])], barrier: False, local dim: 0;  accu_time 0.9448s
+[rosout][INFO] 2023-11-22 07:44:55,216: 477 max: input_from: [476], output_to: [479, 480, 481], output_shapes: [torch.Size([755, 1]), torch.Size([755, 1])], barrier: False, local dim: 0;  accu_time 0.9450s
+[rosout][INFO] 2023-11-22 07:44:55,222: 478 __getitem__: input_from: [449, 453], output_to: [480], output_shapes: [torch.Size([755, 34])], barrier: False, local dim: 0;  accu_time 0.9452s
+[rosout][INFO] 2023-11-22 07:44:55,228: 479 float: input_from: [477], output_to: [480], output_shapes: [torch.Size([755, 1])], barrier: False, local dim: 0;  accu_time 0.9454s
+[rosout][INFO] 2023-11-22 07:44:55,233: 480 cat: input_from: [455, 477, 479, 478, 460, 465, 470, 475], output_to: [483], output_shapes: [torch.Size([755, 40])], barrier: False, local dim: 0;  accu_time 0.9458s
+[rosout][INFO] 2023-11-22 07:44:55,239: 481 view: input_from: [477], output_to: [482], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9459s
+[rosout][INFO] 2023-11-22 07:44:55,248: 482 gt: input_from: [481], output_to: [483], output_shapes: [torch.Size([755])], barrier: False, local dim: 0;  accu_time 0.9460s
+[rosout][INFO] 2023-11-22 07:44:55,256: 483 __getitem__: input_from: [480, 482], output_to: [484, 487], output_shapes: [torch.Size([488, 40])], barrier: False, local dim: 0;  accu_time 0.9469s
+[rosout][INFO] 2023-11-22 07:44:55,261: 484 __getitem__: input_from: [483], output_to: [485], output_shapes: [torch.Size([488, 1])], barrier: False, local dim: 0;  accu_time 0.9470s
+[rosout][INFO] 2023-11-22 07:44:55,267: 485 eq: input_from: [484], output_to: [486], output_shapes: [torch.Size([488, 1])], barrier: False, local dim: 0;  accu_time 0.9471s
+[rosout][INFO] 2023-11-22 07:44:55,273: 486 any: input_from: [485], output_to: [487], output_shapes: [torch.Size([488])], barrier: False, local dim: 0;  accu_time 0.9521s
+[rosout][INFO] 2023-11-22 07:44:55,278: 487 __getitem__: input_from: [483, 486], output_to: [488, 490, 492, 494], output_shapes: [torch.Size([73, 40])], barrier: False, local dim: 0;  accu_time 0.9531s
+[rosout][INFO] 2023-11-22 07:44:55,284: 488 __getitem__: input_from: [487], output_to: [489], output_shapes: [torch.Size([73, 1])], barrier: False, local dim: 0;  accu_time 0.9532s
+[rosout][INFO] 2023-11-22 07:44:55,289: 489 mul: input_from: [488], output_to: [491], output_shapes: [torch.Size([73, 1])], barrier: False, local dim: 0;  accu_time 0.9534s
+[rosout][INFO] 2023-11-22 07:44:55,294: 490 __getitem__: input_from: [487], output_to: [491], output_shapes: [torch.Size([73, 4])], barrier: False, local dim: 0;  accu_time 0.9536s
+[rosout][INFO] 2023-11-22 07:44:55,299: 491 add: input_from: [490, 489], output_to: [493], output_shapes: [torch.Size([73, 4])], barrier: False, local dim: 0;  accu_time 0.9538s
+[rosout][INFO] 2023-11-22 07:44:55,305: 492 __getitem__: input_from: [487], output_to: [493], output_shapes: [torch.Size([73])], barrier: False, local dim: 0;  accu_time 0.9541s
+[rosout][INFO] 2023-11-22 07:44:55,312: 493 nms: input_from: [491, 492], output_to: [494], output_shapes: [torch.Size([10])], barrier: False, local dim: 0;  accu_time 0.9630s
+[rosout][INFO] 2023-11-22 07:44:55,457: 494 __getitem__: input_from: [487, 493], output_to: [545], output_shapes: [torch.Size([10, 40])], barrier: False, local dim: 0;  accu_time 0.9632s
+[rosout][INFO] 2023-11-22 07:44:55,464: 495 __getitem__: input_from: [444], output_to: [496], output_shapes: [torch.Size([1, 76500])], barrier: False, local dim: 1;  accu_time 0.9633s
+[rosout][INFO] 2023-11-22 07:44:55,470: 496 gt: input_from: [495], output_to: [498], output_shapes: [torch.Size([1, 76500])], barrier: False, local dim: 1;  accu_time 0.9635s
+[rosout][INFO] 2023-11-22 07:44:55,476: 497 unbind: input_from: [444], output_to: [499], output_shapes: [torch.Size([76500, 57])], barrier: False, local dim: 0;  accu_time 0.9635s
+[rosout][INFO] 2023-11-22 07:44:55,482: 498 __getitem__: input_from: [496], output_to: [499], output_shapes: [torch.Size([76500])], barrier: False, local dim: 0;  accu_time 0.9636s
+[rosout][INFO] 2023-11-22 07:44:55,486: 499 __getitem__: input_from: [497, 498], output_to: [500, 501, 503, 504, 526, 528], output_shapes: [torch.Size([1673, 57])], barrier: False, local dim: 0;  accu_time 0.9643s
+[rosout][INFO] 2023-11-22 07:44:55,492: 500 __getitem__: input_from: [499], output_to: [502], output_shapes: [torch.Size([1673, 18])], barrier: False, local dim: 0;  accu_time 0.9644s
+[rosout][INFO] 2023-11-22 07:44:55,498: 501 __getitem__: input_from: [499], output_to: [502], output_shapes: [torch.Size([1673, 1])], barrier: False, local dim: 0;  accu_time 0.9645s
+[rosout][INFO] 2023-11-22 07:44:55,505: 502 mul_: input_from: [500, 501], output_to: [503], output_shapes: [torch.Size([1673, 18])], barrier: False, local dim: 0;  accu_time 0.9646s
+[rosout][INFO] 2023-11-22 07:44:55,512: 503 __setitem__: input_from: [499, 502], output_to: [504, 526, 528], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9648s
+[rosout][INFO] 2023-11-22 07:44:55,518: 504 __getitem__: input_from: [499, 503], output_to: [505, 506, 507, 511, 512, 516, 517, 521, 522], output_shapes: [torch.Size([1673, 4])], barrier: False, local dim: 0;  accu_time 0.9649s
+[rosout][INFO] 2023-11-22 07:44:55,523: 505 clone: input_from: [504], output_to: [510, 515, 520, 525, 530], output_shapes: [torch.Size([1673, 4])], barrier: False, local dim: 0;  accu_time 0.9650s
+[rosout][INFO] 2023-11-22 07:44:55,530: 506 __getitem__: input_from: [504], output_to: [509], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9652s
+[rosout][INFO] 2023-11-22 07:44:55,535: 507 __getitem__: input_from: [504], output_to: [508], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9653s
+[rosout][INFO] 2023-11-22 07:44:55,541: 508 div: input_from: [507], output_to: [509], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9654s
+[rosout][INFO] 2023-11-22 07:44:55,547: 509 sub: input_from: [506, 508], output_to: [510], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9656s
+[rosout][INFO] 2023-11-22 07:44:55,553: 510 __setitem__: input_from: [505, 509], output_to: [515, 520, 525, 530], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9657s
+[rosout][INFO] 2023-11-22 07:44:55,559: 511 __getitem__: input_from: [504], output_to: [514], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9658s
+[rosout][INFO] 2023-11-22 07:44:55,565: 512 __getitem__: input_from: [504], output_to: [513], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9659s
+[rosout][INFO] 2023-11-22 07:44:55,572: 513 div: input_from: [512], output_to: [514], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9660s
+[rosout][INFO] 2023-11-22 07:44:55,579: 514 sub: input_from: [511, 513], output_to: [515], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9662s
+[rosout][INFO] 2023-11-22 07:44:55,585: 515 __setitem__: input_from: [505, 514, 510], output_to: [520, 525, 530], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9664s
+[rosout][INFO] 2023-11-22 07:44:55,592: 516 __getitem__: input_from: [504], output_to: [519], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9664s
+[rosout][INFO] 2023-11-22 07:44:55,597: 517 __getitem__: input_from: [504], output_to: [518], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9665s
+[rosout][INFO] 2023-11-22 07:44:55,602: 518 div: input_from: [517], output_to: [519], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9666s
+[rosout][INFO] 2023-11-22 07:44:55,607: 519 add: input_from: [516, 518], output_to: [520], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9667s
+[rosout][INFO] 2023-11-22 07:44:55,615: 520 __setitem__: input_from: [505, 519, 510, 515], output_to: [525, 530], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9669s
+[rosout][INFO] 2023-11-22 07:44:55,620: 521 __getitem__: input_from: [504], output_to: [524], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9669s
+[rosout][INFO] 2023-11-22 07:44:55,625: 522 __getitem__: input_from: [504], output_to: [523], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9670s
+[rosout][INFO] 2023-11-22 07:44:55,630: 523 div: input_from: [522], output_to: [524], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9671s
+[rosout][INFO] 2023-11-22 07:44:55,639: 524 add: input_from: [521, 523], output_to: [525], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9672s
+[rosout][INFO] 2023-11-22 07:44:55,645: 525 __setitem__: input_from: [505, 524, 510, 515, 520], output_to: [530], output_shapes: [], barrier: False, local dim: 0;  accu_time 0.9673s
+[rosout][INFO] 2023-11-22 07:44:55,650: 526 __getitem__: input_from: [499, 503], output_to: [527], output_shapes: [torch.Size([1673, 18])], barrier: False, local dim: 0;  accu_time 0.9674s
+[rosout][INFO] 2023-11-22 07:44:55,660: 527 max: input_from: [526], output_to: [529, 530, 531], output_shapes: [torch.Size([1673, 1]), torch.Size([1673, 1])], barrier: False, local dim: 0;  accu_time 0.9676s
+[rosout][INFO] 2023-11-22 07:44:55,664: 528 __getitem__: input_from: [499, 503], output_to: [530], output_shapes: [torch.Size([1673, 34])], barrier: False, local dim: 0;  accu_time 0.9677s
+[rosout][INFO] 2023-11-22 07:44:55,670: 529 float: input_from: [527], output_to: [530], output_shapes: [torch.Size([1673, 1])], barrier: False, local dim: 0;  accu_time 0.9678s
+[rosout][INFO] 2023-11-22 07:44:55,680: 530 cat: input_from: [505, 527, 529, 528, 510, 515, 520, 525], output_to: [533], output_shapes: [torch.Size([1673, 40])], barrier: False, local dim: 0;  accu_time 0.9680s
+[rosout][INFO] 2023-11-22 07:44:55,686: 531 view: input_from: [527], output_to: [532], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9681s
+[rosout][INFO] 2023-11-22 07:44:55,692: 532 gt: input_from: [531], output_to: [533], output_shapes: [torch.Size([1673])], barrier: False, local dim: 0;  accu_time 0.9682s
+[rosout][INFO] 2023-11-22 07:44:55,702: 533 __getitem__: input_from: [530, 532], output_to: [534, 537], output_shapes: [torch.Size([1263, 40])], barrier: False, local dim: 0;  accu_time 0.9689s
+[rosout][INFO] 2023-11-22 07:44:55,707: 534 __getitem__: input_from: [533], output_to: [535], output_shapes: [torch.Size([1263, 1])], barrier: False, local dim: 0;  accu_time 0.9689s
+[rosout][INFO] 2023-11-22 07:44:55,714: 535 eq: input_from: [534], output_to: [536], output_shapes: [torch.Size([1263, 17])], barrier: False, local dim: 0;  accu_time 0.9690s
+[rosout][INFO] 2023-11-22 07:44:55,720: 536 any: input_from: [535], output_to: [537], output_shapes: [torch.Size([1263])], barrier: False, local dim: 0;  accu_time 0.9692s
+[rosout][INFO] 2023-11-22 07:44:55,727: 537 __getitem__: input_from: [533, 536], output_to: [538, 540, 542, 544], output_shapes: [torch.Size([1105, 40])], barrier: False, local dim: 0;  accu_time 0.9697s
+[rosout][INFO] 2023-11-22 07:44:55,733: 538 __getitem__: input_from: [537], output_to: [539], output_shapes: [torch.Size([1105, 1])], barrier: False, local dim: 0;  accu_time 0.9699s
+[rosout][INFO] 2023-11-22 07:44:55,738: 539 mul: input_from: [538], output_to: [541], output_shapes: [torch.Size([1105, 1])], barrier: False, local dim: 0;  accu_time 0.9701s
+[rosout][INFO] 2023-11-22 07:44:55,744: 540 __getitem__: input_from: [537], output_to: [541], output_shapes: [torch.Size([1105, 4])], barrier: False, local dim: 0;  accu_time 0.9701s
+[rosout][INFO] 2023-11-22 07:44:55,750: 541 add: input_from: [540, 539], output_to: [543], output_shapes: [torch.Size([1105, 4])], barrier: False, local dim: 0;  accu_time 0.9702s
+[rosout][INFO] 2023-11-22 07:44:55,756: 542 __getitem__: input_from: [537], output_to: [543], output_shapes: [torch.Size([1105])], barrier: False, local dim: 0;  accu_time 0.9703s
+[rosout][INFO] 2023-11-22 07:44:55,762: 543 nms: input_from: [541, 542], output_to: [544], output_shapes: [torch.Size([120])], barrier: False, local dim: 0;  accu_time 0.9720s
+[rosout][INFO] 2023-11-22 07:44:55,768: 544 __getitem__: input_from: [537, 543], output_to: [545], output_shapes: [torch.Size([120, 40])], barrier: False, local dim: 0;  accu_time 0.9722s
+[rosout][INFO] 2023-11-22 07:44:55,774: 545 _end: input_from: [494, 544], output_to: [-1, -1], output_shapes: [torch.Size([10, 40]), torch.Size([120, 40])], barrier: True, local dim: None;  accu_time 0.9722s
+[rosout][INFO] 2023-11-22 07:44:55,783: total 546 ops (filtered from 569 ops); time 0.9722s (aligned by 0.9067 sleep_step 1).
+
+[rosout][INFO] 2023-11-22 07:44:55,988: Waiting for graph processing at the server
+[rosout][INFO] 2023-11-22 07:44:56,413: Got graph plan from server
+[rosout][INFO] 2023-11-22 07:44:56,423: client: init forward complete.
+[rosout][INFO] 2023-11-22 07:44:56,461: bw 0MB/s offload at [] recv at [] sleep for 546 ops est time 0.9722s.
+[rosout][INFO] 2023-11-22 07:44:56,470: bw 1MB/s offload at [] recv at [] sleep for 546 ops est time 0.9722s.
+[rosout][INFO] 2023-11-22 07:44:56,478: bw 2MB/s offload at [] recv at [] sleep for 546 ops est time 0.9722s.
+[rosout][INFO] 2023-11-22 07:44:56,487: bw 3MB/s offload at [] recv at [] sleep for 546 ops est time 0.9722s.
+[rosout][INFO] 2023-11-22 07:44:56,511: bw 4MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.9405s.
+[rosout][INFO] 2023-11-22 07:44:56,537: bw 5MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.7637s.
+[rosout][INFO] 2023-11-22 07:44:56,561: bw 6MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.6459s.
+[rosout][INFO] 2023-11-22 07:44:56,584: bw 7MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.5617s.
+[rosout][INFO] 2023-11-22 07:44:56,607: bw 8MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.4986s.
+[rosout][INFO] 2023-11-22 07:44:56,632: bw 9MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.4495s.
+[rosout][INFO] 2023-11-22 07:44:56,655: bw 10MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.4102s.
+[rosout][INFO] 2023-11-22 07:44:56,678: bw 11MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.3780s.
+[rosout][INFO] 2023-11-22 07:44:56,700: bw 12MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.3512s.
+[rosout][INFO] 2023-11-22 07:44:56,722: bw 13MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.3286s.
+[rosout][INFO] 2023-11-22 07:44:56,744: bw 14MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.3092s.
+[rosout][INFO] 2023-11-22 07:44:56,764: bw 15MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2923s.
+[rosout][INFO] 2023-11-22 07:44:56,786: bw 16MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2776s.
+[rosout][INFO] 2023-11-22 07:44:56,807: bw 17MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2646s.
+[rosout][INFO] 2023-11-22 07:44:56,828: bw 18MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2530s.
+[rosout][INFO] 2023-11-22 07:44:56,847: bw 19MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2427s.
+[rosout][INFO] 2023-11-22 07:44:56,867: bw 20MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2334s.
+[rosout][INFO] 2023-11-22 07:44:56,887: bw 21MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2250s.
+[rosout][INFO] 2023-11-22 07:44:56,906: bw 22MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2173s.
+[rosout][INFO] 2023-11-22 07:44:56,924: bw 23MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2103s.
+[rosout][INFO] 2023-11-22 07:44:56,943: bw 24MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.2039s.
+[rosout][INFO] 2023-11-22 07:44:56,961: bw 25MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1980s.
+[rosout][INFO] 2023-11-22 07:44:56,978: bw 26MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1926s.
+[rosout][INFO] 2023-11-22 07:44:56,998: bw 27MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1876s.
+[rosout][INFO] 2023-11-22 07:44:57,014: bw 28MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1829s.
+[rosout][INFO] 2023-11-22 07:44:57,032: bw 29MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1785s.
+[rosout][INFO] 2023-11-22 07:44:57,049: bw 30MB/s offload at [0] recv at [494, 544] sleep for 0 ops est time 0.1745s.
+[rosout][INFO] 2023-11-22 07:44:57,056: Started send loop.
+[rosout][INFO] 2023-11-22 07:44:57,061: Started recv loop.
+[rosout][WARNING] 2023-11-22 07:44:57,072: Waiting for service call: /Start
+[rosout][INFO] 2023-11-22 07:44:57,077: Started pose_follower pipeline.
+[rosout][INFO] 2023-11-22 07:45:09,221: Inference freq: 0.0106 FPS; dur: 94.7794 s
+[rosout][INFO] 2023-11-22 07:45:09,222: Start/resume processing image.
+[rospy.service][ERROR] 2023-11-22 07:45:09,385: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:45:09,431: Marking and tracking pose of people in view.
+[rosout][INFO] 2023-11-22 07:45:09,445: Comp freq: 0.0073 FPS; dur: 137.8980s
+[rosout][INFO] 2023-11-22 07:45:10,602: client: 0 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610309.3088763; ends at 1700610310.6021903; dur 1.2933s
+[rosout][INFO] 2023-11-22 07:45:11,638: client: 1 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610310.7123845; ends at 1700610311.6387587; dur 0.9264s
+[rosout][INFO] 2023-11-22 07:45:12,648: client: 2 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610311.7264853; ends at 1700610312.6486497; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:45:13,653: client: 3 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610312.7275145; ends at 1700610313.6527596; dur 0.9252s
+[rosout][INFO] 2023-11-22 07:45:14,919: client: 4 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610313.996515; ends at 1700610314.9189281; dur 0.9224s
+[rosout][INFO] 2023-11-22 07:45:15,948: client: 5 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610315.0226994; ends at 1700610315.9483554; dur 0.9257s
+[rosout][INFO] 2023-11-22 07:45:16,957: client: 6 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610316.034306; ends at 1700610316.9571006; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:45:17,039: Skipping small perturbation.
+[rosout][INFO] 2023-11-22 07:45:17,970: client: 7 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610317.046739; ends at 1700610317.9707136; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:45:18,052: Tracking people for evident movement.
+[rosout][WARNING] 2023-11-22 07:45:18,956: Detected jump back in time of 24.830065s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:45:18,981: client: 8 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610318.0631974; ends at 1700610318.9814434; dur 0.9182s
+[rosout][INFO] 2023-11-22 07:45:19,083: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:45:19,999: client: 9 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610319.0761054; ends at 1700610319.9996889; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:45:20,075: Inference freq: 0.9222 FPS; dur: 10.8438 s
+[rospy.service][ERROR] 2023-11-22 07:45:20,084: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:45:20,096: Comp freq: 0.9389 FPS; dur: 10.6513s
+[rosout][INFO] 2023-11-22 07:45:21,025: client: 10 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610320.1021748; ends at 1700610321.0253944; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:45:22,031: client: 11 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610321.109259; ends at 1700610322.0316117; dur 0.9224s
+[rosout][INFO] 2023-11-22 07:45:23,044: client: 12 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610322.1198673; ends at 1700610323.0438607; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:45:24,054: client: 13 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610323.1318393; ends at 1700610324.0537636; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:45:25,057: client: 14 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610324.1318574; ends at 1700610325.0568202; dur 0.9250s
+[rosout][INFO] 2023-11-22 07:45:26,076: client: 15 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610325.1514914; ends at 1700610326.0762744; dur 0.9248s
+[rosout][INFO] 2023-11-22 07:45:27,085: client: 16 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610326.1645586; ends at 1700610327.084816; dur 0.9203s
+[rosout][INFO] 2023-11-22 07:45:28,098: client: 17 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610327.1715603; ends at 1700610328.0980277; dur 0.9265s
+[rosout][INFO] 2023-11-22 07:45:29,108: client: 18 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610328.186855; ends at 1700610329.1087723; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:45:30,113: client: 19 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610329.1914937; ends at 1700610330.1129236; dur 0.9214s
+[rosout][INFO] 2023-11-22 07:45:30,186: Inference freq: 0.9898 FPS; dur: 10.1032 s
+[rospy.service][ERROR] 2023-11-22 07:45:30,197: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:45:30,206: Comp freq: 0.9892 FPS; dur: 10.1096s
+[rosout][INFO] 2023-11-22 07:45:31,145: client: 20 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610330.215248; ends at 1700610331.1454418; dur 0.9302s
+[rosout][INFO] 2023-11-22 07:45:32,141: client: 21 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610331.216215; ends at 1700610332.1411607; dur 0.9249s
+[rosout][INFO] 2023-11-22 07:45:33,147: client: 22 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610332.2231147; ends at 1700610333.1469095; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:45:34,160: client: 23 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610333.238587; ends at 1700610334.1604364; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:45:35,165: client: 24 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610334.240063; ends at 1700610335.1651866; dur 0.9251s
+[rosout][INFO] 2023-11-22 07:45:36,175: client: 25 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610335.2472758; ends at 1700610336.1742895; dur 0.9270s
+[rosout][INFO] 2023-11-22 07:45:37,177: client: 26 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610336.254361; ends at 1700610337.1771095; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:45:38,187: client: 27 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610337.264441; ends at 1700610338.187702; dur 0.9233s
+[rosout][INFO] 2023-11-22 07:45:39,188: client: 28 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610338.2669523; ends at 1700610339.1884205; dur 0.9215s
+[rosout][INFO] 2023-11-22 07:45:40,197: client: 29 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610339.2713695; ends at 1700610340.1967828; dur 0.9254s
+[rosout][INFO] 2023-11-22 07:45:40,268: Inference freq: 0.9927 FPS; dur: 10.0735 s
+[rospy.service][ERROR] 2023-11-22 07:45:40,276: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:45:40,285: Comp freq: 0.9921 FPS; dur: 10.0795s
+[rosout][INFO] 2023-11-22 07:45:41,214: client: 30 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610340.2941217; ends at 1700610341.2141383; dur 0.9200s
+[rosout][INFO] 2023-11-22 07:45:42,221: client: 31 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610341.2973166; ends at 1700610342.2213397; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:45:43,226: client: 32 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610342.3028762; ends at 1700610343.226455; dur 0.9236s
+[rosout][WARNING] 2023-11-22 07:45:43,817: Detected jump back in time of 24.841366s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:45:43,951: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:45:44,240: client: 33 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610343.316202; ends at 1700610344.2400115; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:45:45,255: client: 34 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610344.327964; ends at 1700610345.255232; dur 0.9273s
+[rosout][INFO] 2023-11-22 07:45:46,258: client: 35 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610345.333416; ends at 1700610346.2578394; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:45:47,260: client: 36 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610346.3383427; ends at 1700610347.259914; dur 0.9216s
+[rosout][INFO] 2023-11-22 07:45:48,266: client: 37 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610347.3408368; ends at 1700610348.2663782; dur 0.9255s
+[rosout][INFO] 2023-11-22 07:45:49,271: client: 38 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610348.3452885; ends at 1700610349.2711432; dur 0.9259s
+[rosout][INFO] 2023-11-22 07:45:50,278: client: 39 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610349.3520036; ends at 1700610350.278086; dur 0.9261s
+[rospy.service][ERROR] 2023-11-22 07:45:50,340: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:45:50,333: Inference freq: 0.9945 FPS; dur: 10.0558 s
+[rosout][INFO] 2023-11-22 07:45:50,355: Comp freq: 0.9931 FPS; dur: 10.0691s
+[rosout][INFO] 2023-11-22 07:45:51,292: client: 40 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610350.367354; ends at 1700610351.2925541; dur 0.9252s
+[rosout][INFO] 2023-11-22 07:45:52,300: client: 41 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610351.3779917; ends at 1700610352.3003118; dur 0.9223s
+[rosout][INFO] 2023-11-22 07:45:53,314: client: 42 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610352.3929296; ends at 1700610353.3147452; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:45:54,324: client: 43 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610353.3959098; ends at 1700610354.3240051; dur 0.9281s
+[rosout][INFO] 2023-11-22 07:45:55,324: client: 44 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610354.4030414; ends at 1700610355.3237858; dur 0.9207s
+[rosout][INFO] 2023-11-22 07:45:56,335: client: 45 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610355.4116085; ends at 1700610356.335499; dur 0.9239s
+[rosout][INFO] 2023-11-22 07:45:57,329: client: 46 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610356.4105785; ends at 1700610357.3296108; dur 0.9190s
+[rosout][INFO] 2023-11-22 07:45:58,350: client: 47 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610357.4256527; ends at 1700610358.3498828; dur 0.9242s
+[rosout][INFO] 2023-11-22 07:45:59,371: client: 48 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610358.4467645; ends at 1700610359.3708334; dur 0.9241s
+[rosout][INFO] 2023-11-22 07:46:00,385: client: 49 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610359.4625945; ends at 1700610360.3856459; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:46:00,462: Inference freq: 0.9883 FPS; dur: 10.1182 s
+[rospy.service][ERROR] 2023-11-22 07:46:00,471: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:00,484: Comp freq: 0.9872 FPS; dur: 10.1292s
+[rosout][INFO] 2023-11-22 07:46:01,416: client: 50 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610360.4924064; ends at 1700610361.4162502; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:46:02,432: client: 51 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610361.509447; ends at 1700610362.4321978; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:46:03,433: client: 52 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610362.5100298; ends at 1700610363.4333591; dur 0.9233s
+[rosout][INFO] 2023-11-22 07:46:04,449: client: 53 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610363.5224202; ends at 1700610364.4493754; dur 0.9270s
+[rosout][INFO] 2023-11-22 07:46:05,453: client: 54 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610364.5326161; ends at 1700610365.453656; dur 0.9210s
+[rosout][INFO] 2023-11-22 07:46:06,462: client: 55 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610365.5367477; ends at 1700610366.4626815; dur 0.9259s
+[rosout][INFO] 2023-11-22 07:46:07,463: client: 56 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610366.5385718; ends at 1700610367.4632866; dur 0.9247s
+[rosout][INFO] 2023-11-22 07:46:08,473: client: 57 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610367.552771; ends at 1700610368.4733586; dur 0.9206s
+[rosout][WARNING] 2023-11-22 07:46:08,678: Detected jump back in time of 24.849918s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:46:08,818: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:46:09,477: client: 58 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610368.5544422; ends at 1700610369.476994; dur 0.9226s
+[rosout][INFO] 2023-11-22 07:46:10,499: client: 59 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610369.5710223; ends at 1700610370.4991758; dur 0.9282s
+[rosout][INFO] 2023-11-22 07:46:10,565: Inference freq: 0.9906 FPS; dur: 10.0944 s
+[rospy.service][ERROR] 2023-11-22 07:46:10,574: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:10,586: Comp freq: 0.9899 FPS; dur: 10.1016s
+[rosout][INFO] 2023-11-22 07:46:11,514: client: 60 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610370.5922558; ends at 1700610371.5137448; dur 0.9215s
+[rosout][INFO] 2023-11-22 07:46:12,519: client: 61 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610371.5936027; ends at 1700610372.5188692; dur 0.9253s
+[rosout][INFO] 2023-11-22 07:46:13,518: client: 62 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610372.592937; ends at 1700610373.518022; dur 0.9251s
+[rosout][INFO] 2023-11-22 07:46:14,523: client: 63 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610373.601125; ends at 1700610374.522968; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:46:15,527: client: 64 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610374.5991485; ends at 1700610375.5271456; dur 0.9280s
+[rosout][INFO] 2023-11-22 07:46:16,525: client: 65 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610375.6023421; ends at 1700610376.5248382; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:46:17,539: client: 66 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610376.6112616; ends at 1700610377.5394294; dur 0.9282s
+[rosout][INFO] 2023-11-22 07:46:18,554: client: 67 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610377.6303113; ends at 1700610378.55466; dur 0.9243s
+[rosout][INFO] 2023-11-22 07:46:19,561: client: 68 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610378.637758; ends at 1700610379.5615222; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:46:20,559: client: 69 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610379.6362464; ends at 1700610380.5594034; dur 0.9232s
+[rospy.service][ERROR] 2023-11-22 07:46:20,637: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:20,630: Inference freq: 0.9945 FPS; dur: 10.0554 s
+[rosout][INFO] 2023-11-22 07:46:20,653: Comp freq: 0.9933 FPS; dur: 10.0675s
+[rosout][INFO] 2023-11-22 07:46:21,587: client: 70 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610380.6628404; ends at 1700610381.5872335; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:46:22,589: client: 71 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610381.6649723; ends at 1700610382.589525; dur 0.9246s
+[rosout][INFO] 2023-11-22 07:46:23,597: client: 72 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610382.6722896; ends at 1700610383.5970004; dur 0.9247s
+[rosout][INFO] 2023-11-22 07:46:24,606: client: 73 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610383.684013; ends at 1700610384.6065667; dur 0.9226s
+[rosout][INFO] 2023-11-22 07:46:25,611: client: 74 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610384.689542; ends at 1700610385.6114354; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:46:26,621: client: 75 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610385.6989675; ends at 1700610386.621102; dur 0.9221s
+[rosout][INFO] 2023-11-22 07:46:27,626: client: 76 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610386.7046466; ends at 1700610387.626488; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:46:28,630: client: 77 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610387.705229; ends at 1700610388.6302047; dur 0.9250s
+[rosout][INFO] 2023-11-22 07:46:29,631: client: 78 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610388.7072105; ends at 1700610389.6310802; dur 0.9239s
+[rosout][INFO] 2023-11-22 07:46:30,636: client: 79 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610389.7124045; ends at 1700610390.6358047; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:46:30,709: Inference freq: 0.9938 FPS; dur: 10.0629 s
+[rospy.service][ERROR] 2023-11-22 07:46:30,718: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:30,730: Comp freq: 0.9923 FPS; dur: 10.0775s
+[rosout][INFO] 2023-11-22 07:46:31,655: client: 80 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610390.7340124; ends at 1700610391.6552856; dur 0.9213s
+[rosout][INFO] 2023-11-22 07:46:32,651: client: 81 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610391.7314353; ends at 1700610392.6509442; dur 0.9195s
+[rosout][WARNING] 2023-11-22 07:46:33,539: Detected jump back in time of 24.857342s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:46:33,659: client: 82 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610392.7402258; ends at 1700610393.6592133; dur 0.9190s
+[rosout][INFO] 2023-11-22 07:46:33,686: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:46:34,776: client: 83 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610393.8536236; ends at 1700610394.7762334; dur 0.9226s
+[rosout][INFO] 2023-11-22 07:46:35,796: client: 84 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610394.8706264; ends at 1700610395.7964168; dur 0.9258s
+[rosout][INFO] 2023-11-22 07:46:36,813: client: 85 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610395.892665; ends at 1700610396.8131092; dur 0.9204s
+[rosout][INFO] 2023-11-22 07:46:37,812: client: 86 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610396.891181; ends at 1700610397.812736; dur 0.9216s
+[rosout][INFO] 2023-11-22 07:46:38,925: client: 87 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610398.0017357; ends at 1700610398.9250863; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:46:39,925: client: 88 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610398.9998443; ends at 1700610399.9242804; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:46:40,932: client: 89 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610400.0116339; ends at 1700610400.9318938; dur 0.9203s
+[rospy.service][ERROR] 2023-11-22 07:46:41,007: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:41,001: Inference freq: 0.9724 FPS; dur: 10.2834 s
+[rosout][INFO] 2023-11-22 07:46:41,018: Comp freq: 0.9721 FPS; dur: 10.2871s
+[rosout][INFO] 2023-11-22 07:46:41,954: client: 90 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610401.0275114; ends at 1700610401.954261; dur 0.9267s
+[rosout][INFO] 2023-11-22 07:46:42,946: client: 91 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610402.0296617; ends at 1700610402.9464974; dur 0.9168s
+[rosout][INFO] 2023-11-22 07:46:43,941: client: 92 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610403.0205429; ends at 1700610403.940864; dur 0.9203s
+[rosout][INFO] 2023-11-22 07:46:44,939: client: 93 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610404.0149946; ends at 1700610404.9389102; dur 0.9239s
+[rosout][INFO] 2023-11-22 07:46:45,939: client: 94 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610405.0157356; ends at 1700610405.9391232; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:46:46,948: client: 95 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610406.024878; ends at 1700610406.948045; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:46:47,950: client: 96 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610407.0316565; ends at 1700610407.9503367; dur 0.9187s
+[rosout][INFO] 2023-11-22 07:46:48,953: client: 97 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610408.0284505; ends at 1700610408.953596; dur 0.9251s
+[rosout][INFO] 2023-11-22 07:46:49,954: client: 98 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610409.0314972; ends at 1700610409.9541078; dur 0.9226s
+[rosout][INFO] 2023-11-22 07:46:50,958: client: 99 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610410.0369558; ends at 1700610410.9583251; dur 0.9214s
+[rospy.service][ERROR] 2023-11-22 07:46:51,034: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:46:51,026: Inference freq: 0.9986 FPS; dur: 10.0140 s
+[rosout][INFO] 2023-11-22 07:46:51,050: Comp freq: 0.9968 FPS; dur: 10.0322s
+[rosout][INFO] 2023-11-22 07:46:51,988: client: 100 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610411.0643198; ends at 1700610411.9878857; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:46:52,993: client: 101 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610412.074043; ends at 1700610412.993502; dur 0.9195s
+[rosout][INFO] 2023-11-22 07:46:54,042: client: 102 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610413.1160164; ends at 1700610414.0425344; dur 0.9265s
+[rosout][INFO] 2023-11-22 07:46:55,045: client: 103 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610414.1231177; ends at 1700610415.045245; dur 0.9221s
+[rosout][INFO] 2023-11-22 07:46:56,056: client: 104 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610415.1326632; ends at 1700610416.056014; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:46:57,056: client: 105 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610416.1304257; ends at 1700610417.0566316; dur 0.9262s
+[rosout][INFO] 2023-11-22 07:46:58,060: client: 106 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610417.1400065; ends at 1700610418.05989; dur 0.9199s
+[rosout][WARNING] 2023-11-22 07:46:58,411: Detected jump back in time of 24.851136s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:46:58,554: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:46:59,068: client: 107 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610418.141244; ends at 1700610419.0687003; dur 0.9275s
+[rosout][INFO] 2023-11-22 07:47:00,069: client: 108 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610419.147362; ends at 1700610420.069133; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:47:01,073: client: 109 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610420.1534588; ends at 1700610421.073335; dur 0.9199s
+[rospy.service][ERROR] 2023-11-22 07:47:01,145: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:01,137: Inference freq: 0.9911 FPS; dur: 10.0893 s
+[rosout][INFO] 2023-11-22 07:47:01,158: Comp freq: 0.9893 FPS; dur: 10.1077s
+[rosout][INFO] 2023-11-22 07:47:02,092: client: 110 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610421.1698122; ends at 1700610422.0924847; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:47:03,089: client: 111 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610422.169565; ends at 1700610423.0889976; dur 0.9194s
+[rosout][INFO] 2023-11-22 07:47:04,087: client: 112 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610423.1656551; ends at 1700610424.0872645; dur 0.9216s
+[rosout][INFO] 2023-11-22 07:47:05,091: client: 113 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610424.1684756; ends at 1700610425.0914721; dur 0.9230s
+[rosout][INFO] 2023-11-22 07:47:06,092: client: 114 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610425.17056; ends at 1700610426.0918655; dur 0.9213s
+[rosout][INFO] 2023-11-22 07:47:07,101: client: 115 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610426.1737492; ends at 1700610427.1010544; dur 0.9273s
+[rosout][INFO] 2023-11-22 07:47:08,102: client: 116 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610427.1831894; ends at 1700610428.1026695; dur 0.9195s
+[rosout][INFO] 2023-11-22 07:47:09,100: client: 117 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610428.1765013; ends at 1700610429.1000063; dur 0.9235s
+[rosout][INFO] 2023-11-22 07:47:10,108: client: 118 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610429.1862977; ends at 1700610430.1078856; dur 0.9216s
+[rosout][INFO] 2023-11-22 07:47:11,132: client: 119 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610430.2080839; ends at 1700610431.1324494; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:47:11,201: Inference freq: 0.9948 FPS; dur: 10.0518 s
+[rospy.service][ERROR] 2023-11-22 07:47:11,210: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:11,221: Comp freq: 0.9937 FPS; dur: 10.0631s
+[rosout][INFO] 2023-11-22 07:47:12,155: client: 120 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610431.227586; ends at 1700610432.1552339; dur 0.9276s
+[rosout][INFO] 2023-11-22 07:47:13,153: client: 121 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610432.2356067; ends at 1700610433.1534877; dur 0.9179s
+[rosout][INFO] 2023-11-22 07:47:14,157: client: 122 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610433.2343593; ends at 1700610434.1576204; dur 0.9233s
+[rosout][INFO] 2023-11-22 07:47:15,181: client: 123 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610434.2588274; ends at 1700610435.1811733; dur 0.9223s
+[rosout][INFO] 2023-11-22 07:47:16,190: client: 124 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610435.2676606; ends at 1700610436.1903427; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:47:17,200: client: 125 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610436.2793033; ends at 1700610437.200621; dur 0.9213s
+[rosout][INFO] 2023-11-22 07:47:18,199: client: 126 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610437.2820518; ends at 1700610438.1993155; dur 0.9173s
+[rosout][INFO] 2023-11-22 07:47:19,207: client: 127 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610438.2843502; ends at 1700610439.2071233; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:47:20,207: client: 128 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610439.2849169; ends at 1700610440.206781; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:47:21,217: client: 129 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610440.295365; ends at 1700610441.2176123; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:47:21,295: Inference freq: 0.9916 FPS; dur: 10.0850 s
+[rospy.service][ERROR] 2023-11-22 07:47:21,306: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:21,317: Comp freq: 0.9905 FPS; dur: 10.0961s
+[rosout][INFO] 2023-11-22 07:47:22,247: client: 130 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610441.3245857; ends at 1700610442.2476838; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:47:23,251: client: 131 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610442.3322957; ends at 1700610443.2510984; dur 0.9188s
+[rosout][WARNING] 2023-11-22 07:47:23,282: Detected jump back in time of 24.853848s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:47:23,422: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:47:24,274: client: 132 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610443.3516982; ends at 1700610444.2744093; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:47:25,274: client: 133 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610444.3539734; ends at 1700610445.2746506; dur 0.9207s
+[rosout][INFO] 2023-11-22 07:47:26,279: client: 134 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610445.3561661; ends at 1700610446.2788782; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:47:27,289: client: 135 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610446.3661573; ends at 1700610447.2891045; dur 0.9229s
+[rosout][INFO] 2023-11-22 07:47:28,294: client: 136 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610447.3672924; ends at 1700610448.2942715; dur 0.9270s
+[rosout][INFO] 2023-11-22 07:47:29,397: client: 137 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610448.4746947; ends at 1700610449.396946; dur 0.9223s
+[rosout][INFO] 2023-11-22 07:47:30,413: client: 138 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610449.4894776; ends at 1700610450.413472; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:47:31,428: client: 139 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610450.5045233; ends at 1700610451.4278524; dur 0.9233s
+[rosout][INFO] 2023-11-22 07:47:31,504: Inference freq: 0.9803 FPS; dur: 10.2014 s
+[rospy.service][ERROR] 2023-11-22 07:47:31,513: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:31,525: Comp freq: 0.9796 FPS; dur: 10.2082s
+[rosout][INFO] 2023-11-22 07:47:32,459: client: 140 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610451.530008; ends at 1700610452.459218; dur 0.9292s
+[rosout][INFO] 2023-11-22 07:47:33,453: client: 141 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610452.5367887; ends at 1700610453.4534461; dur 0.9167s
+[rosout][INFO] 2023-11-22 07:47:34,447: client: 142 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610453.524503; ends at 1700610454.4473488; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:47:35,459: client: 143 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610454.5351613; ends at 1700610455.4590826; dur 0.9239s
+[rosout][INFO] 2023-11-22 07:47:36,464: client: 144 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610455.5428824; ends at 1700610456.4642742; dur 0.9214s
+[rosout][INFO] 2023-11-22 07:47:37,470: client: 145 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610456.5487204; ends at 1700610457.469877; dur 0.9212s
+[rosout][INFO] 2023-11-22 07:47:38,482: client: 146 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610457.5575297; ends at 1700610458.4821684; dur 0.9246s
+[rosout][INFO] 2023-11-22 07:47:39,596: client: 147 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610458.6709638; ends at 1700610459.5961757; dur 0.9252s
+[rosout][INFO] 2023-11-22 07:47:40,589: client: 148 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610459.6697884; ends at 1700610460.5896406; dur 0.9199s
+[rosout][INFO] 2023-11-22 07:47:41,595: client: 149 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610460.674109; ends at 1700610461.5955107; dur 0.9214s
+[rosout][INFO] 2023-11-22 07:47:41,672: Inference freq: 0.9841 FPS; dur: 10.1615 s
+[rospy.service][ERROR] 2023-11-22 07:47:41,682: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:41,693: Comp freq: 0.9835 FPS; dur: 10.1677s
+[rosout][INFO] 2023-11-22 07:47:42,628: client: 150 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610461.7048607; ends at 1700610462.627986; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:47:43,630: client: 151 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610462.7107236; ends at 1700610463.6305552; dur 0.9198s
+[rosout][INFO] 2023-11-22 07:47:44,620: client: 152 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610463.6981993; ends at 1700610464.6200476; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:47:45,617: client: 153 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610464.697536; ends at 1700610465.6171963; dur 0.9197s
+[rosout][INFO] 2023-11-22 07:47:46,622: client: 154 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610465.700223; ends at 1700610466.6225164; dur 0.9223s
+[rosout][INFO] 2023-11-22 07:47:47,624: client: 155 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610466.70174; ends at 1700610467.6245546; dur 0.9228s
+[rosout][WARNING] 2023-11-22 07:47:48,158: Detected jump back in time of 24.834415s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:47:48,290: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:47:48,636: client: 156 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610467.7144706; ends at 1700610468.636599; dur 0.9221s
+[rosout][INFO] 2023-11-22 07:47:49,674: client: 157 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610468.7512813; ends at 1700610469.6737773; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:47:50,686: client: 158 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610469.7634194; ends at 1700610470.6865652; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:47:51,692: client: 159 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610470.769134; ends at 1700610471.6923332; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:47:51,757: Inference freq: 0.9925 FPS; dur: 10.0759 s
+[rospy.service][ERROR] 2023-11-22 07:47:51,766: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:47:51,775: Comp freq: 0.9918 FPS; dur: 10.0825s
+[rosout][INFO] 2023-11-22 07:47:52,706: client: 160 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610471.7800133; ends at 1700610472.706117; dur 0.9261s
+[rosout][INFO] 2023-11-22 07:47:53,702: client: 161 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610472.7840881; ends at 1700610473.7026682; dur 0.9186s
+[rosout][INFO] 2023-11-22 07:47:54,693: client: 162 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610473.7679949; ends at 1700610474.692885; dur 0.9249s
+[rosout][INFO] 2023-11-22 07:47:55,696: client: 163 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610474.7755675; ends at 1700610475.6967008; dur 0.9211s
+[rosout][INFO] 2023-11-22 07:47:56,697: client: 164 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610475.7724342; ends at 1700610476.6974845; dur 0.9251s
+[rosout][INFO] 2023-11-22 07:47:57,705: client: 165 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610476.781003; ends at 1700610477.704851; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:47:58,705: client: 166 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610477.7855642; ends at 1700610478.7051058; dur 0.9195s
+[rosout][INFO] 2023-11-22 07:47:59,702: client: 167 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610478.7803392; ends at 1700610479.7027051; dur 0.9224s
+[rosout][INFO] 2023-11-22 07:48:00,708: client: 168 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610479.785821; ends at 1700610480.7078; dur 0.9220s
+[rosout][INFO] 2023-11-22 07:48:01,710: client: 169 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610480.7886267; ends at 1700610481.710082; dur 0.9215s
+[rosout][INFO] 2023-11-22 07:48:01,782: Inference freq: 0.9984 FPS; dur: 10.0159 s
+[rospy.service][ERROR] 2023-11-22 07:48:01,791: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:01,802: Comp freq: 0.9973 FPS; dur: 10.0271s
+[rosout][INFO] 2023-11-22 07:48:02,732: client: 170 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610481.8104618; ends at 1700610482.7324307; dur 0.9220s
+[rosout][INFO] 2023-11-22 07:48:03,737: client: 171 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610482.8184655; ends at 1700610483.7370903; dur 0.9186s
+[rosout][INFO] 2023-11-22 07:48:04,758: client: 172 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610483.8354914; ends at 1700610484.7585986; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:48:05,769: client: 173 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610484.84527; ends at 1700610485.769607; dur 0.9243s
+[rosout][INFO] 2023-11-22 07:48:06,767: client: 174 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610485.8458505; ends at 1700610486.7676551; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:48:07,765: client: 175 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610486.8421185; ends at 1700610487.7652156; dur 0.9231s
+[rosout][INFO] 2023-11-22 07:48:08,767: client: 176 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610487.8490863; ends at 1700610488.767501; dur 0.9184s
+[rosout][INFO] 2023-11-22 07:48:09,778: client: 177 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610488.8558292; ends at 1700610489.7780523; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:48:10,794: client: 178 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610489.8733132; ends at 1700610490.794459; dur 0.9211s
+[rosout][INFO] 2023-11-22 07:48:11,794: client: 179 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610490.872065; ends at 1700610491.7946143; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:48:11,868: Inference freq: 0.9925 FPS; dur: 10.0760 s
+[rospy.service][ERROR] 2023-11-22 07:48:11,878: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:11,886: Comp freq: 0.9917 FPS; dur: 10.0841s
+[rosout][INFO] 2023-11-22 07:48:12,814: client: 180 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610491.890509; ends at 1700610492.8142967; dur 0.9238s
+[rosout][WARNING] 2023-11-22 07:48:13,009: Detected jump back in time of 24.854143s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:48:13,156: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:48:13,818: client: 181 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610492.899532; ends at 1700610493.817845; dur 0.9183s
+[rosout][INFO] 2023-11-22 07:48:14,838: client: 182 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610493.9135077; ends at 1700610494.838057; dur 0.9245s
+[rosout][INFO] 2023-11-22 07:48:15,849: client: 183 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610494.9286256; ends at 1700610495.8491054; dur 0.9205s
+[rosout][INFO] 2023-11-22 07:48:16,871: client: 184 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610495.9455922; ends at 1700610496.8707793; dur 0.9252s
+[rosout][INFO] 2023-11-22 07:48:17,876: client: 185 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610496.9526758; ends at 1700610497.8766434; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:48:18,874: client: 186 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610497.955342; ends at 1700610498.874043; dur 0.9187s
+[rosout][INFO] 2023-11-22 07:48:19,879: client: 187 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610498.9561346; ends at 1700610499.8793697; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:48:20,883: client: 188 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610499.9626045; ends at 1700610500.8833587; dur 0.9208s
+[rosout][INFO] 2023-11-22 07:48:21,904: client: 189 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610500.9793265; ends at 1700610501.9043155; dur 0.9250s
+[rosout][INFO] 2023-11-22 07:48:21,968: Inference freq: 0.9908 FPS; dur: 10.0932 s
+[rospy.service][ERROR] 2023-11-22 07:48:21,978: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:21,988: Comp freq: 0.9899 FPS; dur: 10.1018s
+[rosout][INFO] 2023-11-22 07:48:22,918: client: 190 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610501.9964654; ends at 1700610502.9186027; dur 0.9221s
+[rosout][INFO] 2023-11-22 07:48:23,922: client: 191 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610503.003253; ends at 1700610503.9225929; dur 0.9193s
+[rosout][INFO] 2023-11-22 07:48:24,919: client: 192 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610503.9960275; ends at 1700610504.9192712; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:48:25,926: client: 193 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610505.0039966; ends at 1700610505.9267554; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:48:26,944: client: 194 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610506.0208383; ends at 1700610506.9442277; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:48:27,940: client: 195 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610507.0177953; ends at 1700610507.940278; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:48:28,940: client: 196 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610508.021515; ends at 1700610508.9403572; dur 0.9188s
+[rosout][INFO] 2023-11-22 07:48:29,946: client: 197 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610509.0238109; ends at 1700610509.9463599; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:48:30,955: client: 198 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610510.032802; ends at 1700610510.9548385; dur 0.9220s
+[rosout][INFO] 2023-11-22 07:48:31,958: client: 199 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610511.0370846; ends at 1700610511.9585009; dur 0.9214s
+[rosout][INFO] 2023-11-22 07:48:32,029: Inference freq: 0.9948 FPS; dur: 10.0523 s
+[rospy.service][ERROR] 2023-11-22 07:48:32,039: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:32,054: Comp freq: 0.9935 FPS; dur: 10.0657s
+[rosout][INFO] 2023-11-22 07:48:32,991: client: 200 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610512.0609782; ends at 1700610512.9913335; dur 0.9304s
+[rosout][INFO] 2023-11-22 07:48:33,996: client: 201 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610513.0773; ends at 1700610513.9964278; dur 0.9191s
+[rosout][INFO] 2023-11-22 07:48:34,993: client: 202 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610514.0711513; ends at 1700610514.993091; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:48:35,989: client: 203 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610515.066901; ends at 1700610515.9895763; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:48:36,990: client: 204 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610516.071605; ends at 1700610516.9906645; dur 0.9191s
+[rosout][WARNING] 2023-11-22 07:48:37,884: Detected jump back in time of 24.846748s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:48:37,982: client: 205 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610517.0566692; ends at 1700610517.982035; dur 0.9254s
+[rosout][INFO] 2023-11-22 07:48:38,027: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:48:38,992: client: 206 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610518.0720558; ends at 1700610518.9927297; dur 0.9207s
+[rosout][INFO] 2023-11-22 07:48:40,008: client: 207 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610519.0843098; ends at 1700610520.008598; dur 0.9243s
+[rosout][INFO] 2023-11-22 07:48:41,015: client: 208 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610520.0952914; ends at 1700610521.01497; dur 0.9197s
+[rosout][INFO] 2023-11-22 07:48:42,036: client: 209 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610521.1069016; ends at 1700610522.0360844; dur 0.9292s
+[rosout][INFO] 2023-11-22 07:48:42,105: Inference freq: 0.9934 FPS; dur: 10.0669 s
+[rospy.service][ERROR] 2023-11-22 07:48:42,114: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:42,122: Comp freq: 0.9932 FPS; dur: 10.0685s
+[rosout][INFO] 2023-11-22 07:48:43,055: client: 210 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610522.1324708; ends at 1700610523.0552664; dur 0.9228s
+[rosout][INFO] 2023-11-22 07:48:44,050: client: 211 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610523.1319535; ends at 1700610524.0500429; dur 0.9181s
+[rosout][INFO] 2023-11-22 07:48:45,048: client: 212 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610524.1226122; ends at 1700610525.048312; dur 0.9257s
+[rosout][INFO] 2023-11-22 07:48:46,065: client: 213 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610525.1410854; ends at 1700610526.065522; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:48:47,067: client: 214 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610526.145321; ends at 1700610527.0674818; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:48:48,069: client: 215 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610527.1451128; ends at 1700610528.0694976; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:48:49,070: client: 216 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610528.1510897; ends at 1700610529.070185; dur 0.9191s
+[rosout][INFO] 2023-11-22 07:48:50,067: client: 217 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610529.1462543; ends at 1700610530.0674417; dur 0.9212s
+[rosout][INFO] 2023-11-22 07:48:51,073: client: 218 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610530.1526601; ends at 1700610531.0737116; dur 0.9211s
+[rosout][INFO] 2023-11-22 07:48:52,068: client: 219 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610531.14585; ends at 1700610532.0678413; dur 0.9220s
+[rosout][INFO] 2023-11-22 07:48:52,135: Inference freq: 0.9978 FPS; dur: 10.0218 s
+[rospy.service][ERROR] 2023-11-22 07:48:52,144: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:48:52,157: Comp freq: 0.9966 FPS; dur: 10.0346s
+[rosout][INFO] 2023-11-22 07:48:53,093: client: 220 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610532.161553; ends at 1700610533.0932086; dur 0.9317s
+[rosout][INFO] 2023-11-22 07:48:54,099: client: 221 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610533.1758523; ends at 1700610534.0994635; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:48:55,096: client: 222 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610534.174379; ends at 1700610535.0962646; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:48:56,099: client: 223 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610535.175138; ends at 1700610536.0994208; dur 0.9243s
+[rosout][INFO] 2023-11-22 07:48:57,098: client: 224 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610536.1751382; ends at 1700610537.0978024; dur 0.9227s
+[rosout][INFO] 2023-11-22 07:48:58,105: client: 225 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610537.183341; ends at 1700610538.1053853; dur 0.9220s
+[rosout][INFO] 2023-11-22 07:48:59,103: client: 226 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610538.1848307; ends at 1700610539.1034865; dur 0.9187s
+[rosout][INFO] 2023-11-22 07:49:00,141: client: 227 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610539.2167394; ends at 1700610540.1411018; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:49:01,144: client: 228 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610540.2202272; ends at 1700610541.143828; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:49:02,152: client: 229 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610541.2280815; ends at 1700610542.1525176; dur 0.9244s
+[rosout][INFO] 2023-11-22 07:49:02,226: Inference freq: 0.9919 FPS; dur: 10.0820 s
+[rospy.service][ERROR] 2023-11-22 07:49:02,240: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:02,250: Comp freq: 0.9907 FPS; dur: 10.0934s
+[rosout][WARNING] 2023-11-22 07:49:02,766: Detected jump back in time of 24.839276s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:49:02,893: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:49:03,179: client: 230 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610542.2557838; ends at 1700610543.179261; dur 0.9235s
+[rosout][INFO] 2023-11-22 07:49:04,192: client: 231 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610543.2708478; ends at 1700610544.1926315; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:49:05,231: client: 232 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610544.309182; ends at 1700610545.231029; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:49:06,228: client: 233 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610545.30304; ends at 1700610546.2279098; dur 0.9249s
+[rosout][INFO] 2023-11-22 07:49:07,226: client: 234 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610546.3027883; ends at 1700610547.2257497; dur 0.9230s
+[rosout][INFO] 2023-11-22 07:49:08,224: client: 235 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610547.3023; ends at 1700610548.2245052; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:49:09,227: client: 236 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610548.308363; ends at 1700610549.2275567; dur 0.9192s
+[rosout][INFO] 2023-11-22 07:49:10,270: client: 237 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610549.3509264; ends at 1700610550.2698133; dur 0.9189s
+[rosout][INFO] 2023-11-22 07:49:11,271: client: 238 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610550.3505707; ends at 1700610551.2712693; dur 0.9207s
+[rosout][INFO] 2023-11-22 07:49:12,275: client: 239 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610551.3542283; ends at 1700610552.2756157; dur 0.9214s
+[rosout][INFO] 2023-11-22 07:49:12,338: Inference freq: 0.9901 FPS; dur: 10.0998 s
+[rospy.service][ERROR] 2023-11-22 07:49:12,347: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:12,359: Comp freq: 0.9893 FPS; dur: 10.1084s
+[rosout][INFO] 2023-11-22 07:49:13,287: client: 240 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610552.3634396; ends at 1700610553.2873318; dur 0.9239s
+[rosout][INFO] 2023-11-22 07:49:14,296: client: 241 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610553.3776083; ends at 1700610554.2960818; dur 0.9185s
+[rosout][INFO] 2023-11-22 07:49:15,290: client: 242 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610554.366623; ends at 1700610555.2904382; dur 0.9238s
+[rosout][INFO] 2023-11-22 07:49:16,291: client: 243 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610555.3675003; ends at 1700610556.291656; dur 0.9242s
+[rosout][INFO] 2023-11-22 07:49:17,302: client: 244 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610556.3758283; ends at 1700610557.302245; dur 0.9264s
+[rosout][INFO] 2023-11-22 07:49:18,299: client: 245 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610557.3767552; ends at 1700610558.299663; dur 0.9229s
+[rosout][INFO] 2023-11-22 07:49:19,304: client: 246 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610558.3852794; ends at 1700610559.3041747; dur 0.9189s
+[rosout][INFO] 2023-11-22 07:49:20,303: client: 247 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610559.3793337; ends at 1700610560.3027594; dur 0.9234s
+[rosout][INFO] 2023-11-22 07:49:21,305: client: 248 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610560.379181; ends at 1700610561.3053539; dur 0.9262s
+[rosout][INFO] 2023-11-22 07:49:22,312: client: 249 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610561.385547; ends at 1700610562.3123465; dur 0.9268s
+[rospy.service][ERROR] 2023-11-22 07:49:22,389: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:22,380: Inference freq: 0.9967 FPS; dur: 10.0330 s
+[rosout][INFO] 2023-11-22 07:49:22,401: Comp freq: 0.9958 FPS; dur: 10.0425s
+[rosout][INFO] 2023-11-22 07:49:23,338: client: 250 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610562.4134421; ends at 1700610563.3380914; dur 0.9246s
+[rosout][INFO] 2023-11-22 07:49:24,346: client: 251 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610563.4287744; ends at 1700610564.346783; dur 0.9180s
+[rosout][INFO] 2023-11-22 07:49:25,334: client: 252 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610564.4152622; ends at 1700610565.33451; dur 0.9192s
+[rosout][INFO] 2023-11-22 07:49:26,346: client: 253 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610565.4252267; ends at 1700610566.3456693; dur 0.9204s
+[rosout][INFO] 2023-11-22 07:49:27,351: client: 254 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610566.427324; ends at 1700610567.3515139; dur 0.9242s
+[rosout][WARNING] 2023-11-22 07:49:27,621: Detected jump back in time of 24.848470s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:49:27,760: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rosout][INFO] 2023-11-22 07:49:28,362: client: 255 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610567.4354448; ends at 1700610568.3622513; dur 0.9268s
+[rosout][INFO] 2023-11-22 07:49:29,382: client: 256 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610568.4636407; ends at 1700610569.38203; dur 0.9184s
+[rosout][INFO] 2023-11-22 07:49:30,384: client: 257 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610569.4606214; ends at 1700610570.3841348; dur 0.9235s
+[rosout][INFO] 2023-11-22 07:49:31,384: client: 258 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610570.4621577; ends at 1700610571.3843946; dur 0.9222s
+[rosout][INFO] 2023-11-22 07:49:32,394: client: 259 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610571.4724038; ends at 1700610572.3940954; dur 0.9217s
+[rospy.service][ERROR] 2023-11-22 07:49:32,473: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:32,465: Inference freq: 0.9929 FPS; dur: 10.0714 s
+[rosout][INFO] 2023-11-22 07:49:32,483: Comp freq: 0.9919 FPS; dur: 10.0813s
+[rosout][INFO] 2023-11-22 07:49:33,419: client: 260 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610572.4916868; ends at 1700610573.418748; dur 0.9271s
+[rosout][INFO] 2023-11-22 07:49:34,417: client: 261 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610573.4976978; ends at 1700610574.417327; dur 0.9196s
+[rosout][INFO] 2023-11-22 07:49:35,417: client: 262 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610574.4927483; ends at 1700610575.4168167; dur 0.9241s
+[rosout][INFO] 2023-11-22 07:49:36,416: client: 263 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610575.4945483; ends at 1700610576.4164104; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:49:37,428: client: 264 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610576.5062432; ends at 1700610577.4281454; dur 0.9219s
+[rosout][INFO] 2023-11-22 07:49:38,437: client: 265 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610577.5158675; ends at 1700610578.437163; dur 0.9213s
+[rosout][INFO] 2023-11-22 07:49:39,444: client: 266 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610578.524446; ends at 1700610579.4440882; dur 0.9196s
+[rosout][INFO] 2023-11-22 07:49:40,434: client: 267 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610579.5100114; ends at 1700610580.4342566; dur 0.9242s
+[rosout][INFO] 2023-11-22 07:49:41,441: client: 268 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610580.5172875; ends at 1700610581.4412947; dur 0.9240s
+[rosout][INFO] 2023-11-22 07:49:42,455: client: 269 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610581.5351238; ends at 1700610582.4550142; dur 0.9199s
+[rospy.service][ERROR] 2023-11-22 07:49:42,537: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:42,528: Inference freq: 0.9948 FPS; dur: 10.0520 s
+[rosout][INFO] 2023-11-22 07:49:42,557: Comp freq: 0.9926 FPS; dur: 10.0741s
+[rosout][INFO] 2023-11-22 07:49:43,484: client: 270 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610582.560829; ends at 1700610583.4845486; dur 0.9237s
+[rosout][INFO] 2023-11-22 07:49:44,482: client: 271 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610583.562474; ends at 1700610584.4826458; dur 0.9202s
+[rosout][INFO] 2023-11-22 07:49:45,480: client: 272 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610584.5574555; ends at 1700610585.4799807; dur 0.9225s
+[rosout][INFO] 2023-11-22 07:49:46,480: client: 273 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610585.559286; ends at 1700610586.4798734; dur 0.9206s
+[rosout][INFO] 2023-11-22 07:49:47,492: client: 274 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610586.5672417; ends at 1700610587.4919698; dur 0.9247s
+[rosout][INFO] 2023-11-22 07:49:48,483: client: 275 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610587.5626764; ends at 1700610588.482769; dur 0.9201s
+[rosout][INFO] 2023-11-22 07:49:49,479: client: 276 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610588.560015; ends at 1700610589.4794233; dur 0.9194s
+[rosout][INFO] 2023-11-22 07:49:50,544: client: 277 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610589.6244457; ends at 1700610590.5446055; dur 0.9202s
+[rosout][INFO] 2023-11-22 07:49:51,549: client: 278 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610590.6261868; ends at 1700610591.5491831; dur 0.9230s
+[rosout][WARNING] 2023-11-22 07:49:52,490: Detected jump back in time of 24.849873s. Clearing TF buffer.
+[rosout][INFO] 2023-11-22 07:49:52,567: client: 279 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610591.6306949; ends at 1700610592.5670023; dur 0.9363s
+[rosout][INFO] 2023-11-22 07:49:52,629: ApproximateTimeSynchronizer: Detected jump back in time. Clearing buffer.
+[rospy.service][ERROR] 2023-11-22 07:49:52,644: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:49:52,634: Inference freq: 0.9908 FPS; dur: 10.0929 s
+[rosout][INFO] 2023-11-22 07:49:52,657: Comp freq: 0.9901 FPS; dur: 10.1000s
+[rosout][INFO] 2023-11-22 07:49:53,596: client: 280 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610592.67252; ends at 1700610593.5965858; dur 0.9241s
+[rosout][INFO] 2023-11-22 07:49:54,595: client: 281 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610593.6721525; ends at 1700610594.5951712; dur 0.9230s
+[rosout][INFO] 2023-11-22 07:49:55,671: client: 282 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610594.74493; ends at 1700610595.670819; dur 0.9259s
+[rosout][INFO] 2023-11-22 07:49:56,669: client: 283 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610595.7462165; ends at 1700610596.6694114; dur 0.9232s
+[rosout][INFO] 2023-11-22 07:49:57,671: client: 284 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610596.750159; ends at 1700610597.6709938; dur 0.9208s
+[rosout][INFO] 2023-11-22 07:49:58,675: client: 285 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610597.7533607; ends at 1700610598.675135; dur 0.9218s
+[rosout][INFO] 2023-11-22 07:49:59,680: client: 286 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610598.7603261; ends at 1700610599.6798913; dur 0.9196s
+[rosout][INFO] 2023-11-22 07:50:00,751: client: 287 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610599.8283932; ends at 1700610600.7507975; dur 0.9224s
+[rosout][INFO] 2023-11-22 07:50:01,762: client: 288 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610600.836888; ends at 1700610601.7625232; dur 0.9256s
+[rosout][INFO] 2023-11-22 07:50:02,776: client: 289 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610601.848681; ends at 1700610602.7766633; dur 0.9280s
+[rosout][INFO] 2023-11-22 07:50:02,841: Inference freq: 0.9811 FPS; dur: 10.1928 s
+[rospy.service][ERROR] 2023-11-22 07:50:02,851: [/move_base/clear_costmaps]: lookup service failed with message [no provider]
+[rosout][INFO] 2023-11-22 07:50:02,858: Comp freq: 0.9802 FPS; dur: 10.2016s
+[rosout][INFO] 2023-11-22 07:50:03,791: client: 290 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610602.8692865; ends at 1700610603.7909; dur 0.9216s
+[rosout][INFO] 2023-11-22 07:50:04,794: client: 291 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610603.8749082; ends at 1700610604.794529; dur 0.9196s
+[rosout][INFO] 2023-11-22 07:50:05,791: client: 292 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610604.8677104; ends at 1700610605.7913027; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:50:06,799: client: 293 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610605.8691978; ends at 1700610606.7991507; dur 0.9300s
+[rosout][INFO] 2023-11-22 07:50:07,803: client: 294 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610606.880095; ends at 1700610607.8036501; dur 0.9236s
+[rosout][INFO] 2023-11-22 07:50:08,804: client: 295 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610607.8813188; ends at 1700610608.8042178; dur 0.9229s
+[rospy.core][INFO] 2023-11-22 07:50:09,198: signal_shutdown [signal-2]
+[rospy.core][INFO] 2023-11-22 07:50:09,213: signal_shutdown [signal-2]
+[rospy.core][INFO] 2023-11-22 07:50:09,356: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-22 07:50:09,360: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-22 07:50:09,363: topic[/clock] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,365: topic[/tf] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,370: topic[/tf_static] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,370: topic[/tf_static] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,372: topic[/move_base/global_costmap/costmap] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,372: topic[/move_base/global_costmap/costmap] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,374: topic[/move_base/global_costmap/costmap_updates] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,375: topic[/move_base/global_costmap/costmap_updates] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,377: topic[/camera/rgb/image_raw] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,379: topic[/camera/rgb/image_raw] removing connection to http://robot2:44619/
+[rospy.internal][INFO] 2023-11-22 07:50:09,380: topic[/camera/depth/image_raw] removing connection to http://robot2:44619/
+[rospy.impl.masterslave][INFO] 2023-11-22 07:50:09,382: signal-2
+[rosout][INFO] 2023-11-22 07:50:09,802: Stopped pose_follower pipeline.
+[rosout][INFO] 2023-11-22 07:50:10,145: client: 296 th inference; est bw 0.0MBps, est exec time 0.9722s;  starts at 1700610608.8840942; ends at 1700610610.144895; dur 1.2608s
+[rosout][INFO] 2023-11-22 07:50:10,382: client: terminated.
+[rospy.core][INFO] 2023-11-22 07:50:10,561: signal_shutdown [atexit]

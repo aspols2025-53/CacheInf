@@ -1,0 +1,473 @@
+Configuring torch to use deterministic behaviors.
+parallel approach select
+constraint_latency False
+starting ParallelCollaborativeInference server...
+Serving on ('0.0.0.0', 12345)
+Ctrl on ('0.0.0.0', 12346)
+server for ('192.168.10.9', 51572): client connected.
+server for ('192.168.10.9', 51572): model initial complete.
+server for ('192.168.10.9', 51572): recv init input from client
+Input size 1.6879MB
+Forwarding for 0(+2 warmup and 3 repeat) times for initialization.
+Forward of the original model takes average 0.0760s.
+pickle.dumps size to time poly: 
+           2
+4.204e-18 x + 1.837e-10 x + 0.0009049
+pickle.loads size to time poly: 
+            2
+-1.689e-19 x + 3.151e-10 x + 6.688e-05
+Output size 0.0042MB
+Local random exec takes average 0.0757s.
+Using torch.profiler for op profile
+Operator records (align ops time with factor 0.9977): 
+0 _start: input_from: [], output_to: [1], output_shapes: [torch.Size([1, 3, 384, 384])], ops time: 0.00e+00 accu_time 0.0000s
+1 conv2d: input_from: [0], output_to: [2], output_shapes: [torch.Size([1, 32, 192, 192])], ops time: 7.12e-05 accu_time 0.0001s
+2 batch_norm: input_from: [1], output_to: [3], output_shapes: [torch.Size([1, 32, 192, 192])], ops time: 5.82e-05 accu_time 0.0001s
+3 relu: input_from: [2], output_to: [4, 6], output_shapes: [torch.Size([1, 32, 192, 192])], ops time: 1.06e-05 accu_time 0.0001s
+4 conv2d: input_from: [3], output_to: [5], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 8.05e-05 accu_time 0.0002s
+5 batch_norm: input_from: [4], output_to: [20], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.78e-05 accu_time 0.0003s
+6 conv2d: input_from: [3], output_to: [7], output_shapes: [torch.Size([1, 528, 192, 192])], ops time: 1.33e-04 accu_time 0.0004s
+7 batch_norm: input_from: [6], output_to: [8], output_shapes: [torch.Size([1, 528, 192, 192])], ops time: 3.83e-04 accu_time 0.0008s
+8 relu: input_from: [7], output_to: [9], output_shapes: [torch.Size([1, 528, 192, 192])], ops time: 2.93e-04 accu_time 0.0011s
+9 conv2d: input_from: [8], output_to: [10], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 1.57e-03 accu_time 0.0027s
+10 batch_norm: input_from: [9], output_to: [11], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 8.59e-04 accu_time 0.0035s
+11 relu: input_from: [10], output_to: [12, 17], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.78e-05 accu_time 0.0036s
+12 adaptive_avg_pool2d: input_from: [11], output_to: [13], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 4.96e-05 accu_time 0.0037s
+13 conv2d: input_from: [12], output_to: [14], output_shapes: [torch.Size([1, 8, 1, 1])], ops time: 1.13e-05 accu_time 0.0037s
+14 relu: input_from: [13], output_to: [15], output_shapes: [torch.Size([1, 8, 1, 1])], ops time: 3.66e-06 accu_time 0.0037s
+15 conv2d: input_from: [14], output_to: [16], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 5.65e-06 accu_time 0.0037s
+16 sigmoid: input_from: [15], output_to: [17], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 6.65e-06 accu_time 0.0037s
+17 mul: input_from: [16, 11], output_to: [18], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.32e-05 accu_time 0.0038s
+18 conv2d: input_from: [17], output_to: [19], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 3.96e-04 accu_time 0.0042s
+19 batch_norm: input_from: [18], output_to: [20], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 5.15e-05 accu_time 0.0042s
+20 add: input_from: [5, 19], output_to: [21], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 1.40e-04 accu_time 0.0043s
+21 relu: input_from: [20], output_to: [22, 36], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.85e-05 accu_time 0.0044s
+22 conv2d: input_from: [21], output_to: [23], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 3.97e-04 accu_time 0.0048s
+23 batch_norm: input_from: [22], output_to: [24], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.98e-05 accu_time 0.0049s
+24 relu: input_from: [23], output_to: [25], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 8.15e-05 accu_time 0.0050s
+25 conv2d: input_from: [24], output_to: [26], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 1.19e-03 accu_time 0.0062s
+26 batch_norm: input_from: [25], output_to: [27], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 5.19e-05 accu_time 0.0062s
+27 relu: input_from: [26], output_to: [28, 33], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 1.05e-04 accu_time 0.0063s
+28 adaptive_avg_pool2d: input_from: [27], output_to: [29], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 3.09e-05 accu_time 0.0064s
+29 conv2d: input_from: [28], output_to: [30], output_shapes: [torch.Size([1, 132, 1, 1])], ops time: 2.63e-05 accu_time 0.0064s
+30 relu: input_from: [29], output_to: [31], output_shapes: [torch.Size([1, 132, 1, 1])], ops time: 4.32e-06 accu_time 0.0064s
+31 conv2d: input_from: [30], output_to: [32], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 4.32e-06 accu_time 0.0064s
+32 sigmoid: input_from: [31], output_to: [33], output_shapes: [torch.Size([1, 528, 1, 1])], ops time: 6.65e-06 accu_time 0.0064s
+33 mul: input_from: [32, 27], output_to: [34], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.15e-05 accu_time 0.0065s
+34 conv2d: input_from: [33], output_to: [35], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 3.99e-04 accu_time 0.0069s
+35 batch_norm: input_from: [34], output_to: [36], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.68e-05 accu_time 0.0070s
+36 add: input_from: [21, 35], output_to: [37], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 1.13e-04 accu_time 0.0071s
+37 relu: input_from: [36], output_to: [38, 40], output_shapes: [torch.Size([1, 528, 96, 96])], ops time: 7.72e-05 accu_time 0.0071s
+38 conv2d: input_from: [37], output_to: [39], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.53e-04 accu_time 0.0073s
+39 batch_norm: input_from: [38], output_to: [54], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.16e-04 accu_time 0.0074s
+40 conv2d: input_from: [37], output_to: [41], output_shapes: [torch.Size([1, 1056, 96, 96])], ops time: 7.85e-04 accu_time 0.0082s
+41 batch_norm: input_from: [40], output_to: [42], output_shapes: [torch.Size([1, 1056, 96, 96])], ops time: 1.49e-04 accu_time 0.0083s
+42 relu: input_from: [41], output_to: [43], output_shapes: [torch.Size([1, 1056, 96, 96])], ops time: 1.52e-04 accu_time 0.0085s
+43 conv2d: input_from: [42], output_to: [44], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.07e-03 accu_time 0.0096s
+44 batch_norm: input_from: [43], output_to: [45], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.06e-05 accu_time 0.0096s
+45 relu: input_from: [44], output_to: [46, 51], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.16e-05 accu_time 0.0097s
+46 adaptive_avg_pool2d: input_from: [45], output_to: [47], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.36e-05 accu_time 0.0097s
+47 conv2d: input_from: [46], output_to: [48], output_shapes: [torch.Size([1, 132, 1, 1])], ops time: 1.30e-05 accu_time 0.0097s
+48 relu: input_from: [47], output_to: [49], output_shapes: [torch.Size([1, 132, 1, 1])], ops time: 7.32e-06 accu_time 0.0097s
+49 conv2d: input_from: [48], output_to: [50], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 9.31e-06 accu_time 0.0097s
+50 sigmoid: input_from: [49], output_to: [51], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 3.66e-06 accu_time 0.0097s
+51 mul: input_from: [50, 45], output_to: [52], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.56e-05 accu_time 0.0097s
+52 conv2d: input_from: [51], output_to: [53], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.98e-04 accu_time 0.0101s
+53 batch_norm: input_from: [52], output_to: [54], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.89e-05 accu_time 0.0102s
+54 add: input_from: [39, 53], output_to: [55], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.99e-05 accu_time 0.0102s
+55 relu: input_from: [54], output_to: [56, 70], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.06e-05 accu_time 0.0103s
+56 conv2d: input_from: [55], output_to: [57], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.33e-04 accu_time 0.0104s
+57 batch_norm: input_from: [56], output_to: [58], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.91e-04 accu_time 0.0107s
+58 relu: input_from: [57], output_to: [59], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.42e-05 accu_time 0.0108s
+59 conv2d: input_from: [58], output_to: [60], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.19e-04 accu_time 0.0110s
+60 batch_norm: input_from: [59], output_to: [61], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.64e-04 accu_time 0.0114s
+61 relu: input_from: [60], output_to: [62, 67], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.69e-05 accu_time 0.0115s
+62 adaptive_avg_pool2d: input_from: [61], output_to: [63], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.93e-05 accu_time 0.0115s
+63 conv2d: input_from: [62], output_to: [64], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 4.66e-06 accu_time 0.0115s
+64 relu: input_from: [63], output_to: [65], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.26e-05 accu_time 0.0115s
+65 conv2d: input_from: [64], output_to: [66], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 6.65e-06 accu_time 0.0115s
+66 sigmoid: input_from: [65], output_to: [67], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 7.32e-06 accu_time 0.0115s
+67 mul: input_from: [66, 61], output_to: [68], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.56e-05 accu_time 0.0116s
+68 conv2d: input_from: [67], output_to: [69], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.98e-04 accu_time 0.0120s
+69 batch_norm: input_from: [68], output_to: [70], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.36e-05 accu_time 0.0120s
+70 add: input_from: [55, 69], output_to: [71], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 8.91e-05 accu_time 0.0121s
+71 relu: input_from: [70], output_to: [72, 86], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.22e-05 accu_time 0.0121s
+72 conv2d: input_from: [71], output_to: [73], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.66e-04 accu_time 0.0124s
+73 batch_norm: input_from: [72], output_to: [74], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.72e-04 accu_time 0.0126s
+74 relu: input_from: [73], output_to: [75], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.16e-05 accu_time 0.0126s
+75 conv2d: input_from: [74], output_to: [76], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.36e-04 accu_time 0.0130s
+76 batch_norm: input_from: [75], output_to: [77], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.45e-04 accu_time 0.0133s
+77 relu: input_from: [76], output_to: [78, 83], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.35e-05 accu_time 0.0133s
+78 adaptive_avg_pool2d: input_from: [77], output_to: [79], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 2.00e-05 accu_time 0.0134s
+79 conv2d: input_from: [78], output_to: [80], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.26e-05 accu_time 0.0134s
+80 relu: input_from: [79], output_to: [81], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 3.99e-06 accu_time 0.0134s
+81 conv2d: input_from: [80], output_to: [82], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 6.65e-06 accu_time 0.0134s
+82 sigmoid: input_from: [81], output_to: [83], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 7.32e-06 accu_time 0.0134s
+83 mul: input_from: [82, 77], output_to: [84], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.46e-05 accu_time 0.0134s
+84 conv2d: input_from: [83], output_to: [85], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.65e-04 accu_time 0.0137s
+85 batch_norm: input_from: [84], output_to: [86], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.73e-04 accu_time 0.0139s
+86 add: input_from: [71, 85], output_to: [87], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.89e-05 accu_time 0.0139s
+87 relu: input_from: [86], output_to: [88, 102], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.12e-05 accu_time 0.0140s
+88 conv2d: input_from: [87], output_to: [89], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.65e-04 accu_time 0.0142s
+89 batch_norm: input_from: [88], output_to: [90], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.72e-04 accu_time 0.0144s
+90 relu: input_from: [89], output_to: [91], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.16e-05 accu_time 0.0144s
+91 conv2d: input_from: [90], output_to: [92], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.34e-04 accu_time 0.0149s
+92 batch_norm: input_from: [91], output_to: [93], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.56e-04 accu_time 0.0151s
+93 relu: input_from: [92], output_to: [94, 99], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.06e-05 accu_time 0.0152s
+94 adaptive_avg_pool2d: input_from: [93], output_to: [95], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.93e-05 accu_time 0.0152s
+95 conv2d: input_from: [94], output_to: [96], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.30e-05 accu_time 0.0152s
+96 relu: input_from: [95], output_to: [97], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 3.99e-06 accu_time 0.0152s
+97 conv2d: input_from: [96], output_to: [98], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 9.64e-06 accu_time 0.0152s
+98 sigmoid: input_from: [97], output_to: [99], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 3.99e-06 accu_time 0.0152s
+99 mul: input_from: [98, 93], output_to: [100], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.56e-05 accu_time 0.0153s
+100 conv2d: input_from: [99], output_to: [101], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.65e-04 accu_time 0.0155s
+101 batch_norm: input_from: [100], output_to: [102], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.76e-04 accu_time 0.0157s
+102 add: input_from: [87, 101], output_to: [103], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 6.15e-05 accu_time 0.0158s
+103 relu: input_from: [102], output_to: [104, 118], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.42e-05 accu_time 0.0158s
+104 conv2d: input_from: [103], output_to: [105], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.97e-04 accu_time 0.0162s
+105 batch_norm: input_from: [104], output_to: [106], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 0.00e+00 accu_time 0.0162s
+106 relu: input_from: [105], output_to: [107], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 8.05e-05 accu_time 0.0163s
+107 conv2d: input_from: [106], output_to: [108], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.20e-04 accu_time 0.0165s
+108 batch_norm: input_from: [107], output_to: [109], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.76e-04 accu_time 0.0170s
+109 relu: input_from: [108], output_to: [110, 115], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.19e-05 accu_time 0.0170s
+110 adaptive_avg_pool2d: input_from: [109], output_to: [111], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.40e-05 accu_time 0.0170s
+111 conv2d: input_from: [110], output_to: [112], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.33e-05 accu_time 0.0170s
+112 relu: input_from: [111], output_to: [113], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 7.98e-06 accu_time 0.0171s
+113 conv2d: input_from: [112], output_to: [114], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 6.32e-06 accu_time 0.0171s
+114 sigmoid: input_from: [113], output_to: [115], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 7.32e-06 accu_time 0.0171s
+115 mul: input_from: [114, 109], output_to: [116], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.56e-05 accu_time 0.0171s
+116 conv2d: input_from: [115], output_to: [117], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.97e-04 accu_time 0.0175s
+117 batch_norm: input_from: [116], output_to: [118], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.99e-05 accu_time 0.0175s
+118 add: input_from: [103, 117], output_to: [119], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.95e-05 accu_time 0.0176s
+119 relu: input_from: [118], output_to: [120, 134], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.26e-05 accu_time 0.0176s
+120 conv2d: input_from: [119], output_to: [121], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.97e-04 accu_time 0.0180s
+121 batch_norm: input_from: [120], output_to: [122], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.49e-05 accu_time 0.0181s
+122 relu: input_from: [121], output_to: [123], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.75e-05 accu_time 0.0181s
+123 conv2d: input_from: [122], output_to: [124], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.36e-04 accu_time 0.0186s
+124 batch_norm: input_from: [123], output_to: [125], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.61e-04 accu_time 0.0188s
+125 relu: input_from: [124], output_to: [126, 131], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.12e-05 accu_time 0.0189s
+126 adaptive_avg_pool2d: input_from: [125], output_to: [127], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 2.13e-05 accu_time 0.0189s
+127 conv2d: input_from: [126], output_to: [128], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.33e-05 accu_time 0.0189s
+128 relu: input_from: [127], output_to: [129], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 3.66e-06 accu_time 0.0189s
+129 conv2d: input_from: [128], output_to: [130], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.13e-05 accu_time 0.0189s
+130 sigmoid: input_from: [129], output_to: [131], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 3.66e-06 accu_time 0.0189s
+131 mul: input_from: [130, 125], output_to: [132], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.59e-05 accu_time 0.0189s
+132 conv2d: input_from: [131], output_to: [133], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.65e-04 accu_time 0.0192s
+133 batch_norm: input_from: [132], output_to: [134], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.75e-04 accu_time 0.0194s
+134 add: input_from: [119, 133], output_to: [135], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 6.05e-05 accu_time 0.0194s
+135 relu: input_from: [134], output_to: [136, 150], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.36e-05 accu_time 0.0195s
+136 conv2d: input_from: [135], output_to: [137], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 1.33e-04 accu_time 0.0196s
+137 batch_norm: input_from: [136], output_to: [138], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.04e-04 accu_time 0.0199s
+138 relu: input_from: [137], output_to: [139], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 4.06e-05 accu_time 0.0200s
+139 conv2d: input_from: [138], output_to: [140], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 6.51e-04 accu_time 0.0206s
+140 batch_norm: input_from: [139], output_to: [141], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 2.79e-05 accu_time 0.0206s
+141 relu: input_from: [140], output_to: [142, 147], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.52e-05 accu_time 0.0207s
+142 adaptive_avg_pool2d: input_from: [141], output_to: [143], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 0.00e+00 accu_time 0.0207s
+143 conv2d: input_from: [142], output_to: [144], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 2.83e-05 accu_time 0.0207s
+144 relu: input_from: [143], output_to: [145], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 7.32e-06 accu_time 0.0207s
+145 conv2d: input_from: [144], output_to: [146], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 3.66e-06 accu_time 0.0207s
+146 sigmoid: input_from: [145], output_to: [147], output_shapes: [torch.Size([1, 1056, 1, 1])], ops time: 1.10e-05 accu_time 0.0208s
+147 mul: input_from: [146, 141], output_to: [148], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.53e-05 accu_time 0.0208s
+148 conv2d: input_from: [147], output_to: [149], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.98e-04 accu_time 0.0212s
+149 batch_norm: input_from: [148], output_to: [150], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.86e-05 accu_time 0.0212s
+150 add: input_from: [135, 149], output_to: [151], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 5.82e-05 accu_time 0.0213s
+151 relu: input_from: [150], output_to: [152, 154], output_shapes: [torch.Size([1, 1056, 48, 48])], ops time: 3.96e-05 accu_time 0.0213s
+152 conv2d: input_from: [151], output_to: [153], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.51e-04 accu_time 0.0217s
+153 batch_norm: input_from: [152], output_to: [168], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.19e-05 accu_time 0.0217s
+154 conv2d: input_from: [151], output_to: [155], output_shapes: [torch.Size([1, 2904, 48, 48])], ops time: 6.70e-04 accu_time 0.0224s
+155 batch_norm: input_from: [154], output_to: [156], output_shapes: [torch.Size([1, 2904, 48, 48])], ops time: 4.10e-04 accu_time 0.0228s
+156 relu: input_from: [155], output_to: [157], output_shapes: [torch.Size([1, 2904, 48, 48])], ops time: 1.44e-04 accu_time 0.0229s
+157 conv2d: input_from: [156], output_to: [158], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 6.24e-04 accu_time 0.0236s
+158 batch_norm: input_from: [157], output_to: [159], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.45e-04 accu_time 0.0239s
+159 relu: input_from: [158], output_to: [160, 165], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.99e-05 accu_time 0.0239s
+160 adaptive_avg_pool2d: input_from: [159], output_to: [161], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.33e-05 accu_time 0.0239s
+161 conv2d: input_from: [160], output_to: [162], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 1.03e-05 accu_time 0.0240s
+162 relu: input_from: [161], output_to: [163], output_shapes: [torch.Size([1, 264, 1, 1])], ops time: 9.31e-06 accu_time 0.0240s
+163 conv2d: input_from: [162], output_to: [164], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.40e-05 accu_time 0.0240s
+164 sigmoid: input_from: [163], output_to: [165], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 3.66e-06 accu_time 0.0240s
+165 mul: input_from: [164, 159], output_to: [166], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.59e-05 accu_time 0.0240s
+166 conv2d: input_from: [165], output_to: [167], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.63e-04 accu_time 0.0246s
+167 batch_norm: input_from: [166], output_to: [168], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.02e-04 accu_time 0.0249s
+168 add: input_from: [153, 167], output_to: [169], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.45e-05 accu_time 0.0249s
+169 relu: input_from: [168], output_to: [170, 184], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.99e-05 accu_time 0.0250s
+170 conv2d: input_from: [169], output_to: [171], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.62e-04 accu_time 0.0255s
+171 batch_norm: input_from: [170], output_to: [172], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.02e-04 accu_time 0.0258s
+172 relu: input_from: [171], output_to: [173], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.22e-05 accu_time 0.0259s
+173 conv2d: input_from: [172], output_to: [174], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.72e-04 accu_time 0.0263s
+174 batch_norm: input_from: [173], output_to: [175], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.76e-04 accu_time 0.0266s
+175 relu: input_from: [174], output_to: [176, 181], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0266s
+176 adaptive_avg_pool2d: input_from: [175], output_to: [177], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.56e-05 accu_time 0.0267s
+177 conv2d: input_from: [176], output_to: [178], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.66e-05 accu_time 0.0267s
+178 relu: input_from: [177], output_to: [179], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0267s
+179 conv2d: input_from: [178], output_to: [180], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.76e-05 accu_time 0.0267s
+180 sigmoid: input_from: [179], output_to: [181], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.16e-05 accu_time 0.0267s
+181 mul: input_from: [180, 175], output_to: [182], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0267s
+182 conv2d: input_from: [181], output_to: [183], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.46e-04 accu_time 0.0276s
+183 batch_norm: input_from: [182], output_to: [184], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.26e-05 accu_time 0.0276s
+184 add: input_from: [169, 183], output_to: [185], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.26e-05 accu_time 0.0277s
+185 relu: input_from: [184], output_to: [186, 200], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0277s
+186 conv2d: input_from: [185], output_to: [187], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.81e-04 accu_time 0.0280s
+187 batch_norm: input_from: [186], output_to: [188], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.93e-04 accu_time 0.0286s
+188 relu: input_from: [187], output_to: [189], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.96e-05 accu_time 0.0286s
+189 conv2d: input_from: [188], output_to: [190], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.03e-04 accu_time 0.0293s
+190 batch_norm: input_from: [189], output_to: [191], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.36e-05 accu_time 0.0293s
+191 relu: input_from: [190], output_to: [192, 197], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0294s
+192 adaptive_avg_pool2d: input_from: [191], output_to: [193], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.64e-06 accu_time 0.0294s
+193 conv2d: input_from: [192], output_to: [194], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.19e-05 accu_time 0.0294s
+194 relu: input_from: [193], output_to: [195], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.16e-05 accu_time 0.0294s
+195 conv2d: input_from: [194], output_to: [196], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.73e-05 accu_time 0.0294s
+196 sigmoid: input_from: [195], output_to: [197], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 3.99e-06 accu_time 0.0294s
+197 mul: input_from: [196, 191], output_to: [198], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0295s
+198 conv2d: input_from: [197], output_to: [199], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.43e-04 accu_time 0.0303s
+199 batch_norm: input_from: [198], output_to: [200], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.06e-05 accu_time 0.0303s
+200 add: input_from: [185, 199], output_to: [201], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.26e-05 accu_time 0.0304s
+201 relu: input_from: [200], output_to: [202, 216], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.86e-05 accu_time 0.0304s
+202 conv2d: input_from: [201], output_to: [203], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.43e-04 accu_time 0.0312s
+203 batch_norm: input_from: [202], output_to: [204], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.13e-05 accu_time 0.0313s
+204 relu: input_from: [203], output_to: [205], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.16e-05 accu_time 0.0313s
+205 conv2d: input_from: [204], output_to: [206], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.07e-04 accu_time 0.0320s
+206 batch_norm: input_from: [205], output_to: [207], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.23e-05 accu_time 0.0320s
+207 relu: input_from: [206], output_to: [208, 213], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.09e-05 accu_time 0.0321s
+208 adaptive_avg_pool2d: input_from: [207], output_to: [209], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.31e-06 accu_time 0.0321s
+209 conv2d: input_from: [208], output_to: [210], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.16e-05 accu_time 0.0321s
+210 relu: input_from: [209], output_to: [211], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0321s
+211 conv2d: input_from: [210], output_to: [212], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.31e-06 accu_time 0.0321s
+212 sigmoid: input_from: [211], output_to: [213], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.13e-05 accu_time 0.0322s
+213 mul: input_from: [212, 207], output_to: [214], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0322s
+214 conv2d: input_from: [213], output_to: [215], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.80e-04 accu_time 0.0325s
+215 batch_norm: input_from: [214], output_to: [216], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.99e-04 accu_time 0.0331s
+216 add: input_from: [201, 215], output_to: [217], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.42e-05 accu_time 0.0331s
+217 relu: input_from: [216], output_to: [218, 232], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0331s
+218 conv2d: input_from: [217], output_to: [219], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.81e-04 accu_time 0.0334s
+219 batch_norm: input_from: [218], output_to: [220], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.98e-04 accu_time 0.0340s
+220 relu: input_from: [219], output_to: [221], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0340s
+221 conv2d: input_from: [220], output_to: [222], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 6.98e-04 accu_time 0.0347s
+222 batch_norm: input_from: [221], output_to: [223], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.16e-05 accu_time 0.0348s
+223 relu: input_from: [222], output_to: [224, 229], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.06e-05 accu_time 0.0348s
+224 adaptive_avg_pool2d: input_from: [223], output_to: [225], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 4.66e-06 accu_time 0.0348s
+225 conv2d: input_from: [224], output_to: [226], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.49e-05 accu_time 0.0348s
+226 relu: input_from: [225], output_to: [227], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0348s
+227 conv2d: input_from: [226], output_to: [228], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.69e-05 accu_time 0.0349s
+228 sigmoid: input_from: [227], output_to: [229], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 4.32e-06 accu_time 0.0349s
+229 mul: input_from: [228, 223], output_to: [230], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0349s
+230 conv2d: input_from: [229], output_to: [231], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.65e-04 accu_time 0.0355s
+231 batch_norm: input_from: [230], output_to: [232], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.13e-04 accu_time 0.0358s
+232 add: input_from: [217, 231], output_to: [233], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.22e-05 accu_time 0.0358s
+233 relu: input_from: [232], output_to: [234, 248], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.86e-05 accu_time 0.0359s
+234 conv2d: input_from: [233], output_to: [235], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.65e-04 accu_time 0.0364s
+235 batch_norm: input_from: [234], output_to: [236], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.13e-04 accu_time 0.0367s
+236 relu: input_from: [235], output_to: [237], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.16e-05 accu_time 0.0368s
+237 conv2d: input_from: [236], output_to: [238], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.85e-04 accu_time 0.0372s
+238 batch_norm: input_from: [237], output_to: [239], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.66e-04 accu_time 0.0375s
+239 relu: input_from: [238], output_to: [240, 245], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.13e-05 accu_time 0.0375s
+240 adaptive_avg_pool2d: input_from: [239], output_to: [241], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.60e-05 accu_time 0.0376s
+241 conv2d: input_from: [240], output_to: [242], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.69e-05 accu_time 0.0376s
+242 relu: input_from: [241], output_to: [243], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0376s
+243 conv2d: input_from: [242], output_to: [244], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.76e-05 accu_time 0.0376s
+244 sigmoid: input_from: [243], output_to: [245], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 4.32e-06 accu_time 0.0376s
+245 mul: input_from: [244, 239], output_to: [246], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0376s
+246 conv2d: input_from: [245], output_to: [247], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.51e-04 accu_time 0.0385s
+247 batch_norm: input_from: [246], output_to: [248], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.39e-05 accu_time 0.0385s
+248 add: input_from: [233, 247], output_to: [249], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.22e-05 accu_time 0.0386s
+249 relu: input_from: [248], output_to: [250, 264], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0386s
+250 conv2d: input_from: [249], output_to: [251], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.48e-04 accu_time 0.0394s
+251 batch_norm: input_from: [250], output_to: [252], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.13e-05 accu_time 0.0395s
+252 relu: input_from: [251], output_to: [253], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0395s
+253 conv2d: input_from: [252], output_to: [254], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.12e-04 accu_time 0.0402s
+254 batch_norm: input_from: [253], output_to: [255], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.13e-05 accu_time 0.0402s
+255 relu: input_from: [254], output_to: [256, 261], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0403s
+256 adaptive_avg_pool2d: input_from: [255], output_to: [257], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.43e-05 accu_time 0.0403s
+257 conv2d: input_from: [256], output_to: [258], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.46e-05 accu_time 0.0403s
+258 relu: input_from: [257], output_to: [259], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0403s
+259 conv2d: input_from: [258], output_to: [260], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.76e-05 accu_time 0.0404s
+260 sigmoid: input_from: [259], output_to: [261], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 3.99e-06 accu_time 0.0404s
+261 mul: input_from: [260, 255], output_to: [262], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.43e-05 accu_time 0.0404s
+262 conv2d: input_from: [261], output_to: [263], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 0.00e+00 accu_time 0.0404s
+263 batch_norm: input_from: [262], output_to: [264], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.83e-04 accu_time 0.0413s
+264 add: input_from: [249, 263], output_to: [265], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0413s
+265 relu: input_from: [264], output_to: [266, 280], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.86e-05 accu_time 0.0413s
+266 conv2d: input_from: [265], output_to: [267], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.50e-04 accu_time 0.0422s
+267 batch_norm: input_from: [266], output_to: [268], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.06e-05 accu_time 0.0422s
+268 relu: input_from: [267], output_to: [269], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.96e-05 accu_time 0.0422s
+269 conv2d: input_from: [268], output_to: [270], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.06e-04 accu_time 0.0430s
+270 batch_norm: input_from: [269], output_to: [271], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.19e-05 accu_time 0.0430s
+271 relu: input_from: [270], output_to: [272, 277], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.12e-05 accu_time 0.0430s
+272 adaptive_avg_pool2d: input_from: [271], output_to: [273], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 4.99e-06 accu_time 0.0430s
+273 conv2d: input_from: [272], output_to: [274], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.36e-05 accu_time 0.0431s
+274 relu: input_from: [273], output_to: [275], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0431s
+275 conv2d: input_from: [274], output_to: [276], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.66e-05 accu_time 0.0431s
+276 sigmoid: input_from: [275], output_to: [277], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 4.32e-06 accu_time 0.0431s
+277 mul: input_from: [276, 271], output_to: [278], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0431s
+278 conv2d: input_from: [277], output_to: [279], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.65e-04 accu_time 0.0437s
+279 batch_norm: input_from: [278], output_to: [280], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.16e-04 accu_time 0.0440s
+280 add: input_from: [265, 279], output_to: [281], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.22e-05 accu_time 0.0440s
+281 relu: input_from: [280], output_to: [282, 296], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0441s
+282 conv2d: input_from: [281], output_to: [283], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.65e-04 accu_time 0.0446s
+283 batch_norm: input_from: [282], output_to: [284], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.15e-04 accu_time 0.0449s
+284 relu: input_from: [283], output_to: [285], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.99e-05 accu_time 0.0450s
+285 conv2d: input_from: [284], output_to: [286], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.71e-04 accu_time 0.0454s
+286 batch_norm: input_from: [285], output_to: [287], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.68e-04 accu_time 0.0457s
+287 relu: input_from: [286], output_to: [288, 293], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0457s
+288 adaptive_avg_pool2d: input_from: [287], output_to: [289], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.31e-06 accu_time 0.0458s
+289 conv2d: input_from: [288], output_to: [290], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.26e-05 accu_time 0.0458s
+290 relu: input_from: [289], output_to: [291], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.20e-05 accu_time 0.0458s
+291 conv2d: input_from: [290], output_to: [292], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.56e-05 accu_time 0.0458s
+292 sigmoid: input_from: [291], output_to: [293], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 5.32e-06 accu_time 0.0458s
+293 mul: input_from: [292, 287], output_to: [294], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0458s
+294 conv2d: input_from: [293], output_to: [295], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.49e-04 accu_time 0.0467s
+295 batch_norm: input_from: [294], output_to: [296], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.43e-05 accu_time 0.0467s
+296 add: input_from: [281, 295], output_to: [297], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.32e-05 accu_time 0.0468s
+297 relu: input_from: [296], output_to: [298, 312], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.96e-05 accu_time 0.0468s
+298 conv2d: input_from: [297], output_to: [299], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.84e-04 accu_time 0.0471s
+299 batch_norm: input_from: [298], output_to: [300], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.84e-04 accu_time 0.0477s
+300 relu: input_from: [299], output_to: [301], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.06e-05 accu_time 0.0477s
+301 conv2d: input_from: [300], output_to: [302], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.30e-04 accu_time 0.0479s
+302 batch_norm: input_from: [301], output_to: [303], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.88e-04 accu_time 0.0484s
+303 relu: input_from: [302], output_to: [304, 309], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0485s
+304 adaptive_avg_pool2d: input_from: [303], output_to: [305], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.06e-05 accu_time 0.0485s
+305 conv2d: input_from: [304], output_to: [306], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.30e-05 accu_time 0.0485s
+306 relu: input_from: [305], output_to: [307], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.06e-05 accu_time 0.0485s
+307 conv2d: input_from: [306], output_to: [308], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.83e-05 accu_time 0.0485s
+308 sigmoid: input_from: [307], output_to: [309], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.30e-05 accu_time 0.0485s
+309 mul: input_from: [308, 303], output_to: [310], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0486s
+310 conv2d: input_from: [309], output_to: [311], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.51e-04 accu_time 0.0494s
+311 batch_norm: input_from: [310], output_to: [312], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.29e-05 accu_time 0.0495s
+312 add: input_from: [297, 311], output_to: [313], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.22e-05 accu_time 0.0495s
+313 relu: input_from: [312], output_to: [314, 328], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0495s
+314 conv2d: input_from: [313], output_to: [315], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.49e-04 accu_time 0.0504s
+315 batch_norm: input_from: [314], output_to: [316], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.16e-05 accu_time 0.0504s
+316 relu: input_from: [315], output_to: [317], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0504s
+317 conv2d: input_from: [316], output_to: [318], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.19e-04 accu_time 0.0512s
+318 batch_norm: input_from: [317], output_to: [319], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.23e-05 accu_time 0.0512s
+319 relu: input_from: [318], output_to: [320, 325], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0512s
+320 adaptive_avg_pool2d: input_from: [319], output_to: [321], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.64e-06 accu_time 0.0512s
+321 conv2d: input_from: [320], output_to: [322], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.99e-05 accu_time 0.0513s
+322 relu: input_from: [321], output_to: [323], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 4.32e-06 accu_time 0.0513s
+323 conv2d: input_from: [322], output_to: [324], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.80e-05 accu_time 0.0513s
+324 sigmoid: input_from: [323], output_to: [325], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.33e-05 accu_time 0.0513s
+325 mul: input_from: [324, 319], output_to: [326], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0513s
+326 conv2d: input_from: [325], output_to: [327], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.82e-04 accu_time 0.0516s
+327 batch_norm: input_from: [326], output_to: [328], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 6.01e-04 accu_time 0.0522s
+328 add: input_from: [313, 327], output_to: [329], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.12e-05 accu_time 0.0522s
+329 relu: input_from: [328], output_to: [330, 344], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0523s
+330 conv2d: input_from: [329], output_to: [331], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.48e-04 accu_time 0.0531s
+331 batch_norm: input_from: [330], output_to: [332], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.03e-05 accu_time 0.0531s
+332 relu: input_from: [331], output_to: [333], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.09e-05 accu_time 0.0532s
+333 conv2d: input_from: [332], output_to: [334], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 7.09e-04 accu_time 0.0539s
+334 batch_norm: input_from: [333], output_to: [335], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.26e-05 accu_time 0.0539s
+335 relu: input_from: [334], output_to: [336, 341], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.29e-05 accu_time 0.0540s
+336 adaptive_avg_pool2d: input_from: [335], output_to: [337], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.98e-06 accu_time 0.0540s
+337 conv2d: input_from: [336], output_to: [338], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.23e-05 accu_time 0.0540s
+338 relu: input_from: [337], output_to: [339], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.13e-05 accu_time 0.0540s
+339 conv2d: input_from: [338], output_to: [340], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.86e-05 accu_time 0.0540s
+340 sigmoid: input_from: [339], output_to: [341], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.30e-05 accu_time 0.0540s
+341 mul: input_from: [340, 335], output_to: [342], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0541s
+342 conv2d: input_from: [341], output_to: [343], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.66e-04 accu_time 0.0546s
+343 batch_norm: input_from: [342], output_to: [344], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.04e-04 accu_time 0.0549s
+344 add: input_from: [329, 343], output_to: [345], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.25e-05 accu_time 0.0550s
+345 relu: input_from: [344], output_to: [346, 360], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.83e-05 accu_time 0.0550s
+346 conv2d: input_from: [345], output_to: [347], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.48e-04 accu_time 0.0559s
+347 batch_norm: input_from: [346], output_to: [348], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.06e-05 accu_time 0.0559s
+348 relu: input_from: [347], output_to: [349], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.99e-05 accu_time 0.0559s
+349 conv2d: input_from: [348], output_to: [350], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.67e-04 accu_time 0.0564s
+350 batch_norm: input_from: [349], output_to: [351], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.54e-04 accu_time 0.0566s
+351 relu: input_from: [350], output_to: [352, 357], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.02e-05 accu_time 0.0567s
+352 adaptive_avg_pool2d: input_from: [351], output_to: [353], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.26e-05 accu_time 0.0567s
+353 conv2d: input_from: [352], output_to: [354], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.59e-05 accu_time 0.0567s
+354 relu: input_from: [353], output_to: [355], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0567s
+355 conv2d: input_from: [354], output_to: [356], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.73e-05 accu_time 0.0567s
+356 sigmoid: input_from: [355], output_to: [357], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.33e-05 accu_time 0.0567s
+357 mul: input_from: [356, 351], output_to: [358], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0568s
+358 conv2d: input_from: [357], output_to: [359], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.43e-04 accu_time 0.0576s
+359 batch_norm: input_from: [358], output_to: [360], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.16e-05 accu_time 0.0576s
+360 add: input_from: [345, 359], output_to: [361], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.36e-05 accu_time 0.0577s
+361 relu: input_from: [360], output_to: [362, 376], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0577s
+362 conv2d: input_from: [361], output_to: [363], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.62e-04 accu_time 0.0583s
+363 batch_norm: input_from: [362], output_to: [364], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.12e-04 accu_time 0.0586s
+364 relu: input_from: [363], output_to: [365], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.96e-05 accu_time 0.0586s
+365 conv2d: input_from: [364], output_to: [366], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.67e-04 accu_time 0.0591s
+366 batch_norm: input_from: [365], output_to: [367], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.48e-04 accu_time 0.0593s
+367 relu: input_from: [366], output_to: [368, 373], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.99e-05 accu_time 0.0594s
+368 adaptive_avg_pool2d: input_from: [367], output_to: [369], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.43e-05 accu_time 0.0594s
+369 conv2d: input_from: [368], output_to: [370], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.63e-05 accu_time 0.0594s
+370 relu: input_from: [369], output_to: [371], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.26e-05 accu_time 0.0594s
+371 conv2d: input_from: [370], output_to: [372], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.66e-05 accu_time 0.0595s
+372 sigmoid: input_from: [371], output_to: [373], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 3.99e-06 accu_time 0.0595s
+373 mul: input_from: [372, 367], output_to: [374], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0595s
+374 conv2d: input_from: [373], output_to: [375], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.45e-04 accu_time 0.0603s
+375 batch_norm: input_from: [374], output_to: [376], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.23e-05 accu_time 0.0604s
+376 add: input_from: [361, 375], output_to: [377], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0604s
+377 relu: input_from: [376], output_to: [378, 392], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0604s
+378 conv2d: input_from: [377], output_to: [379], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.43e-04 accu_time 0.0613s
+379 batch_norm: input_from: [378], output_to: [380], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0613s
+380 relu: input_from: [379], output_to: [381], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.93e-05 accu_time 0.0613s
+381 conv2d: input_from: [380], output_to: [382], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.66e-04 accu_time 0.0618s
+382 batch_norm: input_from: [381], output_to: [383], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.57e-04 accu_time 0.0621s
+383 relu: input_from: [382], output_to: [384, 389], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.92e-05 accu_time 0.0621s
+384 adaptive_avg_pool2d: input_from: [383], output_to: [385], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.31e-06 accu_time 0.0621s
+385 conv2d: input_from: [384], output_to: [386], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.93e-05 accu_time 0.0621s
+386 relu: input_from: [385], output_to: [387], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0621s
+387 conv2d: input_from: [386], output_to: [388], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.73e-05 accu_time 0.0622s
+388 sigmoid: input_from: [387], output_to: [389], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 3.99e-06 accu_time 0.0622s
+389 mul: input_from: [388, 383], output_to: [390], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.46e-05 accu_time 0.0622s
+390 conv2d: input_from: [389], output_to: [391], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.42e-04 accu_time 0.0630s
+391 batch_norm: input_from: [390], output_to: [392], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0631s
+392 add: input_from: [377, 391], output_to: [393], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.96e-05 accu_time 0.0631s
+393 relu: input_from: [392], output_to: [394, 408], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0631s
+394 conv2d: input_from: [393], output_to: [395], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 8.43e-04 accu_time 0.0640s
+395 batch_norm: input_from: [394], output_to: [396], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.09e-05 accu_time 0.0640s
+396 relu: input_from: [395], output_to: [397], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.03e-05 accu_time 0.0640s
+397 conv2d: input_from: [396], output_to: [398], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.69e-04 accu_time 0.0645s
+398 batch_norm: input_from: [397], output_to: [399], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.57e-04 accu_time 0.0648s
+399 relu: input_from: [398], output_to: [400, 405], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.99e-05 accu_time 0.0648s
+400 adaptive_avg_pool2d: input_from: [399], output_to: [401], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 1.40e-05 accu_time 0.0648s
+401 conv2d: input_from: [400], output_to: [402], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.53e-05 accu_time 0.0649s
+402 relu: input_from: [401], output_to: [403], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.99e-06 accu_time 0.0649s
+403 conv2d: input_from: [402], output_to: [404], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.53e-05 accu_time 0.0649s
+404 sigmoid: input_from: [403], output_to: [405], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 5.65e-06 accu_time 0.0649s
+405 mul: input_from: [404, 399], output_to: [406], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0649s
+406 conv2d: input_from: [405], output_to: [407], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.61e-04 accu_time 0.0655s
+407 batch_norm: input_from: [406], output_to: [408], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.12e-04 accu_time 0.0658s
+408 add: input_from: [393, 407], output_to: [409], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0658s
+409 relu: input_from: [408], output_to: [410, 424], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.86e-05 accu_time 0.0659s
+410 conv2d: input_from: [409], output_to: [411], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.81e-04 accu_time 0.0661s
+411 batch_norm: input_from: [410], output_to: [412], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.93e-04 accu_time 0.0667s
+412 relu: input_from: [411], output_to: [413], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.86e-05 accu_time 0.0668s
+413 conv2d: input_from: [412], output_to: [414], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.71e-04 accu_time 0.0672s
+414 batch_norm: input_from: [413], output_to: [415], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.59e-04 accu_time 0.0675s
+415 relu: input_from: [414], output_to: [416, 421], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 4.19e-05 accu_time 0.0675s
+416 adaptive_avg_pool2d: input_from: [415], output_to: [417], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 8.98e-06 accu_time 0.0675s
+417 conv2d: input_from: [416], output_to: [418], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 2.99e-05 accu_time 0.0676s
+418 relu: input_from: [417], output_to: [419], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.66e-06 accu_time 0.0676s
+419 conv2d: input_from: [418], output_to: [420], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 9.31e-06 accu_time 0.0676s
+420 sigmoid: input_from: [419], output_to: [421], output_shapes: [torch.Size([1, 2904, 1, 1])], ops time: 2.26e-05 accu_time 0.0676s
+421 mul: input_from: [420, 415], output_to: [422], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.49e-05 accu_time 0.0676s
+422 conv2d: input_from: [421], output_to: [423], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 5.62e-04 accu_time 0.0682s
+423 batch_norm: input_from: [422], output_to: [424], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.12e-04 accu_time 0.0685s
+424 add: input_from: [409, 423], output_to: [425], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 3.99e-05 accu_time 0.0685s
+425 relu: input_from: [424], output_to: [426, 428], output_shapes: [torch.Size([1, 2904, 24, 24])], ops time: 2.89e-05 accu_time 0.0686s
+426 conv2d: input_from: [425], output_to: [427], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 9.12e-04 accu_time 0.0695s
+427 batch_norm: input_from: [426], output_to: [442], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 2.29e-05 accu_time 0.0695s
+428 conv2d: input_from: [425], output_to: [429], output_shapes: [torch.Size([1, 7392, 24, 24])], ops time: 1.38e-03 accu_time 0.0709s
+429 batch_norm: input_from: [428], output_to: [430], output_shapes: [torch.Size([1, 7392, 24, 24])], ops time: 7.59e-04 accu_time 0.0716s
+430 relu: input_from: [429], output_to: [431], output_shapes: [torch.Size([1, 7392, 24, 24])], ops time: 6.72e-05 accu_time 0.0717s
+431 conv2d: input_from: [430], output_to: [432], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 1.12e-03 accu_time 0.0728s
+432 batch_norm: input_from: [431], output_to: [433], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 2.13e-05 accu_time 0.0729s
+433 relu: input_from: [432], output_to: [434, 439], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 9.31e-06 accu_time 0.0729s
+434 adaptive_avg_pool2d: input_from: [433], output_to: [435], output_shapes: [torch.Size([1, 7392, 1, 1])], ops time: 9.98e-06 accu_time 0.0729s
+435 conv2d: input_from: [434], output_to: [436], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 3.39e-05 accu_time 0.0729s
+436 relu: input_from: [435], output_to: [437], output_shapes: [torch.Size([1, 726, 1, 1])], ops time: 1.86e-05 accu_time 0.0729s
+437 conv2d: input_from: [436], output_to: [438], output_shapes: [torch.Size([1, 7392, 1, 1])], ops time: 9.05e-05 accu_time 0.0730s
+438 sigmoid: input_from: [437], output_to: [439], output_shapes: [torch.Size([1, 7392, 1, 1])], ops time: 4.69e-05 accu_time 0.0731s
+439 mul: input_from: [438, 433], output_to: [440], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 1.40e-05 accu_time 0.0731s
+440 conv2d: input_from: [439], output_to: [441], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 2.75e-03 accu_time 0.0758s
+441 batch_norm: input_from: [440], output_to: [442], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 1.20e-05 accu_time 0.0758s
+442 add: input_from: [427, 441], output_to: [443], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 3.03e-05 accu_time 0.0759s
+443 relu: input_from: [442], output_to: [444], output_shapes: [torch.Size([1, 7392, 12, 12])], ops time: 9.31e-06 accu_time 0.0759s
+444 adaptive_avg_pool2d: input_from: [443], output_to: [445], output_shapes: [torch.Size([1, 7392, 1, 1])], ops time: 1.03e-05 accu_time 0.0759s
+445 flatten: input_from: [444], output_to: [446], output_shapes: [torch.Size([1, 7392])], ops time: 0.00e+00 accu_time 0.0759s
+446 linear: input_from: [445], output_to: [447], output_shapes: [torch.Size([1, 1000])], ops time: 6.75e-05 accu_time 0.0760s
+447 _end: input_from: [446], output_to: [], output_shapes: [torch.Size([1, 1000])], ops time: 0.00e+00 accu_time 0.0760s
+total 448 ops (filtered from 534 ops); time 0.0760s (aligned by 0.9977 sleep_step 20).
+
+Stopped server.

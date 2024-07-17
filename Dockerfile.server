@@ -1,0 +1,22 @@
+FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
+
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+RUN apt-get update
+RUN apt-get install -y vim git
+RUN DEBIAN_FRONTEND=oninteractive apt-get install -y wget unzip
+RUN python3 -m pip install --upgrade pip
+
+# PCI
+RUN pip install wheel --force-reinstall
+RUN pip install setuptools --force-reinstall
+RUN pip install dill pymaxflow
+
+# kapao
+RUN pip uninstall -y torch
+RUN pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install matplotlib numpy Pillow PyYAML scipy tqdm gdown tensorboard seaborn pandas
+RUN pip install Cython pycocotools thop pytube imageio opencv-python
+RUN apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6  libgl1-mesa-glx
+
+WORKDIR /workspace

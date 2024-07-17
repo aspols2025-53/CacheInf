@@ -1,0 +1,28 @@
+[rospy.client][INFO] 2024-05-17 03:58:22,528: init_node, name[/run_torchvision], pid[124]
+[xmlrpc][INFO] 2024-05-17 03:58:22,536: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2024-05-17 03:58:22,539: Started XML-RPC server [http://robot2:39913/]
+[rospy.impl.masterslave][INFO] 2024-05-17 03:58:22,541: _ready: http://robot2:39913/
+[rospy.init][INFO] 2024-05-17 03:58:22,542: ROS Slave URI: [http://robot2:39913/]
+[rospy.registration][INFO] 2024-05-17 03:58:22,548: Registering with master node http://robot2:11311
+[xmlrpc][INFO] 2024-05-17 03:58:22,548: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2024-05-17 03:58:22,643: registered with master
+[rospy.rosout][INFO] 2024-05-17 03:58:22,644: initializing /rosout core topic
+[rospy.rosout][INFO] 2024-05-17 03:58:22,655: connected to core topic /rosout
+[rospy.simtime][INFO] 2024-05-17 03:58:22,659: initializing /clock core topic
+[rospy.simtime][INFO] 2024-05-17 03:58:22,671: connected to core topic /clock
+[rosout][INFO] 2024-05-17 03:58:22,686: Using data dir: /project/ParallelCollaborativeInference/data/ImageNet;
+[rosout][INFO] 2024-05-17 03:58:22,690: device cuda:0; task classification; model_arch regnet_y_128gf; dataset ImageNet
+[rospy.internal][INFO] 2024-05-17 03:58:22,886: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2024-05-17 04:00:01,622: Configuring torch to use deterministic behaviors.
+[rosout][INFO] 2024-05-17 04:00:01,786: parallel approach select
+[rosout][INFO] 2024-05-17 04:00:01,793: constraint_latency False
+[rosout][INFO] 2024-05-17 04:00:01,802: Warning: model still requires grad. Setting requires grad to False.
+[rosout][INFO] 2024-05-17 04:00:01,827: Connecting to server 192.168.10.8:12345
+[rosout][INFO] 2024-05-17 04:00:01,843: Connected to server 192.168.10.8: 12345
+[rosout][INFO] 2024-05-17 04:00:01,857: Model parameter number 644.8129M.
+[rosout][INFO] 2024-05-17 04:16:34,450: Send model to server 2461.5892MB.
+[rosout][INFO] 2024-05-17 04:16:35,451: client: started.
+[rosout][INFO] 2024-05-17 04:16:40,995: client: send init input to server
+[rosout][INFO] 2024-05-17 04:16:41,221: Input size 1.6879MB
+[rosout][INFO] 2024-05-17 04:16:41,228: Forwarding for 0(+2 warmup and 3 repeat) times for initialization.
+[rosout][INFO] 2024-05-17 04:17:43,884: Forward of the original model takes average 1.5280s.
